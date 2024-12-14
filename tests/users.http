@@ -1,0 +1,4 @@
+###
+GET http://localhost:4004/odata/v4/user
+###
+GET http://localhost:4004/odata/v4/user/getUsers()
