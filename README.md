@@ -13,3 +13,9 @@ You have to define a user for the [Repository-Based Shipment Channel](https://ui
 ```bash
 export SAP_NPM_AUTH="<NPM Base64 Credentials>"
 ```
+
+## Add additional RFC enabled function modules
+
+```bash
+cds import --from rfc --as cds --name BAPI_USER_GET_DETAIL --destination SAP_ABAP_BACKEND_RFC
+```

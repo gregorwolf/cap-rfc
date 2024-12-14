@@ -1,0 +1,4400 @@
+{
+  "rfcName": "BAPI_USER_GET_DETAIL",
+  "import": [
+    {
+      "name": "CACHE_RESULTS",
+      "nwrfcType": "RFCTYPE_CHAR",
+      "abapType": "c",
+      "format": "",
+      "length": 1,
+      "decimals": 0,
+      "defaultValue": "'X'",
+      "parameterText": "Temporarily buffer results in work process",
+      "optional": true
+    },
+    {
+      "name": "EXTUID_GET",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 3,
+      "decimals": 0,
+      "associatedType": "BAPIEXTUIDGET",
+      "fields": [
+        {
+          "name": "READ_ALL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "READ_EXTUID_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 1
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Read Flags for External User ID",
+      "optional": true
+    },
+    {
+      "name": "USERNAME",
+      "nwrfcType": "RFCTYPE_CHAR",
+      "abapType": "c",
+      "format": "",
+      "length": 12,
+      "decimals": 0,
+      "defaultValue": "",
+      "parameterText": "User Name",
+      "optional": false
+    }
+  ],
+  "export": [
+    {
+      "name": "ADDRESS",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 2128,
+      "decimals": 0,
+      "associatedType": "BAPIADDR3",
+      "fields": [
+        {
+          "name": "PERS_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "ADDR_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 10
+        },
+        {
+          "name": "TITLE_P",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 20
+        },
+        {
+          "name": "FIRSTNAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 50
+        },
+        {
+          "name": "LASTNAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 90
+        },
+        {
+          "name": "BIRTH_NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 130
+        },
+        {
+          "name": "MIDDLENAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 170
+        },
+        {
+          "name": "SECONDNAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 210
+        },
+        {
+          "name": "FULLNAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 80,
+          "decimals": 0,
+          "offset": 250
+        },
+        {
+          "name": "FULLNAME_X",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 330
+        },
+        {
+          "name": "TITLE_ACA1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 331
+        },
+        {
+          "name": "TITLE_ACA2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 351
+        },
+        {
+          "name": "PREFIX1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 371
+        },
+        {
+          "name": "PREFIX2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 391
+        },
+        {
+          "name": "TITLE_SPPL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 411
+        },
+        {
+          "name": "NICKNAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 431
+        },
+        {
+          "name": "INITIALS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 471
+        },
+        {
+          "name": "NAMEFORMAT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 481
+        },
+        {
+          "name": "NAMCOUNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 483
+        },
+        {
+          "name": "LANGU_P",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 486
+        },
+        {
+          "name": "LANGUP_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 487
+        },
+        {
+          "name": "SORT1_P",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 489
+        },
+        {
+          "name": "SORT2_P",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 509
+        },
+        {
+          "name": "DEPARTMENT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 529
+        },
+        {
+          "name": "FUNCTION",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 569
+        },
+        {
+          "name": "BUILDING_P",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 609
+        },
+        {
+          "name": "FLOOR_P",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 619
+        },
+        {
+          "name": "ROOM_NO_P",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 629
+        },
+        {
+          "name": "INITS_SIG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 639
+        },
+        {
+          "name": "INHOUSE_ML",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 649
+        },
+        {
+          "name": "COMM_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 659
+        },
+        {
+          "name": "TITLE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 662
+        },
+        {
+          "name": "NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 692
+        },
+        {
+          "name": "NAME_2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 732
+        },
+        {
+          "name": "NAME_3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 772
+        },
+        {
+          "name": "NAME_4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 812
+        },
+        {
+          "name": "C_O_NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 852
+        },
+        {
+          "name": "CITY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 892
+        },
+        {
+          "name": "DISTRICT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 932
+        },
+        {
+          "name": "CITY_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 972
+        },
+        {
+          "name": "DISTRCT_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 984
+        },
+        {
+          "name": "CHCKSTATUS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 992
+        },
+        {
+          "name": "POSTL_COD1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 993
+        },
+        {
+          "name": "POSTL_COD2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1003
+        },
+        {
+          "name": "POSTL_COD3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1013
+        },
+        {
+          "name": "PO_BOX",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1023
+        },
+        {
+          "name": "PO_BOX_CIT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 1033
+        },
+        {
+          "name": "PBOXCIT_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 1073
+        },
+        {
+          "name": "DELIV_DIS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 1085
+        },
+        {
+          "name": "TRANSPZONE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1100
+        },
+        {
+          "name": "STREET",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 60,
+          "decimals": 0,
+          "offset": 1110
+        },
+        {
+          "name": "STREET_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 1170
+        },
+        {
+          "name": "STR_ABBR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 1182
+        },
+        {
+          "name": "HOUSE_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1184
+        },
+        {
+          "name": "HOUSE_NO2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1194
+        },
+        {
+          "name": "STR_SUPPL1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 1204
+        },
+        {
+          "name": "STR_SUPPL2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 1244
+        },
+        {
+          "name": "STR_SUPPL3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 1284
+        },
+        {
+          "name": "LOCATION",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 1324
+        },
+        {
+          "name": "BUILDING",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1364
+        },
+        {
+          "name": "FLOOR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1374
+        },
+        {
+          "name": "ROOM_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1384
+        },
+        {
+          "name": "COUNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 1394
+        },
+        {
+          "name": "COUNTRYISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 1397
+        },
+        {
+          "name": "LANGU",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 1399
+        },
+        {
+          "name": "LANGU_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 1400
+        },
+        {
+          "name": "REGION",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 1402
+        },
+        {
+          "name": "SORT1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 1405
+        },
+        {
+          "name": "SORT2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 1425
+        },
+        {
+          "name": "TIME_ZONE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 1445
+        },
+        {
+          "name": "TAXJURCODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 1451
+        },
+        {
+          "name": "ADR_NOTES",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 1466
+        },
+        {
+          "name": "TEL1_NUMBR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 1516
+        },
+        {
+          "name": "TEL1_EXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1546
+        },
+        {
+          "name": "FAX_NUMBER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 1556
+        },
+        {
+          "name": "FAX_EXTENS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1586
+        },
+        {
+          "name": "E_MAIL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 241,
+          "decimals": 0,
+          "offset": 1596
+        },
+        {
+          "name": "BUILD_LONG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 1837
+        },
+        {
+          "name": "REGIOGROUP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 1857
+        },
+        {
+          "name": "HOME_CITY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 1865
+        },
+        {
+          "name": "HOMECITYNO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 1905
+        },
+        {
+          "name": "PCODE1_EXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1917
+        },
+        {
+          "name": "PCODE2_EXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1927
+        },
+        {
+          "name": "PCODE3_EXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1937
+        },
+        {
+          "name": "PO_W_O_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 1947
+        },
+        {
+          "name": "PO_BOX_REG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 1948
+        },
+        {
+          "name": "POBOX_CTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 1951
+        },
+        {
+          "name": "PO_CTRYISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 1954
+        },
+        {
+          "name": "DONT_USE_S",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 1956
+        },
+        {
+          "name": "DONT_USE_P",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 1960
+        },
+        {
+          "name": "HOUSE_NO3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1964
+        },
+        {
+          "name": "LANGU_CR_P",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 1974
+        },
+        {
+          "name": "LANGUCPISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 1975
+        },
+        {
+          "name": "PO_BOX_LOBBY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 1977
+        },
+        {
+          "name": "DELI_SERV_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 2017
+        },
+        {
+          "name": "DELI_SERV_NUMBER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 2021
+        },
+        {
+          "name": "COUNTY_CODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 2031
+        },
+        {
+          "name": "COUNTY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 2039
+        },
+        {
+          "name": "TOWNSHIP_CODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 2079
+        },
+        {
+          "name": "TOWNSHIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 2087
+        },
+        {
+          "name": "XPCPT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 2127
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Address Data",
+      "optional": false
+    },
+    {
+      "name": "ADMINDATA",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 28,
+      "decimals": 0,
+      "associatedType": "BAPIUSERADMIN",
+      "fields": [
+        {
+          "name": "ANAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "ERDAT",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 12
+        },
+        {
+          "name": "TRDAT",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 20
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "User: Administration Data",
+      "optional": false
+    },
+    {
+      "name": "ALIAS",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 40,
+      "decimals": 0,
+      "associatedType": "BAPIALIAS",
+      "fields": [
+        {
+          "name": "USERALIAS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 0
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "User Name Alias",
+      "optional": false
+    },
+    {
+      "name": "COMPANY",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 43,
+      "decimals": 0,
+      "associatedType": "BAPIUSCOMP",
+      "fields": [
+        {
+          "name": "COMPANY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 42,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "TEMPLATE_ORGTYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 42
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Company for Company Address",
+      "optional": false
+    },
+    {
+      "name": "DEFAULTS",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 134,
+      "decimals": 0,
+      "associatedType": "BAPIDEFAUL",
+      "fields": [
+        {
+          "name": "STCOD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "SPLD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 20
+        },
+        {
+          "name": "SPLG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 24
+        },
+        {
+          "name": "SPDB",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 25
+        },
+        {
+          "name": "SPDA",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 26
+        },
+        {
+          "name": "DATFM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 27
+        },
+        {
+          "name": "DCPFM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 28
+        },
+        {
+          "name": "LANGU",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 29
+        },
+        {
+          "name": "CATTKENNZ",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 30
+        },
+        {
+          "name": "KOSTL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 31
+        },
+        {
+          "name": "START_MENU",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 39
+        },
+        {
+          "name": "TIMEFM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 69
+        },
+        {
+          "name": "TZONE_IANA",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 64,
+          "decimals": 0,
+          "offset": 70
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Structure with User Defaults",
+      "optional": false
+    },
+    {
+      "name": "DESCRIPTION",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 92,
+      "decimals": 0,
+      "associatedType": "BAPIUSDESC",
+      "fields": [
+        {
+          "name": "RESPONSIBLE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "TECHDESC",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 80,
+          "decimals": 0,
+          "offset": 12
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Description",
+      "optional": false
+    },
+    {
+      "name": "IDENTITY",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 72,
+      "decimals": 0,
+      "associatedType": "BAPIIDENTITY",
+      "fields": [
+        {
+          "name": "IDENTITY_UUID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 36,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "BPPERSON",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 36,
+          "decimals": 0,
+          "offset": 36
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Person Assignment of an Identity",
+      "optional": false
+    },
+    {
+      "name": "ISLOCKED",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 4,
+      "decimals": 0,
+      "associatedType": "BAPISLOCKD",
+      "fields": [
+        {
+          "name": "WRNG_LOGON",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "LOCAL_LOCK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 1
+        },
+        {
+          "name": "GLOB_LOCK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 2
+        },
+        {
+          "name": "NO_USER_PW",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 3
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "User Lock",
+      "optional": false
+    },
+    {
+      "name": "LASTMODIFIED",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 26,
+      "decimals": 0,
+      "associatedType": "BAPIMODDAT",
+      "fields": [
+        {
+          "name": "MODDATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "MODTIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 8
+        },
+        {
+          "name": "MODIFIER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 14
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "User: Last Change (Date and Time)",
+      "optional": false
+    },
+    {
+      "name": "LOGONDATA",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 379,
+      "decimals": 0,
+      "associatedType": "BAPILOGOND",
+      "fields": [
+        {
+          "name": "GLTGV",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "GLTGB",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 8
+        },
+        {
+          "name": "USTYP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 16
+        },
+        {
+          "name": "CLASS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 17
+        },
+        {
+          "name": "ACCNT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 29
+        },
+        {
+          "name": "TZONE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 41
+        },
+        {
+          "name": "LTIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 47
+        },
+        {
+          "name": "BCODE",
+          "nwrfcType": "RFCTYPE_BYTE",
+          "abapType": "x",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 53
+        },
+        {
+          "name": "CODVN",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 61
+        },
+        {
+          "name": "PASSCODE",
+          "nwrfcType": "RFCTYPE_BYTE",
+          "abapType": "x",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 62
+        },
+        {
+          "name": "CODVC",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 82
+        },
+        {
+          "name": "PWDSALTEDHASH",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 255,
+          "decimals": 0,
+          "offset": 83
+        },
+        {
+          "name": "CODVS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 338
+        },
+        {
+          "name": "SECURITY_POLICY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 339
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Structure with Logon Data",
+      "optional": false
+    },
+    {
+      "name": "REF_USER",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 12,
+      "decimals": 0,
+      "associatedType": "BAPIREFUS",
+      "fields": [
+        {
+          "name": "REF_USER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 0
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "User Name of the Reference User",
+      "optional": false
+    },
+    {
+      "name": "SAPUSER_UUID",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 36,
+      "decimals": 0,
+      "associatedType": "BAPIUSERUUID",
+      "fields": [
+        {
+          "name": "SAP_UID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 36,
+          "decimals": 0,
+          "offset": 0
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Global User ID",
+      "optional": false
+    },
+    {
+      "name": "SNC",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 256,
+      "decimals": 0,
+      "associatedType": "BAPISNCU",
+      "fields": [
+        {
+          "name": "GUIFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "PNAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 255,
+          "decimals": 0,
+          "offset": 1
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Secure Network Communication Data",
+      "optional": false
+    },
+    {
+      "name": "TECH_USER",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 3,
+      "decimals": 0,
+      "associatedType": "BAPITECHUSER",
+      "fields": [
+        {
+          "name": "TECH_INDICATOR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "IDADTYPE",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 1
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Technical User",
+      "optional": false
+    },
+    {
+      "name": "UCLASS",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 45,
+      "decimals": 0,
+      "associatedType": "BAPIUCLASS",
+      "fields": [
+        {
+          "name": "LIC_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "SPEC_VERS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 2
+        },
+        {
+          "name": "COUNTRY_SURCHARGE",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 4
+        },
+        {
+          "name": "SUBSTITUTE_FROM",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "SUBSTITUTE_UNTIL",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 14
+        },
+        {
+          "name": "SYSID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 22
+        },
+        {
+          "name": "CLIENT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 30
+        },
+        {
+          "name": "BNAME_CHARGEABLE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 33
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "License-Related User Classification",
+      "optional": false
+    }
+  ],
+  "changing": [],
+  "table": [
+    {
+      "name": "ACTIVITYGROUPS",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 127,
+      "decimals": 0,
+      "associatedType": "BAPIAGR",
+      "tableFields": [
+        {
+          "name": "AGR_NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "FROM_DAT",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 30
+        },
+        {
+          "name": "TO_DAT",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 38
+        },
+        {
+          "name": "AGR_TEXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 80,
+          "decimals": 0,
+          "offset": 46
+        },
+        {
+          "name": "ORG_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 126
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Activity Groups",
+      "optional": true
+    },
+    {
+      "name": "ADDCOMREM",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 60,
+      "decimals": 0,
+      "associatedType": "BAPICOMREM",
+      "tableFields": [
+        {
+          "name": "COMM_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "LANGU",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 3
+        },
+        {
+          "name": "LANGU_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 4
+        },
+        {
+          "name": "COMM_NOTES",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "CONSNUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 56
+        },
+        {
+          "name": "ERRORFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 59
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "BAPI Structure Communication Comments",
+      "optional": true
+    },
+    {
+      "name": "ADDFAX",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 143,
+      "decimals": 0,
+      "associatedType": "BAPIADFAX",
+      "tableFields": [
+        {
+          "name": "COUNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "COUNTRYISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 3
+        },
+        {
+          "name": "STD_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 5
+        },
+        {
+          "name": "FAX",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "EXTENSION",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 36
+        },
+        {
+          "name": "FAX_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 46
+        },
+        {
+          "name": "SENDER_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 76
+        },
+        {
+          "name": "FAX_GROUP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 106
+        },
+        {
+          "name": "STD_RECIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 107
+        },
+        {
+          "name": "R_3_USER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 108
+        },
+        {
+          "name": "HOME_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 109
+        },
+        {
+          "name": "CONSNUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 110
+        },
+        {
+          "name": "ERRORFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 113
+        },
+        {
+          "name": "FLG_NOUSE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 114
+        },
+        {
+          "name": "VALID_FROM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 115
+        },
+        {
+          "name": "VALID_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 129
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "BAPI Structure Fax Numbers",
+      "optional": true
+    },
+    {
+      "name": "ADDPAG",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 136,
+      "decimals": 0,
+      "associatedType": "BAPIADPAG",
+      "tableFields": [
+        {
+          "name": "COUNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "COUNTRYISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 3
+        },
+        {
+          "name": "STD_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 5
+        },
+        {
+          "name": "PAGER_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "PAGER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 10
+        },
+        {
+          "name": "PAGER_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 40
+        },
+        {
+          "name": "CALLER_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 70
+        },
+        {
+          "name": "STD_RECIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 100
+        },
+        {
+          "name": "R_3_USER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 101
+        },
+        {
+          "name": "HOME_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 102
+        },
+        {
+          "name": "CONSNUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 103
+        },
+        {
+          "name": "ERRORFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 106
+        },
+        {
+          "name": "FLG_NOUSE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 107
+        },
+        {
+          "name": "VALID_FROM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 108
+        },
+        {
+          "name": "VALID_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 122
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "BAPI Structure Pager Numbers",
+      "optional": true
+    },
+    {
+      "name": "ADDPRT",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 40,
+      "decimals": 0,
+      "associatedType": "BAPIADPRT",
+      "tableFields": [
+        {
+          "name": "STD_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "PRINT_DEST",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 1
+        },
+        {
+          "name": "STD_RECIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 5
+        },
+        {
+          "name": "HOME_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "CONSNUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 7
+        },
+        {
+          "name": "ERRORFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 10
+        },
+        {
+          "name": "FLG_NOUSE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 11
+        },
+        {
+          "name": "VALID_FROM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 12
+        },
+        {
+          "name": "VALID_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 26
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "BAPI Structure Printer Addresses",
+      "optional": true
+    },
+    {
+      "name": "ADDRFC",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 69,
+      "decimals": 0,
+      "associatedType": "BAPIADRFC",
+      "tableFields": [
+        {
+          "name": "STD_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "LOG_DEST",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 1
+        },
+        {
+          "name": "STD_RECIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 33
+        },
+        {
+          "name": "R_3_USER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 34
+        },
+        {
+          "name": "HOME_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 35
+        },
+        {
+          "name": "CONSNUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 36
+        },
+        {
+          "name": "ERRORFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 39
+        },
+        {
+          "name": "FLG_NOUSE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 40
+        },
+        {
+          "name": "VALID_FROM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 41
+        },
+        {
+          "name": "VALID_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 55
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "BAPI Structure RFC Addresses",
+      "optional": true
+    },
+    {
+      "name": "ADDRML",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 63,
+      "decimals": 0,
+      "associatedType": "BAPIADRML",
+      "tableFields": [
+        {
+          "name": "STD_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "SYMB_DEST",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1
+        },
+        {
+          "name": "REC_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 11
+        },
+        {
+          "name": "R_MAIL_CLT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 12
+        },
+        {
+          "name": "R_MAIL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 15
+        },
+        {
+          "name": "STD_RECIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 27
+        },
+        {
+          "name": "R_3_USER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 28
+        },
+        {
+          "name": "HOME_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 29
+        },
+        {
+          "name": "CONSNUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 30
+        },
+        {
+          "name": "ERRORFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 33
+        },
+        {
+          "name": "FLG_NOUSE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 34
+        },
+        {
+          "name": "VALID_FROM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 35
+        },
+        {
+          "name": "VALID_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 49
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Inhouse Mail BAPI Structure",
+      "optional": true
+    },
+    {
+      "name": "ADDSMTP",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 300,
+      "decimals": 0,
+      "associatedType": "BAPIADSMTP",
+      "tableFields": [
+        {
+          "name": "STD_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "E_MAIL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 241,
+          "decimals": 0,
+          "offset": 1
+        },
+        {
+          "name": "EMAIL_SRCH",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 242
+        },
+        {
+          "name": "STD_RECIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 262
+        },
+        {
+          "name": "R_3_USER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 263
+        },
+        {
+          "name": "ENCODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 264
+        },
+        {
+          "name": "TNEF",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 265
+        },
+        {
+          "name": "HOME_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 266
+        },
+        {
+          "name": "CONSNUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 267
+        },
+        {
+          "name": "ERRORFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 270
+        },
+        {
+          "name": "FLG_NOUSE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 271
+        },
+        {
+          "name": "VALID_FROM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 272
+        },
+        {
+          "name": "VALID_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 286
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "E-Mail Addresses BAPI Structure",
+      "optional": true
+    },
+    {
+      "name": "ADDSSF",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 2391,
+      "decimals": 0,
+      "associatedType": "BAPIADSSF",
+      "tableFields": [
+        {
+          "name": "STD_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "DUMMY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 1
+        },
+        {
+          "name": "STD_RECIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 2
+        },
+        {
+          "name": "HOME_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 3
+        },
+        {
+          "name": "CONSNUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 4
+        },
+        {
+          "name": "RFCDEST",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 7
+        },
+        {
+          "name": "SSFIDSHORT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 132,
+          "decimals": 0,
+          "offset": 39
+        },
+        {
+          "name": "SSF_NS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 171
+        },
+        {
+          "name": "SSF_PROF",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 132,
+          "decimals": 0,
+          "offset": 181
+        },
+        {
+          "name": "SSFIDPART1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 313
+        },
+        {
+          "name": "SSFIDPART2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 563
+        },
+        {
+          "name": "SSFIDPART3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 813
+        },
+        {
+          "name": "SSFIDPART4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 1063
+        },
+        {
+          "name": "SSFIDPART5",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 1313
+        },
+        {
+          "name": "SSFIDPART6",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 1563
+        },
+        {
+          "name": "SSFIDPART7",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 1813
+        },
+        {
+          "name": "SSFIDPART8",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 2063
+        },
+        {
+          "name": "SSFIDPART9",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 48,
+          "decimals": 0,
+          "offset": 2313
+        },
+        {
+          "name": "ERRORFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 2361
+        },
+        {
+          "name": "FLG_NOUSE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 2362
+        },
+        {
+          "name": "VALID_FROM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 2363
+        },
+        {
+          "name": "VALID_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 2377
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "BAPI Structure SSF Addresses",
+      "optional": true
+    },
+    {
+      "name": "ADDTEL",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 142,
+      "decimals": 0,
+      "associatedType": "BAPIADTEL",
+      "tableFields": [
+        {
+          "name": "COUNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "COUNTRYISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 3
+        },
+        {
+          "name": "STD_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 5
+        },
+        {
+          "name": "TELEPHONE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "EXTENSION",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 36
+        },
+        {
+          "name": "TEL_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 46
+        },
+        {
+          "name": "CALLER_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 76
+        },
+        {
+          "name": "STD_RECIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 106
+        },
+        {
+          "name": "R_3_USER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 107
+        },
+        {
+          "name": "HOME_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 108
+        },
+        {
+          "name": "CONSNUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 109
+        },
+        {
+          "name": "ERRORFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 112
+        },
+        {
+          "name": "FLG_NOUSE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 113
+        },
+        {
+          "name": "VALID_FROM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 114
+        },
+        {
+          "name": "VALID_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 128
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "BAPI Structure Telephone Numbers",
+      "optional": true
+    },
+    {
+      "name": "ADDTLX",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 72,
+      "decimals": 0,
+      "associatedType": "BAPIADTLX",
+      "tableFields": [
+        {
+          "name": "COUNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "COUNTRYISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 3
+        },
+        {
+          "name": "STD_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 5
+        },
+        {
+          "name": "TELEX_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "STD_RECIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 36
+        },
+        {
+          "name": "R_3_USER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 37
+        },
+        {
+          "name": "HOME_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 38
+        },
+        {
+          "name": "CONSNUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 39
+        },
+        {
+          "name": "ERRORFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 42
+        },
+        {
+          "name": "FLG_NOUSE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 43
+        },
+        {
+          "name": "VALID_FROM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 44
+        },
+        {
+          "name": "VALID_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 58
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "BAPI Structure Telex Numbers",
+      "optional": true
+    },
+    {
+      "name": "ADDTTX",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 72,
+      "decimals": 0,
+      "associatedType": "BAPIADTTX",
+      "tableFields": [
+        {
+          "name": "COUNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "COUNTRYISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 3
+        },
+        {
+          "name": "STD_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 5
+        },
+        {
+          "name": "TELETEX",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "STD_RECIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 36
+        },
+        {
+          "name": "R_3_USER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 37
+        },
+        {
+          "name": "HOME_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 38
+        },
+        {
+          "name": "CONSNUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 39
+        },
+        {
+          "name": "ERRORFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 42
+        },
+        {
+          "name": "FLG_NOUSE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 43
+        },
+        {
+          "name": "VALID_FROM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 44
+        },
+        {
+          "name": "VALID_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 58
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "BAPI Structure Teletex Numbers",
+      "optional": true
+    },
+    {
+      "name": "ADDURI",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 2219,
+      "decimals": 0,
+      "associatedType": "BAPIADURI",
+      "tableFields": [
+        {
+          "name": "STD_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "URI_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 1
+        },
+        {
+          "name": "URI",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 132,
+          "decimals": 0,
+          "offset": 4
+        },
+        {
+          "name": "STD_RECIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 136
+        },
+        {
+          "name": "HOME_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 137
+        },
+        {
+          "name": "CONSNUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 138
+        },
+        {
+          "name": "URI_PART1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 141
+        },
+        {
+          "name": "URI_PART2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 391
+        },
+        {
+          "name": "URI_PART3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 641
+        },
+        {
+          "name": "URI_PART4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 891
+        },
+        {
+          "name": "URI_PART5",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 1141
+        },
+        {
+          "name": "URI_PART6",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 1391
+        },
+        {
+          "name": "URI_PART7",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 1641
+        },
+        {
+          "name": "URI_PART8",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 1891
+        },
+        {
+          "name": "URI_PART9",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 48,
+          "decimals": 0,
+          "offset": 2141
+        },
+        {
+          "name": "ERRORFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 2189
+        },
+        {
+          "name": "FLG_NOUSE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 2190
+        },
+        {
+          "name": "VALID_FROM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 2191
+        },
+        {
+          "name": "VALID_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 2205
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "BAPI Structure: URL, FTP, and so on",
+      "optional": true
+    },
+    {
+      "name": "ADDX400",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 948,
+      "decimals": 0,
+      "associatedType": "BAPIADX400",
+      "tableFields": [
+        {
+          "name": "STD_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "COUNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 1
+        },
+        {
+          "name": "COUNTRYISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 4
+        },
+        {
+          "name": "ADM_DOM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 16,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "PRIV_DOM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 16,
+          "decimals": 0,
+          "offset": 22
+        },
+        {
+          "name": "ORGANIZATN",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 64,
+          "decimals": 0,
+          "offset": 38
+        },
+        {
+          "name": "ORG_UNIT_1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 102
+        },
+        {
+          "name": "ORG_UNIT_2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 134
+        },
+        {
+          "name": "ORG_UNIT_3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 166
+        },
+        {
+          "name": "ORG_UNIT_4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 198
+        },
+        {
+          "name": "LASTNAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 230
+        },
+        {
+          "name": "FIRSTNAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 16,
+          "decimals": 0,
+          "offset": 270
+        },
+        {
+          "name": "INITIALS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 286
+        },
+        {
+          "name": "GENERATION",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 291
+        },
+        {
+          "name": "X_121_ADDR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 294
+        },
+        {
+          "name": "TERM_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 24,
+          "decimals": 0,
+          "offset": 309
+        },
+        {
+          "name": "TERM_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 333
+        },
+        {
+          "name": "UANID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 334
+        },
+        {
+          "name": "DDA_TYPE1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 366
+        },
+        {
+          "name": "DDA_VALUE1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 128,
+          "decimals": 0,
+          "offset": 374
+        },
+        {
+          "name": "DDA_TYPE2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 502
+        },
+        {
+          "name": "DDA_VALUE2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 128,
+          "decimals": 0,
+          "offset": 510
+        },
+        {
+          "name": "DDA_TYPE3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 638
+        },
+        {
+          "name": "DDA_VALUE3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 128,
+          "decimals": 0,
+          "offset": 646
+        },
+        {
+          "name": "DDA_TYPE4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 774
+        },
+        {
+          "name": "DDA_VALUE4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 128,
+          "decimals": 0,
+          "offset": 782
+        },
+        {
+          "name": "STD_RECIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 910
+        },
+        {
+          "name": "R_3_USER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 911
+        },
+        {
+          "name": "TXT_ENCODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 912
+        },
+        {
+          "name": "TNEF",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 913
+        },
+        {
+          "name": "HOME_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 914
+        },
+        {
+          "name": "CONSNUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 915
+        },
+        {
+          "name": "ERRORFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 918
+        },
+        {
+          "name": "FLG_NOUSE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 919
+        },
+        {
+          "name": "VALID_FROM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 920
+        },
+        {
+          "name": "VALID_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 14,
+          "decimals": 0,
+          "offset": 934
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "BAPI Structure X400 Addresses",
+      "optional": true
+    },
+    {
+      "name": "EXTIDHEAD",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 36,
+      "decimals": 0,
+      "associatedType": "BAPIUSEXTIDHEAD",
+      "tableFields": [
+        {
+          "name": "SEQ_NO_ID",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 4
+        },
+        {
+          "name": "CODE_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "EXTID_LEN",
+          "nwrfcType": "RFCTYPE_INT2",
+          "abapType": "s",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 8
+        },
+        {
+          "name": "ISSUER_LEN",
+          "nwrfcType": "RFCTYPE_INT2",
+          "abapType": "s",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 10
+        },
+        {
+          "name": "SERIAL_LEN",
+          "nwrfcType": "RFCTYPE_INT2",
+          "abapType": "s",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 12
+        },
+        {
+          "name": "VALITYINFO",
+          "nwrfcType": "RFCTYPE_BYTE",
+          "abapType": "x",
+          "format": "",
+          "length": 16,
+          "decimals": 0,
+          "offset": 14
+        },
+        {
+          "name": "VERSION",
+          "nwrfcType": "RFCTYPE_INT1",
+          "abapType": "b",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 30
+        },
+        {
+          "name": "STATUS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 31
+        },
+        {
+          "name": "EXTFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 32
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Header Data for External ID of a User",
+      "optional": true
+    },
+    {
+      "name": "EXTIDPART",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 234,
+      "decimals": 0,
+      "associatedType": "BAPIUSEXTIDPART",
+      "tableFields": [
+        {
+          "name": "SEQ_NO_ID",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "FIELDNAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 4
+        },
+        {
+          "name": "SEQ_NO_PART",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 34
+        },
+        {
+          "name": "PART_DATA",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 192,
+          "decimals": 0,
+          "offset": 38
+        },
+        {
+          "name": "EXTFLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 230
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Part of a Long Field for the External ID of a User",
+      "optional": true
+    },
+    {
+      "name": "EXTUID",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 243,
+      "decimals": 0,
+      "associatedType": "BAPIEXTUID",
+      "tableFields": [
+        {
+          "name": "EXTUID_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "EXTUID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 241,
+          "decimals": 0,
+          "offset": 2
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "User: Transfer Structure External User ID",
+      "optional": true
+    },
+    {
+      "name": "GROUPS",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 12,
+      "decimals": 0,
+      "associatedType": "BAPIGROUPS",
+      "tableFields": [
+        {
+          "name": "USERGROUP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 0
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Transfer Structure for a List of User Groups",
+      "optional": true
+    },
+    {
+      "name": "PARAMETER",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 98,
+      "decimals": 0,
+      "associatedType": "BAPIPARAM",
+      "tableFields": [
+        {
+          "name": "PARID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "PARVA",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 18,
+          "decimals": 0,
+          "offset": 20
+        },
+        {
+          "name": "PARTXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 60,
+          "decimals": 0,
+          "offset": 38
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Table with User Parameters",
+      "optional": true
+    },
+    {
+      "name": "PARAMETER1",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 120,
+      "decimals": 0,
+      "associatedType": "BAPIPARAM1",
+      "tableFields": [
+        {
+          "name": "PARID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "PARVA",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 20
+        },
+        {
+          "name": "PARTXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 60,
+          "decimals": 0,
+          "offset": 60
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Replaces Parameter (Length 18 -> 40)",
+      "optional": true
+    },
+    {
+      "name": "PROFILES",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 74,
+      "decimals": 0,
+      "associatedType": "BAPIPROF",
+      "tableFields": [
+        {
+          "name": "BAPIPROF",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "BAPIPTEXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 60,
+          "decimals": 0,
+          "offset": 12
+        },
+        {
+          "name": "BAPITYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 72
+        },
+        {
+          "name": "BAPIAKTPS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 73
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Profiles",
+      "optional": true
+    },
+    {
+      "name": "RETURN",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 548,
+      "decimals": 0,
+      "associatedType": "BAPIRET2",
+      "tableFields": [
+        {
+          "name": "TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 1
+        },
+        {
+          "name": "NUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 21
+        },
+        {
+          "name": "MESSAGE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 220,
+          "decimals": 0,
+          "offset": 24
+        },
+        {
+          "name": "LOG_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 244
+        },
+        {
+          "name": "LOG_MSG_NO",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 264
+        },
+        {
+          "name": "MESSAGE_V1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 270
+        },
+        {
+          "name": "MESSAGE_V2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 320
+        },
+        {
+          "name": "MESSAGE_V3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 370
+        },
+        {
+          "name": "MESSAGE_V4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 420
+        },
+        {
+          "name": "PARAMETER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 470
+        },
+        {
+          "name": "ROW",
+          "nwrfcType": "RFCTYPE_INT",
+          "abapType": "i",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 504
+        },
+        {
+          "name": "FIELD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 508
+        },
+        {
+          "name": "SYSTEM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 538
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Return Structure",
+      "optional": false
+    },
+    {
+      "name": "SAPUSER_UUID_HIST",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 36,
+      "decimals": 0,
+      "associatedType": "BAPIUSERUUIDHIST",
+      "tableFields": [
+        {
+          "name": "SAP_UID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 36,
+          "decimals": 0,
+          "offset": 0
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Global User ID History (Not Supported)",
+      "optional": true
+    },
+    {
+      "name": "SYSTEMS",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 10,
+      "decimals": 0,
+      "associatedType": "BAPIRCVSYS",
+      "tableFields": [
+        {
+          "name": "SUBSYSTEM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 0
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "BAPI Structure for CUA Target Systems",
+      "optional": true
+    },
+    {
+      "name": "UCLASSSYS",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 55,
+      "decimals": 0,
+      "associatedType": "BAPIUCLASSSYS",
+      "tableFields": [
+        {
+          "name": "RCVSYSTEM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "LIC_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 10
+        },
+        {
+          "name": "SPEC_VERS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 12
+        },
+        {
+          "name": "COUNTRY_SURCHARGE",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 14
+        },
+        {
+          "name": "SUBSTITUTE_FROM",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 16
+        },
+        {
+          "name": "SUBSTITUTE_UNTIL",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 24
+        },
+        {
+          "name": "SYSID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 32
+        },
+        {
+          "name": "CLIENT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 40
+        },
+        {
+          "name": "BNAME_CHARGEABLE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 43
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "System-Specific License-Related User Classification",
+      "optional": true
+    },
+    {
+      "name": "USATTRIBUTE",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 90,
+      "decimals": 0,
+      "associatedType": "BAPIUSATTRIBUTE",
+      "tableFields": [
+        {
+          "name": "ATTR_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "ATTR_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 10
+        },
+        {
+          "name": "ATTR_TEXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 60,
+          "decimals": 0,
+          "offset": 30
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "User: Transfer Structure for User Attributes",
+      "optional": true
+    }
+  ]
+}
