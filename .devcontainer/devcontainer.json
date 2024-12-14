@@ -3,7 +3,8 @@
   "image": "mcr.microsoft.com/devcontainers/base:debian",
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
-    "ghcr.io/devcontainers/features/github-cli:1": {}
+    "ghcr.io/devcontainers/features/github-cli:1": {},
+    "ghcr.io/devcontainers/features/node:1": {"version": "20"}
   },
   "customizations": {
     "vscode": {
