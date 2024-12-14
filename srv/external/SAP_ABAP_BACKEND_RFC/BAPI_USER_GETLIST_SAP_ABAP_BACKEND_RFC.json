@@ -1,0 +1,378 @@
+{
+    "rfcName": "BAPI_USER_GETLIST",
+    "import": [
+        {
+            "name": "MAX_ROWS",
+            "nwrfcType": "RFCTYPE_INT",
+            "abapType": "i",
+            "format": "",
+            "length": 4,
+            "decimals": 0,
+            "defaultValue": "0",
+            "parameterText": "Maximum Number of Lines of Hits",
+            "optional": true
+        },
+        {
+            "name": "WITH_USERNAME",
+            "nwrfcType": "RFCTYPE_CHAR",
+            "abapType": "c",
+            "format": "",
+            "length": 1,
+            "decimals": 0,
+            "defaultValue": "SPACE",
+            "parameterText": "Read User with Name",
+            "optional": true
+        }
+    ],
+    "export": [
+        {
+            "name": "ROWS",
+            "nwrfcType": "RFCTYPE_INT",
+            "abapType": "i",
+            "format": "",
+            "length": 4,
+            "decimals": 0,
+            "defaultValue": "",
+            "parameterText": "No. of users selected",
+            "optional": false
+        }
+    ],
+    "changing": [],
+    "table": [
+        {
+            "name": "RETURN",
+            "nwrfcType": "RFCTYPE_TABLE",
+            "abapType": "h",
+            "format": "",
+            "length": 548,
+            "decimals": 0,
+            "associatedType": "BAPIRET2",
+            "tableFields": [
+                {
+                    "name": "TYPE",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 1,
+                    "decimals": 0,
+                    "offset": 0
+                },
+                {
+                    "name": "ID",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 20,
+                    "decimals": 0,
+                    "offset": 1
+                },
+                {
+                    "name": "NUMBER",
+                    "nwrfcType": "RFCTYPE_NUM",
+                    "abapType": "n",
+                    "format": "",
+                    "length": 3,
+                    "decimals": 0,
+                    "offset": 21
+                },
+                {
+                    "name": "MESSAGE",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 220,
+                    "decimals": 0,
+                    "offset": 24
+                },
+                {
+                    "name": "LOG_NO",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 20,
+                    "decimals": 0,
+                    "offset": 244
+                },
+                {
+                    "name": "LOG_MSG_NO",
+                    "nwrfcType": "RFCTYPE_NUM",
+                    "abapType": "n",
+                    "format": "",
+                    "length": 6,
+                    "decimals": 0,
+                    "offset": 264
+                },
+                {
+                    "name": "MESSAGE_V1",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 50,
+                    "decimals": 0,
+                    "offset": 270
+                },
+                {
+                    "name": "MESSAGE_V2",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 50,
+                    "decimals": 0,
+                    "offset": 320
+                },
+                {
+                    "name": "MESSAGE_V3",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 50,
+                    "decimals": 0,
+                    "offset": 370
+                },
+                {
+                    "name": "MESSAGE_V4",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 50,
+                    "decimals": 0,
+                    "offset": 420
+                },
+                {
+                    "name": "PARAMETER",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 32,
+                    "decimals": 0,
+                    "offset": 470
+                },
+                {
+                    "name": "ROW",
+                    "nwrfcType": "RFCTYPE_INT",
+                    "abapType": "i",
+                    "format": "",
+                    "length": 4,
+                    "decimals": 0,
+                    "offset": 504
+                },
+                {
+                    "name": "FIELD",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 30,
+                    "decimals": 0,
+                    "offset": 508
+                },
+                {
+                    "name": "SYSTEM",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 10,
+                    "decimals": 0,
+                    "offset": 538
+                }
+            ],
+            "defaultValue": "",
+            "parameterText": "Return Parameter",
+            "optional": true
+        },
+        {
+            "name": "SELECTION_EXP",
+            "nwrfcType": "RFCTYPE_TABLE",
+            "abapType": "h",
+            "format": "",
+            "length": 164,
+            "decimals": 0,
+            "associatedType": "BAPIUSSEXP",
+            "tableFields": [
+                {
+                    "name": "LOGOP",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 3,
+                    "decimals": 0,
+                    "offset": 0
+                },
+                {
+                    "name": "ARITY",
+                    "nwrfcType": "RFCTYPE_INT",
+                    "abapType": "i",
+                    "format": "",
+                    "length": 4,
+                    "decimals": 0,
+                    "offset": 4
+                },
+                {
+                    "name": "PARAMETER",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 32,
+                    "decimals": 0,
+                    "offset": 8
+                },
+                {
+                    "name": "FIELD",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 30,
+                    "decimals": 0,
+                    "offset": 40
+                },
+                {
+                    "name": "OPTION",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 2,
+                    "decimals": 0,
+                    "offset": 70
+                },
+                {
+                    "name": "LOW",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 45,
+                    "decimals": 0,
+                    "offset": 72
+                },
+                {
+                    "name": "HIGH",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 45,
+                    "decimals": 0,
+                    "offset": 117
+                }
+            ],
+            "defaultValue": "",
+            "parameterText": "Find Users with Dynamic Selections",
+            "optional": true
+        },
+        {
+            "name": "SELECTION_RANGE",
+            "nwrfcType": "RFCTYPE_TABLE",
+            "abapType": "h",
+            "format": "",
+            "length": 155,
+            "decimals": 0,
+            "associatedType": "BAPIUSSRGE",
+            "tableFields": [
+                {
+                    "name": "PARAMETER",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 32,
+                    "decimals": 0,
+                    "offset": 0
+                },
+                {
+                    "name": "FIELD",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 30,
+                    "decimals": 0,
+                    "offset": 32
+                },
+                {
+                    "name": "SIGN",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 1,
+                    "decimals": 0,
+                    "offset": 62
+                },
+                {
+                    "name": "OPTION",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 2,
+                    "decimals": 0,
+                    "offset": 63
+                },
+                {
+                    "name": "LOW",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 45,
+                    "decimals": 0,
+                    "offset": 65
+                },
+                {
+                    "name": "HIGH",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 45,
+                    "decimals": 0,
+                    "offset": 110
+                }
+            ],
+            "defaultValue": "",
+            "parameterText": "Search for Users with a Ranges Table",
+            "optional": true
+        },
+        {
+            "name": "USERLIST",
+            "nwrfcType": "RFCTYPE_TABLE",
+            "abapType": "h",
+            "format": "",
+            "length": 172,
+            "decimals": 0,
+            "associatedType": "BAPIUSNAME",
+            "tableFields": [
+                {
+                    "name": "USERNAME",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 12,
+                    "decimals": 0,
+                    "offset": 0
+                },
+                {
+                    "name": "FIRSTNAME",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 40,
+                    "decimals": 0,
+                    "offset": 12
+                },
+                {
+                    "name": "LASTNAME",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 40,
+                    "decimals": 0,
+                    "offset": 52
+                },
+                {
+                    "name": "FULLNAME",
+                    "nwrfcType": "RFCTYPE_CHAR",
+                    "abapType": "c",
+                    "format": "",
+                    "length": 80,
+                    "decimals": 0,
+                    "offset": 92
+                }
+            ],
+            "defaultValue": "",
+            "parameterText": "User List",
+            "optional": true
+        }
+    ]
+}

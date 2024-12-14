@@ -16,5 +16,18 @@
   },
   "scripts": {
     "start": "cds-serve"
+  },
+  "cds": {
+    "requires": {
+      "SAP_ABAP_BACKEND_RFC": {
+        "kind": "rfc",
+        "model": "srv/external/SAP_ABAP_BACKEND_RFC",
+        "[production]": {
+          "credentials": {
+            "destination": "SAP_ABAP_BACKEND_RFC"
+          }
+        }
+      }
+    }
   }
 }
