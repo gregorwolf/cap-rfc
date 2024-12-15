@@ -18,5 +18,6 @@
   "oauth2-configuration": {
     "redirect-uris": ["https://*.hana.ondemand.com/**"],
     "credential-types": ["binding-secret", "x509"]
-  }
+  },
+  "attributes": []
 }
