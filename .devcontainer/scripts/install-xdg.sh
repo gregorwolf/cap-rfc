@@ -6,4 +6,5 @@ sudo apt-get update
 sudo apt-get install -y xdg-utils cf8-cli
 cf add-plugin-repo CF-Community https://plugins.cloudfoundry.org
 cf install-plugin multiapps -f
+cf install-plugin html5-plugin -f
 npm i -g @sap/cds-dk mbt
