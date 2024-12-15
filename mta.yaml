@@ -26,6 +26,8 @@ modules:
           srv-url: ${default-url}
     requires:
       - name: cap-rfc-auth
+      - name: cap-rfc-destination
+      - name: cap-rfc-connectivity
 
 resources:
   - name: cap-rfc-auth
@@ -37,3 +39,13 @@ resources:
       config:
         xsappname: cap-rfc-${org}-${space}
         tenant-mode: dedicated
+  - name: cap-rfc-destination
+    parameters:
+      service-plan: lite
+      service: destination
+    type: org.cloudfoundry.managed-service
+  - name: cap-rfc-connectivity
+    parameters:
+      service-plan: lite
+      service: connectivity
+    type: org.cloudfoundry.managed-service
