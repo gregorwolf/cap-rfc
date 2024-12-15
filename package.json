@@ -5,6 +5,9 @@
   "repository": "<Add your repository here>",
   "license": "UNLICENSED",
   "private": true,
+  "engines": {
+    "node": "^20"
+  },
   "dependencies": {
     "@sap/cds": "^8",
     "@sap/cds-rfc": "^1.2.1",
