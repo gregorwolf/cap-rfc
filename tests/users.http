@@ -1,6 +1,9 @@
 ###
 GET http://localhost:4004/odata/v4/user
+Authorization: Basic alice:
 ###
 GET http://localhost:4004/odata/v4/user/getUsers()
+Authorization: Basic alice:
 ###
 GET http://localhost:4004/odata/v4/user/Users
+Authorization: Basic alice:
