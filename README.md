@@ -14,6 +14,31 @@ The package @sap-rfc/node-rfc-library is provided via the [Repository-Based Ship
 export SAP_NPM_AUTH="<NPM Base64 Credentials>"
 ```
 
+## Connect to the ABAP backend system via a Cloud Connector in SAP Business Application Studio (BAS)
+
+Create a `.cdsrc-private.json` file in the root folder of your project with the following structure and fill it with the values also maintained in the Subaccount Destination:
+
+```json
+{
+  "requires": {
+    "SAP_ABAP_BACKEND_RFC": {
+      "credentials": {
+        "destinationBack": "",
+        "connectivity_subaccount": "<Subaccount GUID>",
+        "connectivity_proxy_host": "localhost",
+        "connectivity_proxy_port": "",
+        "ashost": "",
+        "client": "",
+        "sysnr": "",
+        "connectivity_location_id": "",
+        "user": "",
+        "passwd": ""
+      }
+    }
+  }
+}
+```
+
 ## Add additional RFC enabled function modules
 
 ```bash
