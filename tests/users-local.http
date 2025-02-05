@@ -7,3 +7,6 @@ Authorization: Basic alice:
 ###
 GET http://localhost:4004/odata/v4/user/Users
 Authorization: Basic alice:
+###
+GET http://localhost:4004/odata/v4/user/salesOrderSimulate()
+Authorization: Basic alice:

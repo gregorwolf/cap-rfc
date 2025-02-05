@@ -12,6 +12,12 @@ class UserService extends cds.ApplicationService {
       const userData = await sys.BAPI_USER_GETLIST({ MAX_ROWS: 10 });
       return userData.USERLIST;
     });
+
+    this.on("salesOrderSimulate", async (req) => {
+      const bapiSalesorderSimulate = await sys.BAPI_SALESORDER_SIMULATE({});
+      return bapiSalesorderSimulate;
+    });
+
     return super.init();
   }
 }
