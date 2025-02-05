@@ -1,10 +1,12 @@
 {
   "name": "Terraform provider for SAP BTP - Default",
-  "image": "mcr.microsoft.com/devcontainers/base:debian",
-  // Features to add to the dev container. More info: https://containers.dev/features.
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  // Features to add to the dev container. More info: https://cont--platform linux/amd64ainers.dev/features.
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {},
-    "ghcr.io/devcontainers/features/node:1": {"version": "20"}
+    "ghcr.io/devcontainers/features/node:1": { "version": "20" }
   },
   "customizations": {
     "vscode": {
