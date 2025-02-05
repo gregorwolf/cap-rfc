@@ -1,0 +1,7756 @@
+{
+  "rfcName": "BAPI_SALESORDER_SIMULATE",
+  "import": [
+    {
+      "name": "CONVERT_PARVW_AUART",
+      "nwrfcType": "RFCTYPE_CHAR",
+      "abapType": "c",
+      "format": "",
+      "length": 1,
+      "decimals": 0,
+      "defaultValue": "SPACE",
+      "parameterText": "Conversion of partner function + order type",
+      "optional": true
+    },
+    {
+      "name": "ORDER_HEADER_IN",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 710,
+      "decimals": 0,
+      "associatedType": "BAPISDHEAD",
+      "fields": [
+        {
+          "name": "DOC_NUMBER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "DOC_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 10
+        },
+        {
+          "name": "COLLECT_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 14
+        },
+        {
+          "name": "SALES_ORG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 24
+        },
+        {
+          "name": "DISTR_CHAN",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 28
+        },
+        {
+          "name": "DIVISION",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 30
+        },
+        {
+          "name": "SALES_GRP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 32
+        },
+        {
+          "name": "SALES_OFF",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 35
+        },
+        {
+          "name": "REQ_DATE_H",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 39
+        },
+        {
+          "name": "DATE_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 47
+        },
+        {
+          "name": "PURCH_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 48
+        },
+        {
+          "name": "PURCH_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 68
+        },
+        {
+          "name": "PO_METHOD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 76
+        },
+        {
+          "name": "PO_SUPPLEM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 80
+        },
+        {
+          "name": "REF_1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 84
+        },
+        {
+          "name": "NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 96
+        },
+        {
+          "name": "TELEPHONE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 16,
+          "decimals": 0,
+          "offset": 126
+        },
+        {
+          "name": "PRICE_GRP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 142
+        },
+        {
+          "name": "CUST_GROUP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 144
+        },
+        {
+          "name": "SALES_DIST",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 146
+        },
+        {
+          "name": "PRICE_LIST",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 152
+        },
+        {
+          "name": "INCOTERMS1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 154
+        },
+        {
+          "name": "INCOTERMS2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 28,
+          "decimals": 0,
+          "offset": 157
+        },
+        {
+          "name": "PMNTTRMS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 185
+        },
+        {
+          "name": "DLV_BLOCK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 189
+        },
+        {
+          "name": "BILL_BLOCK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 191
+        },
+        {
+          "name": "ORD_REASON",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 193
+        },
+        {
+          "name": "COMPL_DLV",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 196
+        },
+        {
+          "name": "PRICE_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 197
+        },
+        {
+          "name": "QT_VALID_F",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 205
+        },
+        {
+          "name": "QT_VALID_T",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 213
+        },
+        {
+          "name": "CT_VALID_F",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 221
+        },
+        {
+          "name": "CT_VALID_T",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 229
+        },
+        {
+          "name": "CUST_GRP1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 237
+        },
+        {
+          "name": "CUST_GRP2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 240
+        },
+        {
+          "name": "CUST_GRP3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 243
+        },
+        {
+          "name": "CUST_GRP4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 246
+        },
+        {
+          "name": "CUST_GRP5",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 249
+        },
+        {
+          "name": "PURCH_NO_C",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 252
+        },
+        {
+          "name": "PURCH_NO_S",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 287
+        },
+        {
+          "name": "PO_DAT_S",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 322
+        },
+        {
+          "name": "PO_METH_S",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 330
+        },
+        {
+          "name": "REF_1_S",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 334
+        },
+        {
+          "name": "SD_DOC_CAT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 346
+        },
+        {
+          "name": "SHIP_COND",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 347
+        },
+        {
+          "name": "CURRENCY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 349
+        },
+        {
+          "name": "CURRENCY_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 354
+        },
+        {
+          "name": "DLV_TIME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 357
+        },
+        {
+          "name": "CD_TYPE1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 360
+        },
+        {
+          "name": "CD_VALUE1",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 364
+        },
+        {
+          "name": "CD_P_UNT1",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 376
+        },
+        {
+          "name": "CD_D_UNT1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 381
+        },
+        {
+          "name": "CD_D_UISO1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 384
+        },
+        {
+          "name": "CD_CURR1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 387
+        },
+        {
+          "name": "CD_CU_ISO1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 392
+        },
+        {
+          "name": "CD_TYPE2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 395
+        },
+        {
+          "name": "CD_VALUE2",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 399
+        },
+        {
+          "name": "CD_P_UNT2",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 411
+        },
+        {
+          "name": "CD_D_UNT2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 416
+        },
+        {
+          "name": "CD_D_UISO2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 419
+        },
+        {
+          "name": "CD_CURR2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 422
+        },
+        {
+          "name": "CD_CU_ISO2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 427
+        },
+        {
+          "name": "CD_TYPE3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 430
+        },
+        {
+          "name": "CD_VALUE3",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 434
+        },
+        {
+          "name": "CD_P_UNT3",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 446
+        },
+        {
+          "name": "CD_D_UNT3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 451
+        },
+        {
+          "name": "CD_D_UISO3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 454
+        },
+        {
+          "name": "CD_CURR3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 457
+        },
+        {
+          "name": "CD_CU_ISO3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 462
+        },
+        {
+          "name": "CD_TYPE4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 465
+        },
+        {
+          "name": "CD_VALUE4",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 469
+        },
+        {
+          "name": "CD_P_UNT4",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 481
+        },
+        {
+          "name": "CD_D_UNT4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 486
+        },
+        {
+          "name": "CD_D_UISO4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 489
+        },
+        {
+          "name": "CD_CURR4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 492
+        },
+        {
+          "name": "CD_CU_ISO4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 497
+        },
+        {
+          "name": "FKK_CONACCT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 500
+        },
+        {
+          "name": "REF_DOC",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 512
+        },
+        {
+          "name": "REF_DOC_CA",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 522
+        },
+        {
+          "name": "SEPA_MANDATE_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 523
+        },
+        {
+          "name": "SD_DOC_CAT_LONG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 558
+        },
+        {
+          "name": "REF_DOC_CA_LONG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 562
+        },
+        {
+          "name": "INCOTERMSV",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 566
+        },
+        {
+          "name": "INCOTERMS2L",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 70,
+          "decimals": 0,
+          "offset": 570
+        },
+        {
+          "name": "INCOTERMS3L",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 70,
+          "decimals": 0,
+          "offset": 640
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Order Header",
+      "optional": false
+    }
+  ],
+  "export": [
+    {
+      "name": "BILLING_PARTY",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 300,
+      "decimals": 0,
+      "associatedType": "BAPIPAYER",
+      "fields": [
+        {
+          "name": "PAYER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 10
+        },
+        {
+          "name": "STREET",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 45
+        },
+        {
+          "name": "PO_BOX",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 75
+        },
+        {
+          "name": "POSTL_CODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 85
+        },
+        {
+          "name": "POBX_PCD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 95
+        },
+        {
+          "name": "CITY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 25,
+          "decimals": 0,
+          "offset": 105
+        },
+        {
+          "name": "LANGU",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 130
+        },
+        {
+          "name": "COUNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 131
+        },
+        {
+          "name": "TELEPHONE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 16,
+          "decimals": 0,
+          "offset": 134
+        },
+        {
+          "name": "C_CTR_AREA",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 150
+        },
+        {
+          "name": "CRED_ACCNT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 154
+        },
+        {
+          "name": "CRED_LIMIT",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 8,
+          "decimals": 2,
+          "offset": 164
+        },
+        {
+          "name": "ORDER_VALS",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 8,
+          "decimals": 2,
+          "offset": 172
+        },
+        {
+          "name": "RCVBL_VALS",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 8,
+          "decimals": 2,
+          "offset": 180
+        },
+        {
+          "name": "CRED_LIAB",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 8,
+          "decimals": 2,
+          "offset": 188
+        },
+        {
+          "name": "CURRENCY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 196
+        },
+        {
+          "name": "MN_INVOICE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 201
+        },
+        {
+          "name": "BILL_SCHED",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 202
+        },
+        {
+          "name": "LIST_SCHED",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 204
+        },
+        {
+          "name": "VAL_LIMIT",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 7,
+          "decimals": 2,
+          "offset": 206
+        },
+        {
+          "name": "ACCNT_ASGN",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 213
+        },
+        {
+          "name": "PMNTTRMS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 215
+        },
+        {
+          "name": "ADD_VAL_DY",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 219
+        },
+        {
+          "name": "FIX_VAL_DY",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 221
+        },
+        {
+          "name": "PROD_PROP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 229
+        },
+        {
+          "name": "BILL_BLOCK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 239
+        },
+        {
+          "name": "ORDER_BLCK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 241
+        },
+        {
+          "name": "VAT_REG_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 243
+        },
+        {
+          "name": "VAT_CNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 263
+        },
+        {
+          "name": "TAX_CLASS1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 266
+        },
+        {
+          "name": "TAX_CLASS2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 267
+        },
+        {
+          "name": "TAX_CLASS3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 268
+        },
+        {
+          "name": "TAX_CLASS4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 269
+        },
+        {
+          "name": "TAX_CLASS5",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 270
+        },
+        {
+          "name": "TAX_CLASS6",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 271
+        },
+        {
+          "name": "TAX_CLASS7",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 272
+        },
+        {
+          "name": "TAX_CLASS8",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 273
+        },
+        {
+          "name": "TAX_CLASS9",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 274
+        },
+        {
+          "name": "REBATE_REL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 275
+        },
+        {
+          "name": "REBATE_FRM",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 276
+        },
+        {
+          "name": "CRED_GROUP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 284
+        },
+        {
+          "name": "REPR_GROUP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 288
+        },
+        {
+          "name": "RISK_CATEG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 291
+        },
+        {
+          "name": "TRADE_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 294
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Payer",
+      "optional": false
+    },
+    {
+      "name": "RETURN",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 452,
+      "decimals": 0,
+      "associatedType": "BAPIRETURN",
+      "fields": [
+        {
+          "name": "TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "CODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 1
+        },
+        {
+          "name": "MESSAGE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 220,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "LOG_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 226
+        },
+        {
+          "name": "LOG_MSG_NO",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 246
+        },
+        {
+          "name": "MESSAGE_V1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 252
+        },
+        {
+          "name": "MESSAGE_V2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 302
+        },
+        {
+          "name": "MESSAGE_V3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 352
+        },
+        {
+          "name": "MESSAGE_V4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 402
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Error Text",
+      "optional": false
+    },
+    {
+      "name": "SALESDOCUMENT",
+      "nwrfcType": "RFCTYPE_CHAR",
+      "abapType": "c",
+      "format": "",
+      "length": 10,
+      "decimals": 0,
+      "defaultValue": "",
+      "parameterText": "Sales and Distribution Document Number",
+      "optional": false
+    },
+    {
+      "name": "SHIP_TO_PARTY",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 530,
+      "decimals": 0,
+      "associatedType": "BAPISHIPTO",
+      "fields": [
+        {
+          "name": "SHIP_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 10
+        },
+        {
+          "name": "STREET",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 45
+        },
+        {
+          "name": "PO_BOX",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 75
+        },
+        {
+          "name": "POSTL_CODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 85
+        },
+        {
+          "name": "POBX_PCD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 95
+        },
+        {
+          "name": "CITY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 25,
+          "decimals": 0,
+          "offset": 105
+        },
+        {
+          "name": "LANGU",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 130
+        },
+        {
+          "name": "DEST_CNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 131
+        },
+        {
+          "name": "TRNSP_ZONE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 134
+        },
+        {
+          "name": "TRAIN_STAT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 25,
+          "decimals": 0,
+          "offset": 144
+        },
+        {
+          "name": "EXPR_STAT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 25,
+          "decimals": 0,
+          "offset": 169
+        },
+        {
+          "name": "TELEPHONE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 16,
+          "decimals": 0,
+          "offset": 194
+        },
+        {
+          "name": "UNLOAD_PT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 25,
+          "decimals": 0,
+          "offset": 210
+        },
+        {
+          "name": "FAC_CALEND",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 235
+        },
+        {
+          "name": "RECV_HOURS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 237
+        },
+        {
+          "name": "MO_AM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 240
+        },
+        {
+          "name": "MO_AM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 246
+        },
+        {
+          "name": "MO_PM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 252
+        },
+        {
+          "name": "MO_PM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 258
+        },
+        {
+          "name": "TU_AM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 264
+        },
+        {
+          "name": "TU_AM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 270
+        },
+        {
+          "name": "TU_PM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 276
+        },
+        {
+          "name": "TU_PM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 282
+        },
+        {
+          "name": "WE_AM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 288
+        },
+        {
+          "name": "WR_AM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 294
+        },
+        {
+          "name": "WE_PM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 300
+        },
+        {
+          "name": "WE_PM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 306
+        },
+        {
+          "name": "TH_AM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 312
+        },
+        {
+          "name": "TH_AM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 318
+        },
+        {
+          "name": "TH_PM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 324
+        },
+        {
+          "name": "TH_PM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 330
+        },
+        {
+          "name": "FR_AM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 336
+        },
+        {
+          "name": "FR_AM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 342
+        },
+        {
+          "name": "FR_PM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 348
+        },
+        {
+          "name": "FR_PM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 354
+        },
+        {
+          "name": "SA_AM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 360
+        },
+        {
+          "name": "SA_AM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 366
+        },
+        {
+          "name": "SA_PM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 372
+        },
+        {
+          "name": "SA_PM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 378
+        },
+        {
+          "name": "SU_AM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 384
+        },
+        {
+          "name": "SU_AM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 390
+        },
+        {
+          "name": "SU_PM_FROM",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 396
+        },
+        {
+          "name": "SU_PM_UNTL",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 402
+        },
+        {
+          "name": "VAT_REG_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 408
+        },
+        {
+          "name": "TAX_CLASS1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 428
+        },
+        {
+          "name": "TAX_CLASS2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 429
+        },
+        {
+          "name": "TAX_CLASS3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 430
+        },
+        {
+          "name": "TAX_CLASS4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 431
+        },
+        {
+          "name": "TAX_CLASS5",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 432
+        },
+        {
+          "name": "TAX_CLASS6",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 433
+        },
+        {
+          "name": "TAX_CLASS7",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 434
+        },
+        {
+          "name": "TAX_CLASS8",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 435
+        },
+        {
+          "name": "TAX_CLASS9",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 436
+        },
+        {
+          "name": "REGION",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 437
+        },
+        {
+          "name": "COUNTY_CDE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 440
+        },
+        {
+          "name": "CITY_CODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 443
+        },
+        {
+          "name": "TAXJURCODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 447
+        },
+        {
+          "name": "CTRDATA_OK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 462
+        },
+        {
+          "name": "DLV_PLANT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 463
+        },
+        {
+          "name": "DLV_BLOCK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 467
+        },
+        {
+          "name": "ORDER_BLCK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 469
+        },
+        {
+          "name": "PROD_PROP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 471
+        },
+        {
+          "name": "SHIP_COND",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 481
+        },
+        {
+          "name": "ACC_1_TIME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 483
+        },
+        {
+          "name": "ACCNT_GRP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 484
+        },
+        {
+          "name": "DESC_PARTN",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 488
+        },
+        {
+          "name": "FY_VARIANT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 518
+        },
+        {
+          "name": "PROD_ATTR1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 520
+        },
+        {
+          "name": "PROD_ATTR2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 521
+        },
+        {
+          "name": "PROD_ATTR3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 522
+        },
+        {
+          "name": "PROD_ATTR4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 523
+        },
+        {
+          "name": "PROD_ATTR5",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 524
+        },
+        {
+          "name": "PROD_ATTR6",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 525
+        },
+        {
+          "name": "PROD_ATTR7",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 526
+        },
+        {
+          "name": "PROD_ATTR8",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 527
+        },
+        {
+          "name": "PROD_ATTR9",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 528
+        },
+        {
+          "name": "PROD_ATTRA",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 529
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Ship-To Party",
+      "optional": false
+    },
+    {
+      "name": "SOLD_TO_PARTY",
+      "nwrfcType": "RFCTYPE_STRUCTURE",
+      "abapType": "u",
+      "format": "",
+      "length": 419,
+      "decimals": 0,
+      "associatedType": "BAPISOLDTO",
+      "fields": [
+        {
+          "name": "SOLD_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 10
+        },
+        {
+          "name": "STREET",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 45
+        },
+        {
+          "name": "PO_BOX",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 75
+        },
+        {
+          "name": "POSTL_CODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 85
+        },
+        {
+          "name": "POBX_PCD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 95
+        },
+        {
+          "name": "CITY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 25,
+          "decimals": 0,
+          "offset": 105
+        },
+        {
+          "name": "LANGU",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 130
+        },
+        {
+          "name": "COUNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 131
+        },
+        {
+          "name": "TELEPHONE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 16,
+          "decimals": 0,
+          "offset": 134
+        },
+        {
+          "name": "STAT_GROUP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 150
+        },
+        {
+          "name": "ORDER_BLCK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 151
+        },
+        {
+          "name": "PRC_PROCED",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 153
+        },
+        {
+          "name": "CUST_GROUP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 154
+        },
+        {
+          "name": "SALES_DIST",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 156
+        },
+        {
+          "name": "PRICE_GRP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 162
+        },
+        {
+          "name": "PRICE_LIST",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 164
+        },
+        {
+          "name": "INCOTERMS1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 166
+        },
+        {
+          "name": "INCOTERMS2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 28,
+          "decimals": 0,
+          "offset": 169
+        },
+        {
+          "name": "COMPL_DLV",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 197
+        },
+        {
+          "name": "MAX_PL_DLV",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 198
+        },
+        {
+          "name": "ORDER_COMB",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 199
+        },
+        {
+          "name": "BTCH_SPLIT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 200
+        },
+        {
+          "name": "DLV_PRIO",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 201
+        },
+        {
+          "name": "CURRENCY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 203
+        },
+        {
+          "name": "EXCHG_RATE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 208
+        },
+        {
+          "name": "SHIP_COND",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 212
+        },
+        {
+          "name": "PART_DLV",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 214
+        },
+        {
+          "name": "ORDER_PROB",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 215
+        },
+        {
+          "name": "DLV_BLOCK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 218
+        },
+        {
+          "name": "PROD_PROP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 220
+        },
+        {
+          "name": "ACC_1_TIME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 230
+        },
+        {
+          "name": "SALES_OFF",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 231
+        },
+        {
+          "name": "SALES_GRP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 235
+        },
+        {
+          "name": "VAT_REG_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 238
+        },
+        {
+          "name": "TAX_CLASS1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 258
+        },
+        {
+          "name": "TAX_CLASS2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 259
+        },
+        {
+          "name": "TAX_CLASS3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 260
+        },
+        {
+          "name": "TAX_CLASS4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 261
+        },
+        {
+          "name": "TAX_CLASS5",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 262
+        },
+        {
+          "name": "TAX_CLASS6",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 263
+        },
+        {
+          "name": "TAX_CLASS7",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 264
+        },
+        {
+          "name": "TAX_CLASS8",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 265
+        },
+        {
+          "name": "TAX_CLASS9",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 266
+        },
+        {
+          "name": "COMPANY_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 267
+        },
+        {
+          "name": "INCOTERMSV",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 273
+        },
+        {
+          "name": "INCOTERMS2L",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 70,
+          "decimals": 0,
+          "offset": 277
+        },
+        {
+          "name": "INCOTERMS3L",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 70,
+          "decimals": 0,
+          "offset": 347
+        },
+        {
+          "name": "PRC_PROCED_LONG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 417
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Sold-to party",
+      "optional": false
+    }
+  ],
+  "changing": [],
+  "table": [
+    {
+      "name": "EXTENSIONIN",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 990,
+      "decimals": 0,
+      "associatedType": "BAPIPAREX",
+      "tableFields": [
+        {
+          "name": "STRUCTURE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "VALUEPART1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 240,
+          "decimals": 0,
+          "offset": 30
+        },
+        {
+          "name": "VALUEPART2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 240,
+          "decimals": 0,
+          "offset": 270
+        },
+        {
+          "name": "VALUEPART3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 240,
+          "decimals": 0,
+          "offset": 510
+        },
+        {
+          "name": "VALUEPART4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 240,
+          "decimals": 0,
+          "offset": 750
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Customer enhancment import",
+      "optional": true
+    },
+    {
+      "name": "MESSAGETABLE",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 548,
+      "decimals": 0,
+      "associatedType": "BAPIRET2",
+      "tableFields": [
+        {
+          "name": "TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 1
+        },
+        {
+          "name": "NUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 21
+        },
+        {
+          "name": "MESSAGE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 220,
+          "decimals": 0,
+          "offset": 24
+        },
+        {
+          "name": "LOG_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 244
+        },
+        {
+          "name": "LOG_MSG_NO",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 264
+        },
+        {
+          "name": "MESSAGE_V1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 270
+        },
+        {
+          "name": "MESSAGE_V2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 320
+        },
+        {
+          "name": "MESSAGE_V3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 370
+        },
+        {
+          "name": "MESSAGE_V4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 420
+        },
+        {
+          "name": "PARAMETER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 470
+        },
+        {
+          "name": "ROW",
+          "nwrfcType": "RFCTYPE_INT",
+          "abapType": "i",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 504
+        },
+        {
+          "name": "FIELD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 508
+        },
+        {
+          "name": "SYSTEM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 538
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Warning table (XVBFS)",
+      "optional": true
+    },
+    {
+      "name": "ORDER_CCARD",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 377,
+      "decimals": 0,
+      "associatedType": "BAPICCARD",
+      "tableFields": [
+        {
+          "name": "CC_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "CC_NUMBER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 25,
+          "decimals": 0,
+          "offset": 4
+        },
+        {
+          "name": "CC_VALID_T",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 29
+        },
+        {
+          "name": "CC_NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 37
+        },
+        {
+          "name": "BILLAMOUNT",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 77
+        },
+        {
+          "name": "AUTH_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 89
+        },
+        {
+          "name": "AUTHAMOUNT",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 90
+        },
+        {
+          "name": "CURRENCY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 102
+        },
+        {
+          "name": "CURR_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 107
+        },
+        {
+          "name": "AUTH_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 110
+        },
+        {
+          "name": "AUTH_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 118
+        },
+        {
+          "name": "AUTH_CC_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 124
+        },
+        {
+          "name": "AUTH_REFNO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 134
+        },
+        {
+          "name": "CC_REACT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 149
+        },
+        {
+          "name": "CC_RE_AMOUNT",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 150
+        },
+        {
+          "name": "GL_ACCOUNT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 162
+        },
+        {
+          "name": "CC_STAT_EX",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 172
+        },
+        {
+          "name": "CC_REACT_T",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 173
+        },
+        {
+          "name": "VIRT_CARD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 213
+        },
+        {
+          "name": "MERCHIDCL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 214
+        },
+        {
+          "name": "PRE_AUTH",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 229
+        },
+        {
+          "name": "CC_SEQ_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 230
+        },
+        {
+          "name": "AMOUNTCHAN",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 240
+        },
+        {
+          "name": "AUTHORTYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 241
+        },
+        {
+          "name": "DATAORIGIN",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 242
+        },
+        {
+          "name": "RADRCHECK1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 243
+        },
+        {
+          "name": "RADRCHECK2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 247
+        },
+        {
+          "name": "RADRCHECK3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 251
+        },
+        {
+          "name": "RCARDCHECK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 255
+        },
+        {
+          "name": "CC_LIMITED",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 259
+        },
+        {
+          "name": "CC_VERIF_VALUE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 260
+        },
+        {
+          "name": "CC_CTRL_FIELD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 266
+        },
+        {
+          "name": "CC_IN_USE_ST",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 267
+        },
+        {
+          "name": "CC_TOKEN",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 25,
+          "decimals": 0,
+          "offset": 268
+        },
+        {
+          "name": "DP_PSP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 293
+        },
+        {
+          "name": "DP_PAYID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 297
+        },
+        {
+          "name": "DP_PSP_TRANSID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 337
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Credit Card Data",
+      "optional": true
+    },
+    {
+      "name": "ORDER_CCARD_EX",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 380,
+      "decimals": 0,
+      "associatedType": "BAPICCARD_EX",
+      "tableFields": [
+        {
+          "name": "PAY_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "CC_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 1
+        },
+        {
+          "name": "CC_NUMBER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 25,
+          "decimals": 0,
+          "offset": 5
+        },
+        {
+          "name": "CC_SEQ_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 30
+        },
+        {
+          "name": "CC_VALID_F",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 40
+        },
+        {
+          "name": "CC_VALID_T",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 48
+        },
+        {
+          "name": "CC_NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 56
+        },
+        {
+          "name": "AUTHAMOUNT",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 96
+        },
+        {
+          "name": "CURRENCY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 108
+        },
+        {
+          "name": "CURR_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 113
+        },
+        {
+          "name": "AUTH_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 116
+        },
+        {
+          "name": "AUTH_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 124
+        },
+        {
+          "name": "MERCHIDCL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 130
+        },
+        {
+          "name": "TERMINAL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 145
+        },
+        {
+          "name": "BILLAMOUNT",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 155
+        },
+        {
+          "name": "CC_LI_AMOUNT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 167
+        },
+        {
+          "name": "CC_AUTTH_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 168
+        },
+        {
+          "name": "BILLSTATUS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 178
+        },
+        {
+          "name": "DATAORIGIN",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 179
+        },
+        {
+          "name": "CC_SETTLED",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 180
+        },
+        {
+          "name": "AUTH_REFNO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 181
+        },
+        {
+          "name": "PTOFRCPT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 196
+        },
+        {
+          "name": "CC_REACT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 206
+        },
+        {
+          "name": "AUTH_FLAG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 207
+        },
+        {
+          "name": "BILL_PLAN",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 208
+        },
+        {
+          "name": "BILL_PLANI",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 218
+        },
+        {
+          "name": "CC_RE_AMOUNT",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 224
+        },
+        {
+          "name": "GL_ACCOUNT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 236
+        },
+        {
+          "name": "CC_STAT_EX",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 246
+        },
+        {
+          "name": "CC_REACT_T",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 247
+        },
+        {
+          "name": "RFCAUT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 287
+        },
+        {
+          "name": "AUT_SETINIT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 319
+        },
+        {
+          "name": "AUT_SETINFO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 349
+        },
+        {
+          "name": "PRE_AUTH",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 379
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Credit card data output",
+      "optional": true
+    },
+    {
+      "name": "ORDER_CFGS_BLOB",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 256,
+      "decimals": 0,
+      "associatedType": "BAPICUBLB",
+      "tableFields": [
+        {
+          "name": "CONFIG_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "CONTEXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 6
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Internal configuration data (SCE)",
+      "optional": true
+    },
+    {
+      "name": "ORDER_CFGS_INST",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 233,
+      "decimals": 0,
+      "associatedType": "BAPICUINS",
+      "tableFields": [
+        {
+          "name": "CONFIG_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "INST_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "OBJ_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 14
+        },
+        {
+          "name": "CLASS_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 24
+        },
+        {
+          "name": "OBJ_KEY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 27
+        },
+        {
+          "name": "OBJ_TXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 70,
+          "decimals": 0,
+          "offset": 77
+        },
+        {
+          "name": "QUANTITY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 147
+        },
+        {
+          "name": "AUTHOR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 162
+        },
+        {
+          "name": "QUANTITY_UNIT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 163
+        },
+        {
+          "name": "COMPLETE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 166
+        },
+        {
+          "name": "CONSISTENT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 167
+        },
+        {
+          "name": "OBJECT_GUID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 168
+        },
+        {
+          "name": "PERSIST_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 200
+        },
+        {
+          "name": "PERSIST_ID_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 232
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Configuration: Instances",
+      "optional": true
+    },
+    {
+      "name": "ORDER_CFGS_PART_OF",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 131,
+      "decimals": 0,
+      "associatedType": "BAPICUPRT",
+      "tableFields": [
+        {
+          "name": "CONFIG_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "PARENT_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "INST_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 14
+        },
+        {
+          "name": "PART_OF_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 22
+        },
+        {
+          "name": "OBJ_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 26
+        },
+        {
+          "name": "CLASS_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 36
+        },
+        {
+          "name": "OBJ_KEY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 39
+        },
+        {
+          "name": "AUTHOR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 89
+        },
+        {
+          "name": "SALES_RELEVANT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 90
+        },
+        {
+          "name": "PART_OF_GUID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 91
+        },
+        {
+          "name": "BOM_IDENT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 123
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Configuration: Part-of Specifications",
+      "optional": true
+    },
+    {
+      "name": "ORDER_CFGS_REF",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 397,
+      "decimals": 0,
+      "associatedType": "BAPICUCFG",
+      "tableFields": [
+        {
+          "name": "POSEX",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "CONFIG_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "ROOT_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 12
+        },
+        {
+          "name": "SCE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 20
+        },
+        {
+          "name": "KBNAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 21
+        },
+        {
+          "name": "KBVERSION",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 51
+        },
+        {
+          "name": "COMPLETE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 81
+        },
+        {
+          "name": "CONSISTENT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 82
+        },
+        {
+          "name": "CFGINFO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 250,
+          "decimals": 0,
+          "offset": 83
+        },
+        {
+          "name": "KBPROFILE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 333
+        },
+        {
+          "name": "KBLANGUAGE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 363
+        },
+        {
+          "name": "CBASE_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 364
+        },
+        {
+          "name": "CBASE_ID_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 396
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Configuration: Reference Data",
+      "optional": true
+    },
+    {
+      "name": "ORDER_CFGS_VALUE",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 416,
+      "decimals": 0,
+      "associatedType": "BAPICUVAL",
+      "tableFields": [
+        {
+          "name": "CONFIG_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "INST_ID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "CHARC",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 14
+        },
+        {
+          "name": "CHARC_TXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 70,
+          "decimals": 0,
+          "offset": 54
+        },
+        {
+          "name": "VALUE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 124
+        },
+        {
+          "name": "VALUE_TXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 70,
+          "decimals": 0,
+          "offset": 164
+        },
+        {
+          "name": "AUTHOR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 234
+        },
+        {
+          "name": "VALUE_TO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 235
+        },
+        {
+          "name": "VALCODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 275
+        },
+        {
+          "name": "VALUE_LONG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 70,
+          "decimals": 0,
+          "offset": 276
+        },
+        {
+          "name": "VALUE_TO_LONG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 70,
+          "decimals": 0,
+          "offset": 346
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Configuration: Characteristic Values",
+      "optional": true
+    },
+    {
+      "name": "ORDER_CONDITION_EX",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 344,
+      "decimals": 0,
+      "associatedType": "BAPICOND",
+      "tableFields": [
+        {
+          "name": "ITM_NUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "COND_ST_NO",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "COND_COUNT",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 9
+        },
+        {
+          "name": "COND_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 11
+        },
+        {
+          "name": "COND_VALUE",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 15,
+          "decimals": 9,
+          "offset": 15
+        },
+        {
+          "name": "CURRENCY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 30
+        },
+        {
+          "name": "COND_UNIT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 35
+        },
+        {
+          "name": "COND_P_UNT",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 38
+        },
+        {
+          "name": "CURR_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 41
+        },
+        {
+          "name": "CD_UNT_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 44
+        },
+        {
+          "name": "REFOBJTYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 47
+        },
+        {
+          "name": "REFOBJKEY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 70,
+          "decimals": 0,
+          "offset": 57
+        },
+        {
+          "name": "REFLOGSYS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 127
+        },
+        {
+          "name": "APPLICATIO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 137
+        },
+        {
+          "name": "CONPRICDAT",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 139
+        },
+        {
+          "name": "CALCTYPCON",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 147
+        },
+        {
+          "name": "CONBASEVAL",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 15,
+          "decimals": 9,
+          "offset": 148
+        },
+        {
+          "name": "CONEXCHRAT",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 5,
+          "decimals": 5,
+          "offset": 163
+        },
+        {
+          "name": "NUMCONVERT",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 168
+        },
+        {
+          "name": "DENOMINATO",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 171
+        },
+        {
+          "name": "CONDTYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 174
+        },
+        {
+          "name": "STAT_CON",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 175
+        },
+        {
+          "name": "SCALETYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 176
+        },
+        {
+          "name": "ACCRUALS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 177
+        },
+        {
+          "name": "CONINVOLST",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 178
+        },
+        {
+          "name": "CONDORIGIN",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 179
+        },
+        {
+          "name": "GROUPCOND",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 180
+        },
+        {
+          "name": "COND_UPDAT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 181
+        },
+        {
+          "name": "ACCESS_SEQ",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 182
+        },
+        {
+          "name": "CONDCOUNT",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 184
+        },
+        {
+          "name": "ROUNDOFFDI",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 15,
+          "decimals": 9,
+          "offset": 186
+        },
+        {
+          "name": "CONDVALUE",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 15,
+          "decimals": 9,
+          "offset": 201
+        },
+        {
+          "name": "CURRENCY_2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 216
+        },
+        {
+          "name": "CURR_ISO_2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 221
+        },
+        {
+          "name": "CONDCNTRL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 224
+        },
+        {
+          "name": "CONDISACTI",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 225
+        },
+        {
+          "name": "CONDCLASS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 226
+        },
+        {
+          "name": "FACTBASVAL",
+          "nwrfcType": "RFCTYPE_FLOAT",
+          "abapType": "f",
+          "format": "",
+          "length": 8,
+          "decimals": 16,
+          "offset": 232
+        },
+        {
+          "name": "SCALEBASIN",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 240
+        },
+        {
+          "name": "SCALBASVAL",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 15,
+          "decimals": 9,
+          "offset": 241
+        },
+        {
+          "name": "UNITMEASUR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 256
+        },
+        {
+          "name": "ISO_UNIT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 259
+        },
+        {
+          "name": "CURRENCKEY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 262
+        },
+        {
+          "name": "CURRENISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 267
+        },
+        {
+          "name": "CONDINCOMP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 270
+        },
+        {
+          "name": "CONDCONFIG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 271
+        },
+        {
+          "name": "CONDCHAMAN",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 272
+        },
+        {
+          "name": "COND_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 273
+        },
+        {
+          "name": "TAX_CODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 283
+        },
+        {
+          "name": "VARCOND",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 26,
+          "decimals": 0,
+          "offset": 285
+        },
+        {
+          "name": "ACCOUNTKEY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 311
+        },
+        {
+          "name": "ACCOUNT_KE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 314
+        },
+        {
+          "name": "WT_WITHCD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 317
+        },
+        {
+          "name": "STRUCTCOND",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 319
+        },
+        {
+          "name": "FACTCONBAS",
+          "nwrfcType": "RFCTYPE_FLOAT",
+          "abapType": "f",
+          "format": "",
+          "length": 8,
+          "decimals": 16,
+          "offset": 320
+        },
+        {
+          "name": "CONDCOINHD",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 328
+        },
+        {
+          "name": "ACCESS_SEQ_LONG",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 330
+        },
+        {
+          "name": "COND_COUNT_LONG",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 333
+        },
+        {
+          "name": "CONDCOINHD_LONG",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 336
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Conditions Output",
+      "optional": true
+    },
+    {
+      "name": "ORDER_INCOMPLETE",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 122,
+      "decimals": 0,
+      "associatedType": "BAPIINCOMP",
+      "tableFields": [
+        {
+          "name": "DOC_NUMBER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "ITM_NUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 10
+        },
+        {
+          "name": "SCHED_LINE",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 16
+        },
+        {
+          "name": "PARTN_ROLE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 20
+        },
+        {
+          "name": "TABLE_NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 22
+        },
+        {
+          "name": "FIELD_NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 52
+        },
+        {
+          "name": "FIELD_TEXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 82
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "",
+      "optional": true
+    },
+    {
+      "name": "ORDER_ITEMS_IN",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 993,
+      "decimals": 0,
+      "associatedType": "BAPIITEMIN",
+      "tableFields": [
+        {
+          "name": "ITM_NUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "HG_LV_ITEM",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "PO_ITM_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 12
+        },
+        {
+          "name": "MATERIAL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 18,
+          "decimals": 0,
+          "offset": 18
+        },
+        {
+          "name": "CUST_MAT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 22,
+          "decimals": 0,
+          "offset": 36
+        },
+        {
+          "name": "BATCH",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 58
+        },
+        {
+          "name": "DLV_GROUP",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 68
+        },
+        {
+          "name": "PART_DLV",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 71
+        },
+        {
+          "name": "REASON_REJ",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 72
+        },
+        {
+          "name": "BILL_BLOCK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 74
+        },
+        {
+          "name": "BILL_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 76
+        },
+        {
+          "name": "PLANT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 84
+        },
+        {
+          "name": "STORE_LOC",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 88
+        },
+        {
+          "name": "TARGET_QTY",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 13,
+          "decimals": 0,
+          "offset": 92
+        },
+        {
+          "name": "TARGET_QU",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 105
+        },
+        {
+          "name": "REQ_QTY",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 13,
+          "decimals": 0,
+          "offset": 108
+        },
+        {
+          "name": "SALES_UNIT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 121
+        },
+        {
+          "name": "ITEM_CATEG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 124
+        },
+        {
+          "name": "SHORT_TEXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 128
+        },
+        {
+          "name": "REQ_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 168
+        },
+        {
+          "name": "DATE_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 176
+        },
+        {
+          "name": "REQ_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 177
+        },
+        {
+          "name": "COND_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 183
+        },
+        {
+          "name": "COND_VALUE",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 6,
+          "decimals": 2,
+          "offset": 187
+        },
+        {
+          "name": "COND_P_UNT",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 193
+        },
+        {
+          "name": "COND_D_UNT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 198
+        },
+        {
+          "name": "PRC_GROUP1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 201
+        },
+        {
+          "name": "PRC_GROUP2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 204
+        },
+        {
+          "name": "PRC_GROUP3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 207
+        },
+        {
+          "name": "PRC_GROUP4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 210
+        },
+        {
+          "name": "PRC_GROUP5",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 213
+        },
+        {
+          "name": "PROD_HIERA",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 18,
+          "decimals": 0,
+          "offset": 216
+        },
+        {
+          "name": "MATL_GROUP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 9,
+          "decimals": 0,
+          "offset": 234
+        },
+        {
+          "name": "PURCH_NO_C",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 243
+        },
+        {
+          "name": "PURCH_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 278
+        },
+        {
+          "name": "PO_METHOD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 286
+        },
+        {
+          "name": "REF_1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 290
+        },
+        {
+          "name": "PURCH_NO_S",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 302
+        },
+        {
+          "name": "PO_DAT_S",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 337
+        },
+        {
+          "name": "PO_METH_S",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 345
+        },
+        {
+          "name": "REF_1_S",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 349
+        },
+        {
+          "name": "PO_ITM_NO_S",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 361
+        },
+        {
+          "name": "COND_VAL1",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 367
+        },
+        {
+          "name": "CURRENCY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 379
+        },
+        {
+          "name": "CURR_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 384
+        },
+        {
+          "name": "T_UNIT_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 387
+        },
+        {
+          "name": "S_UNIT_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 390
+        },
+        {
+          "name": "CD_UNT_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 393
+        },
+        {
+          "name": "CUST_MAT35",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 396
+        },
+        {
+          "name": "INCOTERMS1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 431
+        },
+        {
+          "name": "INCOTERMS2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 28,
+          "decimals": 0,
+          "offset": 434
+        },
+        {
+          "name": "DLV_TIME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 462
+        },
+        {
+          "name": "ASSORT_MOD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 18,
+          "decimals": 0,
+          "offset": 465
+        },
+        {
+          "name": "VAL_CONTR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 483
+        },
+        {
+          "name": "VAL_CON_I",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 493
+        },
+        {
+          "name": "REF_DOC",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 499
+        },
+        {
+          "name": "REF_DOC_IT",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 509
+        },
+        {
+          "name": "REF_DOC_CA",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 515
+        },
+        {
+          "name": "CD_TYPE2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 516
+        },
+        {
+          "name": "CD_VALUE2",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 520
+        },
+        {
+          "name": "CD_P_UNT2",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 532
+        },
+        {
+          "name": "CD_D_UNT2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 537
+        },
+        {
+          "name": "CD_D_UISO2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 540
+        },
+        {
+          "name": "CD_CURR2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 543
+        },
+        {
+          "name": "CD_CU_ISO2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 548
+        },
+        {
+          "name": "CD_TYPE3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 551
+        },
+        {
+          "name": "CD_VALUE3",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 555
+        },
+        {
+          "name": "CD_P_UNT3",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 567
+        },
+        {
+          "name": "CD_D_UNT3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 572
+        },
+        {
+          "name": "CD_D_UISO3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 575
+        },
+        {
+          "name": "CD_CURR3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 578
+        },
+        {
+          "name": "CD_CU_ISO3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 583
+        },
+        {
+          "name": "CD_TYPE4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 586
+        },
+        {
+          "name": "CD_VALUE4",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 590
+        },
+        {
+          "name": "CD_P_UNT4",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 602
+        },
+        {
+          "name": "CD_D_UNT4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 607
+        },
+        {
+          "name": "CD_D_UISO4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 610
+        },
+        {
+          "name": "CD_CURR4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 613
+        },
+        {
+          "name": "CD_CU_ISO4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 618
+        },
+        {
+          "name": "MAT_EXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 621
+        },
+        {
+          "name": "MAT_GUID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 661
+        },
+        {
+          "name": "MAT_VERS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 693
+        },
+        {
+          "name": "ALTERN_BOM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 703
+        },
+        {
+          "name": "FKK_CONACCT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 705
+        },
+        {
+          "name": "EAN_UPC",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 18,
+          "decimals": 0,
+          "offset": 717
+        },
+        {
+          "name": "SHIP_POINT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 735
+        },
+        {
+          "name": "PRODCAT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 739
+        },
+        {
+          "name": "SGT_RCAT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 16,
+          "decimals": 0,
+          "offset": 749
+        },
+        {
+          "name": "INCOTERMSV",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 765
+        },
+        {
+          "name": "INCOTERMS2L",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 70,
+          "decimals": 0,
+          "offset": 769
+        },
+        {
+          "name": "INCOTERMS3L",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 70,
+          "decimals": 0,
+          "offset": 839
+        },
+        {
+          "name": "REF_DOC_CA_LONG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 909
+        },
+        {
+          "name": "MATERIAL_LONG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 913
+        },
+        {
+          "name": "REQ_SEG_LONG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 953
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Item Data Input",
+      "optional": false
+    },
+    {
+      "name": "ORDER_ITEMS_OUT",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 862,
+      "decimals": 0,
+      "associatedType": "BAPIITEMEX",
+      "tableFields": [
+        {
+          "name": "ITM_NUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "PO_ITM_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "MATERIAL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 18,
+          "decimals": 0,
+          "offset": 12
+        },
+        {
+          "name": "MAT_ENTRD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 18,
+          "decimals": 0,
+          "offset": 30
+        },
+        {
+          "name": "SHORT_TEXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 48
+        },
+        {
+          "name": "NET_VALUE",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 88
+        },
+        {
+          "name": "CURRENCY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 103
+        },
+        {
+          "name": "SUBTOTAL_1",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 108
+        },
+        {
+          "name": "SUBTOTAL_2",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 123
+        },
+        {
+          "name": "SUBTOTAL_3",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 138
+        },
+        {
+          "name": "SUBTOTAL_4",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 153
+        },
+        {
+          "name": "SUBTOTAL_5",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 168
+        },
+        {
+          "name": "SUBTOTAL_6",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 183
+        },
+        {
+          "name": "SALES_UNIT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 198
+        },
+        {
+          "name": "QTY_REQ_DT",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 13,
+          "decimals": 0,
+          "offset": 201
+        },
+        {
+          "name": "DLV_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 214
+        },
+        {
+          "name": "REPL_TIME",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 222
+        },
+        {
+          "name": "CONFIGURED",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 225
+        },
+        {
+          "name": "PURCH_NO_C",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 226
+        },
+        {
+          "name": "PURCH_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 261
+        },
+        {
+          "name": "PO_METHOD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 269
+        },
+        {
+          "name": "REF_1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 273
+        },
+        {
+          "name": "PURCH_NO_S",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 285
+        },
+        {
+          "name": "PO_DAT_S",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 320
+        },
+        {
+          "name": "PO_METH_S",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 328
+        },
+        {
+          "name": "REF_1_S",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 332
+        },
+        {
+          "name": "PO_ITM_NO_S",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 344
+        },
+        {
+          "name": "NET_VALUE1",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 350
+        },
+        {
+          "name": "CURR_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 362
+        },
+        {
+          "name": "S_UNIT_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 365
+        },
+        {
+          "name": "REQ_QTY",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 8,
+          "decimals": 3,
+          "offset": 368
+        },
+        {
+          "name": "PLANT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 376
+        },
+        {
+          "name": "TX_DOC_CUR",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 380
+        },
+        {
+          "name": "MAT_EXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 392
+        },
+        {
+          "name": "MAT_GUID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 432
+        },
+        {
+          "name": "MAT_VERS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 464
+        },
+        {
+          "name": "MAT_E_EXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 474
+        },
+        {
+          "name": "MAT_E_GUID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 32,
+          "decimals": 0,
+          "offset": 514
+        },
+        {
+          "name": "MAT_E_VERS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 546
+        },
+        {
+          "name": "TARGET_QTY",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 7,
+          "decimals": 3,
+          "offset": 556
+        },
+        {
+          "name": "TARGET_QU",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 563
+        },
+        {
+          "name": "T_UNIT_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 566
+        },
+        {
+          "name": "ITEM_CATEG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 569
+        },
+        {
+          "name": "SHIP_POINT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 573
+        },
+        {
+          "name": "HG_LV_ITEM",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 577
+        },
+        {
+          "name": "CUST_MAT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 583
+        },
+        {
+          "name": "PART_DLV",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 618
+        },
+        {
+          "name": "REASON_REJ",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 619
+        },
+        {
+          "name": "BILL_BLOCK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 621
+        },
+        {
+          "name": "STGE_LOC",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 623
+        },
+        {
+          "name": "PROD_HIER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 18,
+          "decimals": 0,
+          "offset": 627
+        },
+        {
+          "name": "MATL_GROUP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 9,
+          "decimals": 0,
+          "offset": 645
+        },
+        {
+          "name": "SUBTOTAL1",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 654
+        },
+        {
+          "name": "SUBTOTAL2",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 666
+        },
+        {
+          "name": "SUBTOTAL3",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 678
+        },
+        {
+          "name": "SUBTOTAL4",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 690
+        },
+        {
+          "name": "SUBTOTAL5",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 702
+        },
+        {
+          "name": "SUBTOTAL6",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 12,
+          "decimals": 4,
+          "offset": 714
+        },
+        {
+          "name": "MATERIAL_LONG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 726
+        },
+        {
+          "name": "MAT_ENTRD_LONG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 766
+        },
+        {
+          "name": "REQ_SEGMENT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 16,
+          "decimals": 0,
+          "offset": 806
+        },
+        {
+          "name": "REQ_SEG_LONG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 822
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Item Data Output",
+      "optional": true
+    },
+    {
+      "name": "ORDER_PARTNERS",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 594,
+      "decimals": 0,
+      "associatedType": "BAPIPARTNR",
+      "tableFields": [
+        {
+          "name": "PARTN_ROLE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "PARTN_NUMB",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 2
+        },
+        {
+          "name": "ITM_NUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 12
+        },
+        {
+          "name": "TITLE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 18
+        },
+        {
+          "name": "NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 33
+        },
+        {
+          "name": "NAME_2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 68
+        },
+        {
+          "name": "NAME_3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 103
+        },
+        {
+          "name": "NAME_4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 138
+        },
+        {
+          "name": "STREET",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 173
+        },
+        {
+          "name": "COUNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 208
+        },
+        {
+          "name": "COUNTRY_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 211
+        },
+        {
+          "name": "POSTL_CODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 213
+        },
+        {
+          "name": "POBX_PCD",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 223
+        },
+        {
+          "name": "POBX_CTY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 233
+        },
+        {
+          "name": "CITY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 268
+        },
+        {
+          "name": "DISTRICT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 35,
+          "decimals": 0,
+          "offset": 303
+        },
+        {
+          "name": "REGION",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 338
+        },
+        {
+          "name": "PO_BOX",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 341
+        },
+        {
+          "name": "TELEPHONE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 16,
+          "decimals": 0,
+          "offset": 351
+        },
+        {
+          "name": "TELEPHONE2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 16,
+          "decimals": 0,
+          "offset": 367
+        },
+        {
+          "name": "TELEBOX",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 383
+        },
+        {
+          "name": "FAX_NUMBER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 31,
+          "decimals": 0,
+          "offset": 398
+        },
+        {
+          "name": "TELETEX_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 429
+        },
+        {
+          "name": "TELEX_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 459
+        },
+        {
+          "name": "LANGU",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 489
+        },
+        {
+          "name": "LANGU_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 490
+        },
+        {
+          "name": "UNLOAD_PT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 25,
+          "decimals": 0,
+          "offset": 492
+        },
+        {
+          "name": "TRANSPZONE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 517
+        },
+        {
+          "name": "TAXJURCODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 527
+        },
+        {
+          "name": "ADDRESS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 542
+        },
+        {
+          "name": "PRIV_ADDR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 552
+        },
+        {
+          "name": "ADDR_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 562
+        },
+        {
+          "name": "ADDR_ORIG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 563
+        },
+        {
+          "name": "ADDR_LINK",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 564
+        },
+        {
+          "name": "VAT_REG_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 574
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Partners",
+      "optional": false
+    },
+    {
+      "name": "ORDER_SCHEDULE_EX",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 344,
+      "decimals": 0,
+      "associatedType": "BAPISDHEDU",
+      "tableFields": [
+        {
+          "name": "OPERATION",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "DOC_NUMBER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 3
+        },
+        {
+          "name": "ITM_NUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 13
+        },
+        {
+          "name": "SCHED_LINE",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 19
+        },
+        {
+          "name": "SCHED_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 23
+        },
+        {
+          "name": "RELFORDEL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 25
+        },
+        {
+          "name": "REQ_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 26
+        },
+        {
+          "name": "REQ_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 34
+        },
+        {
+          "name": "REQ_QTY",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 7,
+          "decimals": 3,
+          "offset": 40
+        },
+        {
+          "name": "CONFIR_QTY",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 7,
+          "decimals": 3,
+          "offset": 47
+        },
+        {
+          "name": "SALES_UNIT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 54
+        },
+        {
+          "name": "ISOCODUNIT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 57
+        },
+        {
+          "name": "REQ_QTY1",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 7,
+          "decimals": 3,
+          "offset": 60
+        },
+        {
+          "name": "BASE_UOM",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 67
+        },
+        {
+          "name": "ISOBASUNIT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 70
+        },
+        {
+          "name": "REQ_DATE1",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 73
+        },
+        {
+          "name": "REQ_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 81
+        },
+        {
+          "name": "PLTYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 83
+        },
+        {
+          "name": "BUSIDOCNR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 84
+        },
+        {
+          "name": "BUSIITNR",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 94
+        },
+        {
+          "name": "SCHED_LIN1",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 100
+        },
+        {
+          "name": "EARL_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 104
+        },
+        {
+          "name": "MAINT_REQ",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 112
+        },
+        {
+          "name": "PREQ_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 122
+        },
+        {
+          "name": "PO_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 132
+        },
+        {
+          "name": "DOC_CAT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 136
+        },
+        {
+          "name": "CONF_STAT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 137
+        },
+        {
+          "name": "IR_IND",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 138
+        },
+        {
+          "name": "RETURNDATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 139
+        },
+        {
+          "name": "DATE_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 147
+        },
+        {
+          "name": "TP_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 148
+        },
+        {
+          "name": "MS_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 156
+        },
+        {
+          "name": "LOAD_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 164
+        },
+        {
+          "name": "GI_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 172
+        },
+        {
+          "name": "CORR_QTY",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 7,
+          "decimals": 3,
+          "offset": 180
+        },
+        {
+          "name": "REQ_DLV_BL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 187
+        },
+        {
+          "name": "GRP_DEFIN",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 189
+        },
+        {
+          "name": "RELEASTYP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 192
+        },
+        {
+          "name": "FORCAST_NR",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 193
+        },
+        {
+          "name": "COMMIT_QTY",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 7,
+          "decimals": 3,
+          "offset": 203
+        },
+        {
+          "name": "SIZE2",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 7,
+          "decimals": 3,
+          "offset": 210
+        },
+        {
+          "name": "SIZE3",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 7,
+          "decimals": 3,
+          "offset": 217
+        },
+        {
+          "name": "UNIT_MEAS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 224
+        },
+        {
+          "name": "ISO_ROMEI",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 227
+        },
+        {
+          "name": "FORMULAKEY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 230
+        },
+        {
+          "name": "SALESQTYNR",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 232
+        },
+        {
+          "name": "SALESQTYDE",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 235
+        },
+        {
+          "name": "AVAIL_CON",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 238
+        },
+        {
+          "name": "MOVE_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 239
+        },
+        {
+          "name": "PREQ_ITEM",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 5,
+          "decimals": 0,
+          "offset": 242
+        },
+        {
+          "name": "LINTYP_EDI",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 247
+        },
+        {
+          "name": "ORDERID",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 248
+        },
+        {
+          "name": "PLANORDNR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 260
+        },
+        {
+          "name": "BOMEXPL_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 270
+        },
+        {
+          "name": "CUSTCHSTAT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 17,
+          "decimals": 0,
+          "offset": 278
+        },
+        {
+          "name": "GURANTEED",
+          "nwrfcType": "RFCTYPE_FLOAT",
+          "abapType": "f",
+          "format": "",
+          "length": 8,
+          "decimals": 16,
+          "offset": 296
+        },
+        {
+          "name": "MS_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 304
+        },
+        {
+          "name": "TP_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 310
+        },
+        {
+          "name": "LOAD_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 316
+        },
+        {
+          "name": "GI_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 322
+        },
+        {
+          "name": "ROUTESCHED",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 328
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Schedule line data output",
+      "optional": true
+    },
+    {
+      "name": "ORDER_SCHEDULE_IN",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 198,
+      "decimals": 0,
+      "associatedType": "BAPISCHDL",
+      "tableFields": [
+        {
+          "name": "ITM_NUMBER",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "SCHED_LINE",
+          "nwrfcType": "RFCTYPE_NUM",
+          "abapType": "n",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 6
+        },
+        {
+          "name": "REQ_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 10
+        },
+        {
+          "name": "DATE_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 18
+        },
+        {
+          "name": "REQ_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 19
+        },
+        {
+          "name": "REQ_QTY",
+          "nwrfcType": "RFCTYPE_BCD",
+          "abapType": "p",
+          "format": "",
+          "length": 7,
+          "decimals": 3,
+          "offset": 25
+        },
+        {
+          "name": "REQ_DLV_BL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 32
+        },
+        {
+          "name": "SCHED_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 34
+        },
+        {
+          "name": "TP_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 36
+        },
+        {
+          "name": "MS_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 44
+        },
+        {
+          "name": "LOAD_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 52
+        },
+        {
+          "name": "GI_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 60
+        },
+        {
+          "name": "TP_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 68
+        },
+        {
+          "name": "MS_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 74
+        },
+        {
+          "name": "LOAD_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 80
+        },
+        {
+          "name": "GI_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 86
+        },
+        {
+          "name": "REFOBJTYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 92
+        },
+        {
+          "name": "REFOBJKEY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 70,
+          "decimals": 0,
+          "offset": 102
+        },
+        {
+          "name": "REFLOGSYS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 172
+        },
+        {
+          "name": "DLV_DATE",
+          "nwrfcType": "RFCTYPE_DATE",
+          "abapType": "d",
+          "format": "YYYYMMDD",
+          "length": 8,
+          "decimals": 0,
+          "offset": 182
+        },
+        {
+          "name": "DLV_TIME",
+          "nwrfcType": "RFCTYPE_TIME",
+          "abapType": "t",
+          "format": "HHMMSS",
+          "length": 6,
+          "decimals": 0,
+          "offset": 190
+        },
+        {
+          "name": "REL_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 196
+        },
+        {
+          "name": "PLAN_SCHED_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 197
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "Schedule Line Data Input",
+      "optional": true
+    },
+    {
+      "name": "PARTNERADDRESSES",
+      "nwrfcType": "RFCTYPE_TABLE",
+      "abapType": "h",
+      "format": "",
+      "length": 1674,
+      "decimals": 0,
+      "associatedType": "BAPIADDR1",
+      "tableFields": [
+        {
+          "name": "ADDR_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 0
+        },
+        {
+          "name": "FORMOFADDR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 10
+        },
+        {
+          "name": "NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 30
+        },
+        {
+          "name": "NAME_2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 70
+        },
+        {
+          "name": "NAME_3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 110
+        },
+        {
+          "name": "NAME_4",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 150
+        },
+        {
+          "name": "C_O_NAME",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 190
+        },
+        {
+          "name": "CITY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 230
+        },
+        {
+          "name": "DISTRICT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 270
+        },
+        {
+          "name": "CITY_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 310
+        },
+        {
+          "name": "POSTL_COD1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 322
+        },
+        {
+          "name": "POSTL_COD2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 332
+        },
+        {
+          "name": "POSTL_COD3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 342
+        },
+        {
+          "name": "PO_BOX",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 352
+        },
+        {
+          "name": "PO_BOX_CIT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 362
+        },
+        {
+          "name": "DELIV_DIS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 402
+        },
+        {
+          "name": "STREET",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 417
+        },
+        {
+          "name": "STREET_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 457
+        },
+        {
+          "name": "STR_ABBR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 469
+        },
+        {
+          "name": "HOUSE_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 471
+        },
+        {
+          "name": "STR_SUPPL1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 481
+        },
+        {
+          "name": "STR_SUPPL2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 521
+        },
+        {
+          "name": "LOCATION",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 561
+        },
+        {
+          "name": "BUILDING",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 601
+        },
+        {
+          "name": "FLOOR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 611
+        },
+        {
+          "name": "ROOM_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 621
+        },
+        {
+          "name": "COUNTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 631
+        },
+        {
+          "name": "LANGU",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 634
+        },
+        {
+          "name": "REGION",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 635
+        },
+        {
+          "name": "SORT1",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 638
+        },
+        {
+          "name": "SORT2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 658
+        },
+        {
+          "name": "TIME_ZONE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 6,
+          "decimals": 0,
+          "offset": 678
+        },
+        {
+          "name": "TAXJURCODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 15,
+          "decimals": 0,
+          "offset": 684
+        },
+        {
+          "name": "ADR_NOTES",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 50,
+          "decimals": 0,
+          "offset": 699
+        },
+        {
+          "name": "COMM_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 749
+        },
+        {
+          "name": "TEL1_NUMBR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 752
+        },
+        {
+          "name": "TEL1_EXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 782
+        },
+        {
+          "name": "FAX_NUMBER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 792
+        },
+        {
+          "name": "FAX_EXTENS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 822
+        },
+        {
+          "name": "STREET_LNG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 60,
+          "decimals": 0,
+          "offset": 832
+        },
+        {
+          "name": "DISTRCT_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 892
+        },
+        {
+          "name": "CHCKSTATUS",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 900
+        },
+        {
+          "name": "PBOXCIT_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 901
+        },
+        {
+          "name": "TRANSPZONE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 913
+        },
+        {
+          "name": "HOUSE_NO2",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 923
+        },
+        {
+          "name": "E_MAIL",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 241,
+          "decimals": 0,
+          "offset": 933
+        },
+        {
+          "name": "STR_SUPPL3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 1174
+        },
+        {
+          "name": "TITLE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 30,
+          "decimals": 0,
+          "offset": 1214
+        },
+        {
+          "name": "COUNTRYISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 1244
+        },
+        {
+          "name": "LANGU_ISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 1246
+        },
+        {
+          "name": "BUILD_LONG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 20,
+          "decimals": 0,
+          "offset": 1248
+        },
+        {
+          "name": "REGIOGROUP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 1268
+        },
+        {
+          "name": "HOME_CITY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 1276
+        },
+        {
+          "name": "HOMECITYNO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 12,
+          "decimals": 0,
+          "offset": 1316
+        },
+        {
+          "name": "PCODE1_EXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1328
+        },
+        {
+          "name": "PCODE2_EXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1338
+        },
+        {
+          "name": "PCODE3_EXT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1348
+        },
+        {
+          "name": "PO_W_O_NO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 1358
+        },
+        {
+          "name": "PO_BOX_REG",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 1359
+        },
+        {
+          "name": "POBOX_CTRY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 1362
+        },
+        {
+          "name": "PO_CTRYISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 1365
+        },
+        {
+          "name": "HOMEPAGE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 132,
+          "decimals": 0,
+          "offset": 1367
+        },
+        {
+          "name": "DONT_USE_S",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 1499
+        },
+        {
+          "name": "DONT_USE_P",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 1503
+        },
+        {
+          "name": "HOUSE_NO3",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1507
+        },
+        {
+          "name": "LANGU_CR",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 1517
+        },
+        {
+          "name": "LANGUCRISO",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 2,
+          "decimals": 0,
+          "offset": 1518
+        },
+        {
+          "name": "PO_BOX_LOBBY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 1520
+        },
+        {
+          "name": "DELI_SERV_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 4,
+          "decimals": 0,
+          "offset": 1560
+        },
+        {
+          "name": "DELI_SERV_NUMBER",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 10,
+          "decimals": 0,
+          "offset": 1564
+        },
+        {
+          "name": "URI_TYPE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 3,
+          "decimals": 0,
+          "offset": 1574
+        },
+        {
+          "name": "COUNTY_CODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 1577
+        },
+        {
+          "name": "COUNTY",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 1585
+        },
+        {
+          "name": "TOWNSHIP_CODE",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 8,
+          "decimals": 0,
+          "offset": 1625
+        },
+        {
+          "name": "TOWNSHIP",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 40,
+          "decimals": 0,
+          "offset": 1633
+        },
+        {
+          "name": "XPCPT",
+          "nwrfcType": "RFCTYPE_CHAR",
+          "abapType": "c",
+          "format": "",
+          "length": 1,
+          "decimals": 0,
+          "offset": 1673
+        }
+      ],
+      "defaultValue": "",
+      "parameterText": "BAPI Reference Structure for Addresses (Org./Company)",
+      "optional": true
+    }
+  ]
+}
