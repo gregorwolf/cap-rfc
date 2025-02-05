@@ -10,5 +10,6 @@ service UserService {
 
     function getUsers()           returns array of SAP_ABAP_BACKEND_RFC.DDIC.BAPIUSNAME;
     function salesOrderSimulate() returns SAP_ABAP_BACKEND_RFC.BAPI_SALESORDER_SIMULATE.ResultType;
+    function salesOrderCreate()   returns SAP_ABAP_BACKEND_RFC.BAPI_SALESORDER_CREATEFROMDAT2.ResultType;
 
 }
