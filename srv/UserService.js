@@ -3,7 +3,7 @@ class UserService extends cds.ApplicationService {
   async init() {
     const sys = await cds.connect.to("SAP_ABAP_BACKEND_RFC");
 
-    this.on('READ', 'Users', async req => {
+    this.on("READ", "Users", async (req) => {
       const userData = await sys.BAPI_USER_GETLIST({ MAX_ROWS: 10 });
       return userData.USERLIST;
     });
@@ -14,7 +14,11 @@ class UserService extends cds.ApplicationService {
     });
 
     this.on("salesOrderSimulate", async (req) => {
-      const bapiSalesorderSimulate = await sys.BAPI_SALESORDER_SIMULATE({});
+      // read default-salesorder.json file
+      const salesOrder = require("./default-salesorder.json");
+      const bapiSalesorderSimulate = await sys.BAPI_SALESORDER_SIMULATE(
+        salesOrder
+      );
       return bapiSalesorderSimulate;
     });
 
