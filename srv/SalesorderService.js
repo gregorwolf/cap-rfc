@@ -3,7 +3,7 @@ class SalesorderService extends cds.ApplicationService {
   async init() {
     const sys = await cds.connect.to("SAP_ABAP_BACKEND_RFC");
 
-    this.on("simulate", async (req) => {
+    this.on("simulateOrder", async (req) => {
       // read default-salesorder.json file
       const salesOrder = require("./default-salesorder-simulate.json");
       const bapiSalesorderSimulate = await sys.BAPI_SALESORDER_SIMULATE(
@@ -15,11 +15,11 @@ class SalesorderService extends cds.ApplicationService {
       return bapiSalesorderSimulate;
     });
 
-    this.on("create", async (req) => {
+    this.on("createOrder", async (req) => {
       // read default-salesorder.json file
-      const salesOrder = require("./default-salesorder.json");
+      // const salesOrder = require("./default-salesorder.json");
       const bapiSalesorderCreate = await sys.BAPI_SALESORDER_CREATEFROMDAT2(
-        salesOrder
+        req.data
       );
       if (bapiSalesorderCreate.RETURN.length > 0) {
         // Check all return messages if any of them is an error
