@@ -8,7 +8,7 @@ Content-Type: application/json
 
 {
     "ORDER_HEADER_IN": {
-        "DOC_TYPE": "TA",
+        "DOC_TYPE": "{{$dotenv DOC_TYPE}}",
         "SALES_ORG": "{{$dotenv SALES_ORG}}",
         "DISTR_CHAN": "{{$dotenv DISTR_CHAN}}",
         "DIVISION": "{{$dotenv DIVISION}}"
