@@ -5,9 +5,9 @@ class SalesorderService extends cds.ApplicationService {
 
     this.on("simulateOrder", async (req) => {
       // read default-salesorder.json file
-      const salesOrder = require("./default-salesorder-simulate.json");
+      // const salesOrder = require("./default-salesorder-simulate.json");
       const bapiSalesorderSimulate = await sys.BAPI_SALESORDER_SIMULATE(
-        salesOrder
+        req.data
       );
       if (bapiSalesorderSimulate.RETURN.TYPE === "E") {
         throw new Error(bapiSalesorderSimulate.RETURN.MESSAGE);

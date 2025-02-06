@@ -6,7 +6,28 @@ POST http://localhost:4004/odata/v4/salesorder/simulateOrder
 Authorization: Basic alice:
 Content-Type: application/json
 
-{}
+{
+    "ORDER_HEADER_IN": {
+        "DOC_TYPE": "TA",
+        "SALES_ORG": "{{$dotenv SALES_ORG}}",
+        "DISTR_CHAN": "{{$dotenv DISTR_CHAN}}",
+        "DIVISION": "{{$dotenv DIVISION}}"
+    },
+    "ORDER_ITEMS_IN": [
+        {
+            "ITM_NUMBER": "000010",
+            "MATERIAL": "{{$dotenv MATERIAL}}",
+            "TARGET_QTY": "0000000001000",
+            "TARGET_QU": "ST"
+        }
+    ],
+    "ORDER_PARTNERS": [
+        {
+            "PARTN_ROLE": "AG",
+            "PARTN_NUMB": "{{$dotenv PARTN_NUMB}}"
+        }
+    ]
+}
 ###
 POST http://localhost:4004/odata/v4/salesorder/createOrder
 Authorization: Basic alice:
