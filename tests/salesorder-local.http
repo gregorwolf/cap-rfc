@@ -1,7 +1,4 @@
 ###
-GET http://localhost:4004/odata/v4/user
-Authorization: Basic alice:
-###
 POST http://localhost:4004/odata/v4/salesorder/simulateOrder
 Authorization: Basic alice:
 Content-Type: application/json
