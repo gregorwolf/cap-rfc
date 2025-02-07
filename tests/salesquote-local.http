@@ -1,0 +1,3 @@
+###
+GET http://localhost:4004/odata/v4/salesquote/getQuotation(SALESDOCUMENT='{{$dotenv SALESDOCUMENT}}')
+Authorization: Basic alice:

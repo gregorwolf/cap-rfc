@@ -1,4 +1,4 @@
-/* checksum : c550a9bdc6735ce36fc80a7d6f2703e9 */
+/* checksum : ba27bbe67b977cf5a19ae864e8e316e6 */
 @cds.external: true
 @protocol    : 'rfc'
 service SAP_ABAP_BACKEND_RFC {};
@@ -180,102 +180,174 @@ action SAP_ABAP_BACKEND_RFC.BAPI_INQUIRY_CREATEFROMDATA2(
                                                          RETURN : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIRET2)        returns SAP_ABAP_BACKEND_RFC.BAPI_INQUIRY_CREATEFROMDATA2.ResultType;
 
 action SAP_ABAP_BACKEND_RFC.BAPI_SALESORDER_CREATEFROMDAT2(
-                                                           /** Error Handling */
                                                            @RFCParameterType:'Import'
                                                            BEHAVE_WHEN_ERROR : String(1),
-                                                           /** Binary Relationship Type (Private) */
                                                            @RFCParameterType:'Import'
                                                            BINARY_RELATIONSHIPTYPE : String(4),
-                                                           /** Conversion of Partner Function + Order Type */
                                                            @RFCParameterType:'Import'
                                                            CONVERT : String(1) default 'SPACE',
-                                                           /** Internal Item Number Assignment */
                                                            @RFCParameterType:'Import'
                                                            INT_NUMBER_ASSIGNMENT : String(1),
-                                                           /** Internal Control Parameter */
                                                            @RFCParameterType:'Import'
                                                            LOGIC_SWITCH : SAP_ABAP_BACKEND_RFC.DDIC.BAPISDLS,
-                                                           /** Suppress call of function module 'DEQUEUE_ALL' */
                                                            @RFCParameterType:'Import'
                                                            NO_DEQUEUE_ALL : String(1) default 'SPACE',
-                                                           /** Order Header */
                                                            @RFCParameterType:'Import'
                                                            ORDER_HEADER_IN : SAP_ABAP_BACKEND_RFC.DDIC.BAPISDHD1 not null,
-                                                           /** Sales Order Check List */
                                                            @RFCParameterType:'Import'
                                                            ORDER_HEADER_INX : SAP_ABAP_BACKEND_RFC.DDIC.BAPISDHD1X,
-                                                           /** Sales and Distribution Document Number */
                                                            @RFCParameterType:'Import'
                                                            SALESDOCUMENTIN : String(10),
-                                                           /** Logical System - Sender */
                                                            @RFCParameterType:'Import'
                                                            SENDER : SAP_ABAP_BACKEND_RFC.DDIC.BAPI_SENDER,
-                                                           /** Test Run */
                                                            @RFCParameterType:'Import'
                                                            TESTRUN : String(1),
-                                                           /** Reference Structure for BAPI Parameters ExtensionIn/ExtensionOut */
                                                            @RFCParameterType:'Table'
                                                            EXTENSIONEX : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIPAREX,
-                                                           /** Customer Enhancement for VBAK, VBAP, VBEP */
                                                            @RFCParameterType:'Table'
                                                            EXTENSIONIN : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIPAREX,
-                                                           /** Credit Card Data */
                                                            @RFCParameterType:'Table'
                                                            ORDER_CCARD : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICCARD,
-                                                           /** Configuration: BLOB Internal Data (SCE) */
                                                            @RFCParameterType:'Table'
                                                            ORDER_CFGS_BLOB : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUBLB,
-                                                           /** Configuration: Instances */
                                                            @RFCParameterType:'Table'
                                                            ORDER_CFGS_INST : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUINS,
-                                                           /** Configuration: Part-of Specifications */
                                                            @RFCParameterType:'Table'
                                                            ORDER_CFGS_PART_OF : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUPRT,
-                                                           /** Configuration: Reference Data */
                                                            @RFCParameterType:'Table'
                                                            ORDER_CFGS_REF : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUCFG,
-                                                           /** Configuration: Reference Item / Instance */
                                                            @RFCParameterType:'Table'
                                                            ORDER_CFGS_REFINST : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUREF,
-                                                           /** Configuration: Characteristic Values */
                                                            @RFCParameterType:'Table'
                                                            ORDER_CFGS_VALUE : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUVAL,
-                                                           /** Configuration: Variant Condition Key */
                                                            @RFCParameterType:'Table'
                                                            ORDER_CFGS_VK : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUVK,
-                                                           /** Conditions */
                                                            @RFCParameterType:'Table'
                                                            ORDER_CONDITIONS_IN : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICOND,
-                                                           /** Conditions Checkbox */
                                                            @RFCParameterType:'Table'
                                                            ORDER_CONDITIONS_INX : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDX,
-                                                           /** Item Data */
                                                            @RFCParameterType:'Table'
                                                            ORDER_ITEMS_IN : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDITM,
-                                                           /** Item Data Checkbox */
                                                            @RFCParameterType:'Table'
                                                            ORDER_ITEMS_INX : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDITMX,
-                                                           /** Output Table of Reference Keys */
                                                            @RFCParameterType:'Table'
                                                            ORDER_KEYS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDKEY,
-                                                           /** Document Partner */
                                                            @RFCParameterType:'Table'
                                                            ORDER_PARTNERS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIPARNR,
-                                                           /** Schedule Line Data */
                                                            @RFCParameterType:'Table'
                                                            ORDER_SCHEDULES_IN : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISCHDL,
-                                                           /** Checkbox Schedule Line Data */
                                                            @RFCParameterType:'Table'
                                                            ORDER_SCHEDULES_INX : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISCHDLX,
-                                                           /** Texts */
                                                            @RFCParameterType:'Table'
                                                            ORDER_TEXT : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDTEXT,
-                                                           /** BAPI Reference Structure for Addresses (Org./Company) */
                                                            @RFCParameterType:'Table'
                                                            PARTNERADDRESSES : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIADDR1,
-                                                           /** Return Messages */
                                                            @RFCParameterType:'Table'
                                                            RETURN : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIRET2)      returns SAP_ABAP_BACKEND_RFC.BAPI_SALESORDER_CREATEFROMDAT2.ResultType;
+
+action SAP_ABAP_BACKEND_RFC.BAPI_QUOTATION_GETDETAILBOS(
+                                                        /** Checkbox Field - Internal Line */
+                                                        @RFCParameterType:'Import'
+                                                        INTERNALUSE : String(1) default 'SPACE',
+                                                        /** Sales and Distribution Document Number */
+                                                        @RFCParameterType:'Import'
+                                                        SALESDOCUMENT : String(10) not null,
+                                                        /** Customer Enhancement for Export */
+                                                        @RFCParameterType:'Table'
+                                                        EXTENSIONOUT : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIPAREX,
+                                                        /** Address Data */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONADDRESS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDCOAD,
+                                                        /** Billing Data */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONBILLINGDATES : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDBPLD,
+                                                        /** Billing plan */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONBILLINGPLANS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDBPL,
+                                                        /** Business Data */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONBUSINESS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDBUSI,
+                                                        /** Configuration BLOB */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCFGSCUBLBS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUBLBM,
+                                                        /** Configuration Data */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCFGSCUCFGS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUCFGM,
+                                                        /** Instance Data for Configuration */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCFGSCUINS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUINSM,
+                                                        /** Detail Data (Part_of Entries) for Configuration */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCFGSCUPRTS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUPRTM,
+                                                        /** Instance in Configuration */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCFGSCUREFS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUREFM,
+                                                        /** Characteristic Values for Configuration */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCFGSCUVALS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUVALM,
+                                                        /** Variant Condition Key in Configuration */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCFGSCUVKS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUVKM,
+                                                        /** Conditions Header Data */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCONDHEAD : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDHD,
+                                                        /** Conditions Item Data */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCONDITEM : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDIT,
+                                                        /** Conditions */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCONDITIONS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDCOND,
+                                                        /** Condition Scale Quantity */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCONDQTYSCALE : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDQS,
+                                                        /** Condition Scale Value */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCONDVALSCALE : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDVS,
+                                                        /** Contract data */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCONTRACTS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDCNTR,
+                                                        /** Credit Card Data */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONCREDITCARDS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICCARDM,
+                                                        /** Document Flow */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONFLOWS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDFLOW,
+                                                        /** Item Data */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONITEMS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDITBOS,
+                                                        /** Partner Data */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONPARTNERS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDPART,
+                                                        /** Schedule Lines */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONSCHEDULELINES : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDHEDU,
+                                                        /** Services */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONSERVICES : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDESLLBOS,
+                                                        /** Service Conditions */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONSERVICESCOND : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIBOSCD,
+                                                        /** Communication Fields: Sales Document Item With BOS & Costing */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONSERVICESCOST : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIBOSCOST,
+                                                        /** Service Texts */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONSERVICESTEXT : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIESLLTX,
+                                                        /** Header Status */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONSTATUSHEADERS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDHDST,
+                                                        /** Item Status */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONSTATUSITEMS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDITST,
+                                                        /** Text Header Info. */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONTEXTHEADERS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDTEHD,
+                                                        /** Text Lines for Document */
+                                                        @RFCParameterType:'Table'
+                                                        QUOTATIONTEXTLINES : many SAP_ABAP_BACKEND_RFC.DDIC.BAPITEXTLI,
+                                                        /** Return Messages */
+                                                        @RFCParameterType:'Table'
+                                                        RETURN : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIRET2)         returns SAP_ABAP_BACKEND_RFC.BAPI_QUOTATION_GETDETAILBOS.ResultType;
 
 type SAP_ABAP_BACKEND_RFC.BAPI_USER_GETLIST.ResultType {
   @RFCParameterType: 'Export'
@@ -3051,91 +3123,1947 @@ type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDTEXT {
 };
 
 type SAP_ABAP_BACKEND_RFC.BAPI_SALESORDER_CREATEFROMDAT2.ResultType {
-  /** Number of Generated Document */
   @RFCParameterType: 'Export'
   SALESDOCUMENT        :      String(10);
 
-  /** Reference Structure for BAPI Parameters ExtensionIn/ExtensionOut */
   @RFCParameterType: 'Table'
   EXTENSIONEX          : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIPAREX;
 
-  /** Customer Enhancement for VBAK, VBAP, VBEP */
   @RFCParameterType: 'Table'
   EXTENSIONIN          : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIPAREX;
 
-  /** Credit Card Data */
   @RFCParameterType: 'Table'
   ORDER_CCARD          : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICCARD;
 
-  /** Configuration: BLOB Internal Data (SCE) */
   @RFCParameterType: 'Table'
   ORDER_CFGS_BLOB      : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUBLB;
 
-  /** Configuration: Instances */
   @RFCParameterType: 'Table'
   ORDER_CFGS_INST      : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUINS;
 
-  /** Configuration: Part-of Specifications */
   @RFCParameterType: 'Table'
   ORDER_CFGS_PART_OF   : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUPRT;
 
-  /** Configuration: Reference Data */
   @RFCParameterType: 'Table'
   ORDER_CFGS_REF       : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUCFG;
 
-  /** Configuration: Reference Item / Instance */
   @RFCParameterType: 'Table'
   ORDER_CFGS_REFINST   : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUREF;
 
-  /** Configuration: Characteristic Values */
   @RFCParameterType: 'Table'
   ORDER_CFGS_VALUE     : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUVAL;
 
-  /** Configuration: Variant Condition Key */
   @RFCParameterType: 'Table'
   ORDER_CFGS_VK        : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUVK;
 
-  /** Conditions */
   @RFCParameterType: 'Table'
   ORDER_CONDITIONS_IN  : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICOND;
 
-  /** Conditions Checkbox */
   @RFCParameterType: 'Table'
   ORDER_CONDITIONS_INX : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDX;
 
-  /** Item Data */
   @RFCParameterType: 'Table'
   ORDER_ITEMS_IN       : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDITM;
 
-  /** Item Data Checkbox */
   @RFCParameterType: 'Table'
   ORDER_ITEMS_INX      : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDITMX;
 
-  /** Output Table of Reference Keys */
   @RFCParameterType: 'Table'
   ORDER_KEYS           : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDKEY;
 
-  /** Document Partner */
   @RFCParameterType: 'Table'
   ORDER_PARTNERS       : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIPARNR;
 
-  /** Schedule Line Data */
   @RFCParameterType: 'Table'
   ORDER_SCHEDULES_IN   : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISCHDL;
 
-  /** Checkbox Schedule Line Data */
   @RFCParameterType: 'Table'
   ORDER_SCHEDULES_INX  : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISCHDLX;
 
-  /** Texts */
   @RFCParameterType: 'Table'
   ORDER_TEXT           : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDTEXT;
 
-  /** BAPI Reference Structure for Addresses (Org./Company) */
   @RFCParameterType: 'Table'
   PARTNERADDRESSES     : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIADDR1;
 
-  /** Return Messages */
   @RFCParameterType: 'Table'
   RETURN               : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIRET2;
+};
+
+type SAP_ABAP_BACKEND_RFC.BAPI_QUOTATION_GETDETAILBOS.ResultType {
+  /** Document Header Data */
+  @RFCParameterType: 'Export'
+  QUOTATIONHEADER        :      SAP_ABAP_BACKEND_RFC.DDIC.BAPISDHD;
+
+  /** Customer Enhancement for Export */
+  @RFCParameterType: 'Table'
+  EXTENSIONOUT           : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIPAREX;
+
+  /** Address Data */
+  @RFCParameterType: 'Table'
+  QUOTATIONADDRESS       : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDCOAD;
+
+  /** Billing Data */
+  @RFCParameterType: 'Table'
+  QUOTATIONBILLINGDATES  : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDBPLD;
+
+  /** Billing plan */
+  @RFCParameterType: 'Table'
+  QUOTATIONBILLINGPLANS  : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDBPL;
+
+  /** Business Data */
+  @RFCParameterType: 'Table'
+  QUOTATIONBUSINESS      : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDBUSI;
+
+  /** Configuration BLOB */
+  @RFCParameterType: 'Table'
+  QUOTATIONCFGSCUBLBS    : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUBLBM;
+
+  /** Configuration Data */
+  @RFCParameterType: 'Table'
+  QUOTATIONCFGSCUCFGS    : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUCFGM;
+
+  /** Instance Data for Configuration */
+  @RFCParameterType: 'Table'
+  QUOTATIONCFGSCUINS     : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUINSM;
+
+  /** Detail Data (Part_of Entries) for Configuration */
+  @RFCParameterType: 'Table'
+  QUOTATIONCFGSCUPRTS    : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUPRTM;
+
+  /** Instance in Configuration */
+  @RFCParameterType: 'Table'
+  QUOTATIONCFGSCUREFS    : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUREFM;
+
+  /** Characteristic Values for Configuration */
+  @RFCParameterType: 'Table'
+  QUOTATIONCFGSCUVALS    : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUVALM;
+
+  /** Variant Condition Key in Configuration */
+  @RFCParameterType: 'Table'
+  QUOTATIONCFGSCUVKS     : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICUVKM;
+
+  /** Conditions Header Data */
+  @RFCParameterType: 'Table'
+  QUOTATIONCONDHEAD      : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDHD;
+
+  /** Conditions Item Data */
+  @RFCParameterType: 'Table'
+  QUOTATIONCONDITEM      : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDIT;
+
+  /** Conditions */
+  @RFCParameterType: 'Table'
+  QUOTATIONCONDITIONS    : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDCOND;
+
+  /** Condition Scale Quantity */
+  @RFCParameterType: 'Table'
+  QUOTATIONCONDQTYSCALE  : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDQS;
+
+  /** Condition Scale Value */
+  @RFCParameterType: 'Table'
+  QUOTATIONCONDVALSCALE  : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDVS;
+
+  /** Contract data */
+  @RFCParameterType: 'Table'
+  QUOTATIONCONTRACTS     : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDCNTR;
+
+  /** Credit Card Data */
+  @RFCParameterType: 'Table'
+  QUOTATIONCREDITCARDS   : many SAP_ABAP_BACKEND_RFC.DDIC.BAPICCARDM;
+
+  /** Document Flow */
+  @RFCParameterType: 'Table'
+  QUOTATIONFLOWS         : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDFLOW;
+
+  /** Item Data */
+  @RFCParameterType: 'Table'
+  QUOTATIONITEMS         : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDITBOS;
+
+  /** Partner Data */
+  @RFCParameterType: 'Table'
+  QUOTATIONPARTNERS      : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDPART;
+
+  /** Schedule Lines */
+  @RFCParameterType: 'Table'
+  QUOTATIONSCHEDULELINES : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDHEDU;
+
+  /** Services */
+  @RFCParameterType: 'Table'
+  QUOTATIONSERVICES      : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDESLLBOS;
+
+  /** Service Conditions */
+  @RFCParameterType: 'Table'
+  QUOTATIONSERVICESCOND  : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIBOSCD;
+
+  /** Communication Fields: Sales Document Item With BOS & Costing */
+  @RFCParameterType: 'Table'
+  QUOTATIONSERVICESCOST  : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIBOSCOST;
+
+  /** Service Texts */
+  @RFCParameterType: 'Table'
+  QUOTATIONSERVICESTEXT  : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIESLLTX;
+
+  /** Header Status */
+  @RFCParameterType: 'Table'
+  QUOTATIONSTATUSHEADERS : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDHDST;
+
+  /** Item Status */
+  @RFCParameterType: 'Table'
+  QUOTATIONSTATUSITEMS   : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDITST;
+
+  /** Text Header Info. */
+  @RFCParameterType: 'Table'
+  QUOTATIONTEXTHEADERS   : many SAP_ABAP_BACKEND_RFC.DDIC.BAPISDTEHD;
+
+  /** Text Lines for Document */
+  @RFCParameterType: 'Table'
+  QUOTATIONTEXTLINES     : many SAP_ABAP_BACKEND_RFC.DDIC.BAPITEXTLI;
+
+  /** Return Messages */
+  @RFCParameterType: 'Table'
+  RETURN                 : many SAP_ABAP_BACKEND_RFC.DDIC.BAPIRET2;
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDHD {
+  OPERATION       : String(3);
+  DOC_NUMBER      : String(10);
+  REC_DATE        : Date;
+  REC_TIME        : Time;
+  CREATED_BY      : String(12);
+  QT_VALID_F      : Date;
+  QT_VALID_T      : Date;
+  DOC_DATE        : Date;
+  SD_DOC_CAT      : String(1);
+  TRAN_GROUP      : String(1);
+  DOC_TYPE        : String(4);
+  ORD_REASON      : String(3);
+  WAR_DATE        : Date;
+  SD_COL_NUM      : String(10);
+  DLV_BLOCK       : String(2);
+  BILL_BLOCK      : String(2);
+  NET_VAL_HD      : Decimal;
+  CURRENCY        : String(5);
+  CURREN_ISO      : String(3);
+  SALES_ORG       : String(4);
+  DISTR_CHAN      : String(2);
+  DIVISION        : String(2);
+  SALES_GRP       : String(3);
+  SALES_OFF       : String(4);
+  BUS_AREA        : String(4);
+  CT_AREA         : String(4);
+  CT_VALID_F      : Date;
+  CT_VALID_T      : Date;
+  CONDITIONS      : String(10);
+  REQ_DATE_H      : Date;
+  DATE_TYPE       : String(1);
+  COMPL_DLV       : String(1);
+  DOC_CLASS       : String(9);
+  DOC_INDIC       : String(1);
+  SD_PRIC_PR      : String(6);
+  SHIP_COND       : String(2);
+  ORDBILLTYP      : String(4);
+
+  @RFCAbapType: 'N'
+  ORD_PROBAB      : String(3);
+  SEAR_PRPR       : String(40);
+  PURCH_NO        : String(20);
+  PO_METHOD       : String(4);
+  PURCH_DATE      : Date;
+  PO_SUPPLEM      : String(4);
+  REF_1           : String(12);
+  ORDERER_NA      : String(35);
+  TELEPHONE       : String(16);
+  DUN_COUNT       : Decimal;
+  DUN_DATE        : Date;
+  SOLD_TO         : String(10);
+  COSTCENTER      : String(10);
+  UPDATE_GRP      : String(6);
+  STAT_CURR       : String(5);
+  ISOSTATCUR      : String(3);
+  CH_ON           : Date;
+  CUST_GRP1       : String(3);
+  CUST_GRP2       : String(3);
+  CUST_GRP3       : String(3);
+  CUST_GRP4       : String(3);
+  CUST_GRP5       : String(3);
+  AGREE_COND      : String(10);
+  CO_AREA         : String(4);
+
+  @RFCAbapType: 'N'
+  WBS_ELEM        : String(8);
+  EXCHG_RATE      : String(4);
+  C_CTR_AREA      : String(4);
+  CRED_ACCNT      : String(10);
+  CRED_GROUP      : String(4);
+  REPR_GROUP      : String(3);
+  RISK_CATEG      : String(3);
+  CURR_CRED       : String(5);
+  ISOCURRCRE      : String(3);
+  REL_DAT_DD      : Date;
+  NEXT_CHDAT      : Date;
+  NEXT_DATE       : Date;
+  REL_CREDIT      : Decimal;
+  HI_TYPE_PR      : String(1);
+  DLVSCHEDUS      : String(3);
+  PLAN_DLV        : String(1);
+  REF_DOC         : String(10);
+  OB_JNR_HD       : String(22);
+  COMP_CODE       : String(4);
+  ALT_TAX_CL      : String(1);
+  TAX_CLASS2      : String(1);
+  TAX_CLASS3      : String(1);
+  TAX_CLASS4      : String(1);
+  TAX_CLASS5      : String(1);
+  TAX_CLASS6      : String(1);
+  TAX_CLASS7      : String(1);
+  TAX_CLASS8      : String(1);
+  TAX_CLASS9      : String(1);
+  REF_DOC_L       : String(16);
+  ASS_NUMBER      : String(18);
+  DOC_CAT_SD      : String(1);
+  KALSM_CH        : String(6);
+
+  @RFCAbapType: 'N'
+  ACC_PERIOD      : String(2);
+  ORDERID         : String(12);
+  NOTIF_NO        : String(12);
+  MASTER_CON      : String(10);
+  REF_PROC        : String(4);
+  CHECK_PART      : String(1);
+  PICK_UP_DA      : Date;
+  PICK_UP_T1      : Time;
+  PICK_UP_T2      : Time;
+  NUM_PAY_CA      : String(10);
+  LINE_TIME       : Time;
+  TAX_DEST_CT     : String(3);
+  ISOTAXDEST      : String(2);
+  TAX_DEPART      : String(3);
+  ISOTAXDEPA      : String(2);
+  EU_TRIANG       : String(1);
+  MAST_CONTR      : String(1);
+  CML_QTY_DA      : Date;
+  MS_DATE         : Date;
+  VERSION         : String(12);
+  REF_DOC_L_LONG  : String(35);
+  CRM_GUID        : String(70);
+  SD_DOC_CAT_LONG : String(4);
+  DOC_CAT_SD_LONG : String(4);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDCOAD {
+  OPERATION     : String(3);
+  DOC_NUMBER    : String(10);
+  ADDRESS       : String(10);
+  FORMOFADDR    : String(15);
+  NAME          : String(35);
+  NAME_2        : String(35);
+  NAME_3        : String(35);
+  NAME_4        : String(35);
+  STREET        : String(35);
+  COUNTRY       : String(3);
+  COUNTRYISO    : String(2);
+  POSTL_CODE    : String(10);
+  POBX_PCD      : String(10);
+  POBX_CTY      : String(35);
+  CITY          : String(35);
+  DISTRICT      : String(35);
+  REGION        : String(3);
+  CITY_CODE     : String(4);
+  COUNTY_CDE    : String(3);
+  PO_BOX        : String(10);
+  TELEPHONE     : String(16);
+  TELEPHONE2    : String(16);
+  TELEBOX       : String(15);
+  FAX_NUMBER    : String(31);
+  TELETEX       : String(30);
+  TELEX         : String(30);
+  LANGU         : String(1);
+  LANGU_ISO     : String(2);
+  TRANSPZONE    : String(10);
+
+  @RFCAbapType: 'N'
+  HOUSE_NO      : String(6);
+  GENDER        : String(1);
+  NAME_LIST     : String(35);
+  TAXJURCODE    : String(15);
+  PERS_NO       : String(10);
+  ADDR_TYPE     : String(1);
+  NRELSTAT      : String(1);
+  INDIUPDATE    : String(1);
+  STREETNA      : String(35);
+  HOUSE_NO_LONG : String(10);
+  E_MAIL        : String(241);
+  STREET_H_N    : String(35);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDBPLD {
+  OPERATION    : String(3);
+  SD_DOC       : String(10);
+
+  @RFCAbapType: 'N'
+  ITM_NUMBER   : String(6);
+  BILL_PLAN    : String(10);
+
+  @RFCAbapType: 'N'
+  BILL_PLANI   : String(6);
+  DATETYPE     : String(2);
+  DATEDESCRI   : String(4);
+  SETTLEDATE   : Date;
+  IDADOPTBIL   : String(1);
+  RULEBILLPL   : String(1);
+  INVOICEPER   : Decimal;
+  CURRENCKEY   : String(5);
+  CURRENCISO   : String(3);
+  EXCHANRATE   : Decimal;
+  VALONDATE    : Decimal;
+  BILLBLOCK    : String(2);
+  ORDBILLTYP   : String(4);
+  STATBILLPL   : String(1);
+  RULEORINEX   : String(2);
+
+  @RFCAbapType: 'N'
+  LENSTANPER   : String(3);
+
+  @RFCAbapType: 'N'
+  MILESTONNO   : String(12);
+  MILESTONE    : String(5);
+  PMNTTRMS     : String(4);
+  PAYER        : String(10);
+  TAX_CLASS1   : String(1);
+  TAX_CLASS2   : String(1);
+  TAX_CLASS3   : String(1);
+  TAX_CLASS4   : String(1);
+  TAX_CLASS5   : String(1);
+  TAX_CLASS6   : String(1);
+  TAX_CLASS7   : String(1);
+  TAX_CLASS8   : String(1);
+  TAX_CLASS9   : String(1);
+
+  @RFCAbapType: 'N'
+  ADD_VAL_DY   : String(2);
+  FIX_VAL_DY   : Date;
+  SETTLEDAT    : Date;
+  PROCASMANU   : String(1);
+  CALDEFDAYS   : String(2);
+  BILL_DATE    : Date;
+  NET_VALUE    : Decimal;
+  NET_PRICE    : Decimal;
+  COST_DOC_C   : Decimal;
+  SUBTOT_PP1   : Decimal;
+  SUBTOT_PP2   : Decimal;
+  SUBTOT_PP3   : Decimal;
+  SUBTOT_PP4   : Decimal;
+  SUBTOT_PP5   : Decimal;
+  SUBTOT_PP6   : Decimal;
+  CREDPRICIT   : Decimal;
+  AMOUNTELIG   : Decimal;
+  REBATEBAS    : Decimal;
+  CURRENCY     : String(5);
+  CURREN_ISO   : String(3);
+  PRICE_OK     : String(1);
+  MEANSOFPAY   : String(1);
+  CREDITPRED   : Double;
+  HILEVPAYNO   : String(10);
+
+  @RFCAbapType: 'N'
+  HILEVITBIL   : String(6);
+  EXCHRATEFI   : Decimal;
+  ACCOUNTNO    : String(10);
+  INDICORDAT   : String(1);
+  ORIGBILDAT   : Date;
+  EXCHANRATE_V : Decimal;
+  EXCHRATEFI_V : Decimal;
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDBPL {
+  OPERATION  : String(3);
+  SD_DOC     : String(10);
+
+  @RFCAbapType: 'N'
+  ITM_NUMBER : String(6);
+  BILL_PLAN  : String(10);
+  BILLPLATYP : String(1);
+  B_INPLATYP : String(2);
+  SORT_FLD   : String(10);
+  BILLSTADAT : Date;
+  BILLENDDAT : Date;
+  RULEDETHOR : String(2);
+  RULEORISTA : String(2);
+  RULEORIEND : String(2);
+  RULEORINEX : String(2);
+
+  @RFCAbapType: 'N'
+  LENSTANPER : String(3);
+  STANBILLNO : String(10);
+  DATESFROM  : Date;
+  BILLCREAIA : String(1);
+  RULEDATFRO : String(2);
+  RULEDETBIL : String(2);
+  CALDEFDAYS : String(2);
+  DATESTO    : Date;
+  RULDATESTO : String(2);
+
+  @RFCAbapType: 'N'
+  ROUTING_NO : String(10);
+
+  @RFCAbapType: 'N'
+  CO_APLZL   : String(8);
+
+  @RFCAbapType: 'N'
+  RESERV_NO  : String(10);
+
+  @RFCAbapType: 'N'
+  RES_ITEM   : String(4);
+  PO_NUMBER  : String(10);
+
+  @RFCAbapType: 'N'
+  ITUNLIMIT  : String(6);
+  PAYCARDS1  : String(1);
+  PAYCARDS2  : String(1);
+  PAYCARDS3  : String(1);
+  PAYCARDS4  : String(1);
+  PAYCARDS5  : String(1);
+
+  @RFCAbapType: 'N'
+  INTPROJNO  : String(8);
+  AUTOCREATE : String(1);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDBUSI {
+  OPERATION          : String(3);
+  SD_DOC             : String(10);
+
+  @RFCAbapType: 'N'
+  ITM_NUMBER         : String(6);
+  PRICE_GRP          : String(2);
+  CUST_GROUP         : String(2);
+  SALES_DIST         : String(6);
+  PRICE_LIST         : String(2);
+  INCOTERMS1         : String(3);
+  INCOTERMS2         : String(28);
+  ORDCOMBIND         : String(1);
+  BILL_SCHED         : String(2);
+  INVO_SCHED         : String(2);
+  MN_INVOICE         : String(1);
+  EXCHRATEFI         : Decimal;
+
+  @RFCAbapType: 'N'
+  ADD_VAL_DY         : String(2);
+  FIX_VAL_DY         : Date;
+  PMNTTRMS           : String(4);
+  PAYMETHODE         : String(1);
+  ACCNT_ASGN         : String(2);
+  EXCHG_RATE         : Decimal;
+  PRICE_DATE         : Date;
+  BILL_DATE          : Date;
+  SERV_DATE          : Date;
+
+  @RFCAbapType: 'N'
+  FISC_YEAR          : String(4);
+
+  @RFCAbapType: 'N'
+  POSTPERIOD         : String(3);
+  EXCHRATEST         : Decimal;
+  DUNN_KEY           : String(1);
+  DUNN_BLOCK         : String(1);
+  BILL_PLAN          : String(10);
+  PROMOTION          : String(10);
+  PAY_GUARAN         : String(6);
+  FINDOCPROC         : String(10);
+  J_1AFITP_D         : String(2);
+  REAS_0_VAT         : String(1);
+  REGION             : String(3);
+  ACTIVICODE         : String(2);
+  DISTRIBTYP         : String(2);
+  TAX_CLASS          : String(10);
+  DEPART_NO          : String(4);
+  REC_POINT          : String(25);
+  PURCH_NO_C         : String(35);
+  PURCH_DATE         : Date;
+  PO_METHOD          : String(4);
+  REF_1              : String(12);
+  PURCH_NO_S         : String(35);
+  PO_DAT_S           : Date;
+  PO_METH_S          : String(4);
+  REF_1_S            : String(12);
+  POITMNOS           : String(6);
+  TRANS_DATE         : Date;
+  TRANSDATE          : Date;
+  CUSTCONGR1         : String(2);
+  CUSTCONGR2         : String(2);
+  CUSTCONGR3         : String(2);
+  CUSTCONGR4         : String(2);
+  CUSTCONGR5         : String(2);
+  VALCONTCUR         : String(5);
+  ISOVALCONT         : String(3);
+  EXCHRATECO         : Decimal;
+  CURRENCKEY         : String(5);
+  ISOCURRKEY         : String(3);
+  EXCHRATELC         : Decimal;
+  CEPRPERCEN         : Decimal;
+  INFLAT_IDX         : String(5);
+  BASDATEIDX         : Date;
+  CUST_PO_NO         : String(35);
+  DLV_TIME           : String(3);
+  DLI_PROFIL         : String(8);
+  CALC_MOTIVE        : String(2);
+  BILL_FORM          : String(2);
+  REVENUETYP         : String(1);
+  BEGDEMAPER         : String(1);
+  EXCHRATELC_V       : Decimal;
+  EXCH_RATE_FI_V     : Decimal;
+  EXCHG_RATE_V       : Decimal;
+  EXCHRATEST_V       : Decimal;
+  EXCHRATECO_V       : Decimal;
+  DELIV_TYPE         : String(2);
+  TRANS_CAT          : String(4);
+  TRANS_MAT          : String(18);
+  SPEC_PROC          : String(4);
+  PRODCAT            : String(10);
+  FUNC_AREA          : String(4);
+  POD_PROC           : String(1);
+  CAMPAIGN           : Binary(16);
+  FKK_CONACCT        : String(12);
+  FUNC_AREA_LONG     : String(16);
+  FKK_CONACCT_GUID   : Binary(16);
+  TRANS_MAT_EXTERNAL : String(40);
+  TRANS_MAT_GUID     : String(32);
+  TRANS_MAT_VERSION  : String(10);
+  SEPA_MANDATE_ID    : String(35);
+  INCOTERMSV         : String(4);
+  INCOTERMS2L        : String(70);
+  INCOTERMS3L        : String(70);
+  TRANS_MAT_LONG     : String(40);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPICUBLBM {
+  OPERATION : String(3);
+  SD_DOC    : String(10);
+  CONFIG_ID : String(6);
+  CONTEXT   : String(250);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPICUCFGM {
+  OPERATION     : String(3);
+  SD_DOC        : String(10);
+  POSEX         : String(6);
+  CONFIG_ID     : String(6);
+  ROOT_ID       : String(8);
+  SCE           : String(1);
+  KBNAME        : String(30);
+  KBVERSION     : String(30);
+  COMPLETE      : String(1);
+  CONSISTENT    : String(1);
+  CFGINFO       : String(250);
+  KBPROFILE     : String(30);
+  KBLANGUAGE    : String(1);
+  CBASE_ID      : String(32);
+  CBASE_ID_TYPE : String(1);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPICUINSM {
+  OPERATION       : String(3);
+  SD_DOC          : String(10);
+  CONFIG_ID       : String(6);
+  INST_ID         : String(8);
+  OBJ_TYPE        : String(10);
+  CLASS_TYPE      : String(3);
+  OBJ_KEY         : String(50);
+  OBJ_TXT         : String(70);
+  QUANTITY        : String(15);
+  AUTHOR          : String(1);
+  QUANTITY_UNIT   : String(3);
+  COMPLETE        : String(1);
+  CONSISTENT      : String(1);
+  OBJECT_GUID     : String(32);
+  PERSIST_ID      : String(32);
+  PERSIST_ID_TYPE : String(1);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPICUPRTM {
+  OPERATION      : String(3);
+  SD_DOC         : String(10);
+  CONFIG_ID      : String(6);
+  PARENT_ID      : String(8);
+  INST_ID        : String(8);
+  PART_OF_NO     : String(4);
+  OBJ_TYPE       : String(10);
+  CLASS_TYPE     : String(3);
+  OBJ_KEY        : String(50);
+  AUTHOR         : String(1);
+  SALES_RELEVANT : String(1);
+  PART_OF_GUID   : String(32);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPICUREFM {
+  OPERATION : String(3);
+  SD_DOC    : String(10);
+  POSEX     : String(6);
+  CONFIG_ID : String(6);
+  INST_ID   : String(8);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPICUVALM {
+  OPERATION     : String(3);
+  SD_DOC        : String(10);
+  CONFIG_ID     : String(6);
+  INST_ID       : String(8);
+  CHARC         : String(40);
+  CHARC_TXT     : String(70);
+  VALUE         : String(40);
+  VALUE_TXT     : String(70);
+  AUTHOR        : String(1);
+  VALUE_TO      : String(40);
+  VALCODE       : String(1);
+  VALUE_LONG    : String(70);
+  VALUE_TO_LONG : String(70);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPICUVKM {
+  OPERATION : String(3);
+  SD_DOC    : String(10);
+  CONFIG_ID : String(6);
+  INST_ID   : String(8);
+  VKEY      : String(26);
+  FACTOR    : String(15);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDHD {
+  OPERATION      : String(3);
+  SD_DOC         : String(10);
+
+  @RFCAbapType: 'N'
+  ITM_NUMBER     : String(6);
+  COND_NO        : String(10);
+  CREATED_BY     : String(12);
+  CREAT_DATE     : Date;
+  COND_USAGE     : String(1);
+  TABLE_NO       : String(3);
+  APPLICATIO     : String(2);
+  COND_TYPE      : String(4);
+  VARKEY         : String(100);
+  VALID_FROM     : Date;
+  VALID_TO       : Date;
+  SEARCHTERM     : String(10);
+  RESPONS        : String(3);
+  PROMOT_NO      : String(10);
+  SALES_DEAL     : String(10);
+  SALESQUOTE     : String(10);
+  STD_AGRMNT     : String(10);
+  PROMOTION      : String(10);
+  REBAGREEMT     : String(10);
+  LIC_NO         : String(20);
+  LIC_DATE       : Date;
+  VARDATE        : String(100);
+  VARKEY_LONG    : String(255);
+  VARDATE_LONG   : String(255);
+
+  @RFCAbapType: 'N'
+  VARKEY_VERSION : String(2);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDIT {
+  OPERATION          : String(3);
+  SD_DOC             : String(10);
+
+  @RFCAbapType: 'N'
+  ITM_NUMBER         : String(6);
+  COND_NO            : String(10);
+
+  @RFCAbapType: 'N'
+  COND_COUNT         : String(2);
+  APPLICATIO         : String(2);
+  COND_TYPE          : String(4);
+  TEXT_NO            : String(10);
+  SCALETYPE          : String(1);
+  SCALEBASIN         : String(1);
+  SCALE_QTY          : Decimal;
+  UNITMEASUR         : String(3);
+  MEASUR_ISO         : String(3);
+  SCALE_VAL          : Decimal;
+  CURRENCKEY         : String(5);
+  CURREN_ISO         : String(3);
+  CALCTYPCON         : String(1);
+  COND_VALUE         : Decimal;
+  CONDCURR           : String(5);
+  COND_ISO           : String(3);
+  COND_P_UNT         : Decimal;
+  COND_UNIT          : String(3);
+  CONUNITISO         : String(3);
+  PRICELEVEL         : String(4);
+  NUMCONVERT         : Decimal;
+  DENOMINATO         : Decimal;
+  BASE_UOM           : String(3);
+  BASEQTYISO         : String(3);
+  LOWERLIMIT         : Decimal;
+  UPPERLIMIT         : Decimal;
+  PLCONDVAL          : Decimal;
+  CUM_VALUE          : Decimal;
+  CUMM_ACCR          : Decimal;
+  CURRENCY           : String(5);
+  CURR_ISO           : String(3);
+  CONDCURREN         : String(5);
+  ISOCURRENC         : String(3);
+  PLAN_BASIS         : Decimal;
+  RATE_UNIT          : String(5);
+  EXCLUSION          : String(1);
+  CUSTOMER           : String(10);
+  VENDOR_NO          : String(10);
+  TAX_CODE           : String(2);
+  INDIDELETE         : String(1);
+
+  @RFCAbapType: 'N'
+  CONDITIDX          : String(2);
+  MATLSETTL          : String(18);
+  ACCRUALS           : Decimal;
+  REB_RETROA         : String(1);
+  STATOFAGRE         : String(1);
+  PROMOT_NO          : String(10);
+  SALES_DEAL         : String(10);
+  SALESQUOTE         : String(10);
+
+  @RFCAbapType: 'N'
+  ADD_VAL_DY         : String(2);
+  FIX_VAL_DY         : Date;
+  PMNTTRMS           : String(4);
+
+  @RFCAbapType: 'N'
+  NUMBORDERS         : String(2);
+  MINCONBAVA         : Decimal;
+  MAXCONBAVA         : Decimal;
+  MAXCONVAL          : Decimal;
+
+  @RFCAbapType: 'N'
+  INCR_SCALE         : String(4);
+
+  @RFCAbapType: 'N'
+  PRICSCALE          : String(4);
+  RELPRCG            : String(1);
+  PROMOTION          : String(10);
+  REBAGREEMT         : String(10);
+  WITHTAXCOD         : String(2);
+  CONTRACT           : String(1);
+  CONTRACTNO         : String(13);
+  FLOW_TYPE          : String(4);
+  INDIMATMAI         : String(1);
+  STATUS             : String(1);
+  UMSABST            : String(1);
+  MATLSETTL_EXTERNAL : String(40);
+  MATLSETTL_GUID     : String(32);
+  MATLSETTL_VERSION  : String(10);
+  MATLSETTL_LONG     : String(40);
+
+  @RFCAbapType: 'N'
+  CONDITIDX_LONG     : String(3);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDCOND {
+  OPERATION       : String(3);
+  SD_DOC          : String(10);
+  CONDIT_NO       : String(10);
+
+  @RFCAbapType: 'N'
+  ITM_NUMBER      : String(6);
+
+  @RFCAbapType: 'N'
+  COND_ST_NO      : String(3);
+
+  @RFCAbapType: 'N'
+  COND_COUNT      : String(2);
+  APPLICATIO      : String(2);
+  COND_TYPE       : String(4);
+  CONPRICDAT      : Date;
+  CALCTYPCON      : String(1);
+  CONBASEVAL      : Decimal;
+  SDCURRENCY      : String(5);
+  CURREN_ISO      : String(3);
+  COND_VALUE      : Decimal;
+  CURRENCY        : String(5);
+  CURRENCISO      : String(3);
+  CONEXCHRAT      : Decimal;
+  COND_P_UNT      : Decimal;
+  COND_D_UNT      : String(3);
+  T_UNIT_ISO      : String(3);
+  NUMCONVERT      : Decimal;
+  DENOMINATO      : Decimal;
+  CONDTYPE        : String(1);
+  STAT_CON        : String(1);
+  SCALETYPE       : String(1);
+  ACCRUALS        : String(1);
+  CONINVOLST      : String(1);
+  CONDORIGIN      : String(1);
+  GROUPCOND       : String(1);
+  COND_UPDAT      : String(1);
+
+  @RFCAbapType: 'N'
+  ACCESS_SEQ      : String(2);
+  COND_NO         : String(10);
+
+  @RFCAbapType: 'N'
+  CONDCOUNT       : String(2);
+  ACCOUNTKEY      : String(3);
+  GL_ACCOUNT      : String(10);
+  TAX_CODE        : String(2);
+  ACCOUNT_KE      : String(3);
+  GLACCOUNT       : String(10);
+  WITHTAXCOD      : String(2);
+  VENDOR_NO       : String(10);
+  CUSTNO_RR       : String(10);
+  ROUNDOFFDI      : Decimal;
+  CONDVALUE       : Decimal;
+  CONDCNTRL       : String(1);
+  CONDISACTI      : String(1);
+  CONDCLASS       : String(1);
+
+  @RFCAbapType: 'N'
+  CONDCOINHD      : String(2);
+  INDIBASVAL      : String(1);
+  INDICONVAL      : String(1);
+  FACTBASVAL      : Double;
+  STRUCTCOND      : String(1);
+  FACTCONBAS      : Double;
+  PRICELEVEL      : String(4);
+
+  @RFCAbapType: 'N'
+  CONDFORMUL      : String(3);
+  SCALETYP        : String(1);
+  INCREMSCAL      : Decimal;
+  INCREASCAL      : Decimal;
+  INDEX_NO        : Integer;
+  INDEXNO         : Integer;
+
+  @RFCAbapType: 'N'
+  CONDITIDX       : String(2);
+  PRINT_ID        : String(1);
+
+  @RFCAbapType: 'N'
+  FROREFSTEP      : String(3);
+
+  @RFCAbapType: 'N'
+  FROMREFSTE      : String(3);
+  CONDSUBTOT      : String(1);
+
+  @RFCAbapType: 'N'
+  COND_FORM       : String(3);
+
+  @RFCAbapType: 'N'
+  COND_FORM1      : String(3);
+  MAKMANENTR      : String(1);
+  ROUNDRULE       : String(1);
+  PMSIGNAMOU      : String(1);
+  CURRCONVER      : String(1);
+  CONDISMAND      : String(1);
+  RATEOFCHA1      : String(1);
+  RATEOFCHA2      : String(1);
+  RATEOFCHA3      : String(1);
+  RATEOFCHA4      : String(1);
+  RATEOFCHA5      : String(1);
+  RATEOFCHA6      : String(1);
+  TERMSOFPAY      : String(1);
+  MESSAGENO       : String(3);
+  INDIUPDATE      : String(1);
+  SELECTION       : String(1);
+  SCALEBASIN      : String(1);
+  SCALBASVAL      : Decimal;
+  UNITMEASUR      : String(3);
+  TUNITISO        : String(3);
+  CURRENCKEY      : String(5);
+  CORRENISO       : String(3);
+  CONDCURREN      : String(5);
+  CORR_ISO        : String(3);
+  CONBASVAL       : Decimal;
+  CONDIVALUE      : Decimal;
+  CONDINCOMP      : String(1);
+  CONDCONFIG      : String(1);
+  CONDCHAMAN      : String(1);
+  PRICESOURC      : String(1);
+  VARIANCOND      : String(26);
+  LEVEL_BOM       : Decimal;
+  PATH_BOM        : Decimal;
+  STATOFAGRE      : String(1);
+  REB_RETROA      : String(1);
+  INDIDELETE      : String(1);
+  AGREE_COND      : String(10);
+  CALCULBASE      : String(1);
+  SH_MAT_TYP      : String(4);
+  ROUNDDIFCO      : String(1);
+  QTYCONVERS      : String(1);
+  CONCBUFFER      : String(1);
+  RELACCASSI      : String(1);
+  INDIMATMAI      : String(1);
+  TAXJURISDI      : String(1);
+  CONEXCHRAT_V    : Decimal;
+
+  @RFCAbapType: 'N'
+  ACCESS_SEQ_LONG : String(3);
+
+  @RFCAbapType: 'N'
+  COND_COUNT_LONG : String(3);
+
+  @RFCAbapType: 'N'
+  CONDCOINHD_LONG : String(3);
+
+  @RFCAbapType: 'N'
+  CONDITIDX_LONG  : String(3);
+
+  @RFCAbapType: 'N'
+  CONDFORMUL_LONG : String(7);
+
+  @RFCAbapType: 'N'
+  COND_FORM_LONG  : String(7);
+
+  @RFCAbapType: 'N'
+  COND_FORM1_LONG : String(7);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDQS {
+  OPERATION  : String(3);
+  SD_DOC     : String(10);
+
+  @RFCAbapType: 'N'
+  ITM_NUMBER : String(6);
+  COND_NO    : String(10);
+
+  @RFCAbapType: 'N'
+  COND_COUNT : String(2);
+
+  @RFCAbapType: 'N'
+  LINE_NO    : String(4);
+  SCALE_QTY  : Decimal;
+  COND_UNIT  : String(3);
+  T_UNIT_ISO : String(3);
+  CURRENCY   : Decimal;
+  CONDCURR   : String(5);
+  CURREN_ISO : String(3);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPICONDVS {
+  OPERATION  : String(3);
+  SD_DOC     : String(10);
+
+  @RFCAbapType: 'N'
+  ITM_NUMBER : String(6);
+  COND_NO    : String(10);
+
+  @RFCAbapType: 'N'
+  COND_COUNT : String(2);
+
+  @RFCAbapType: 'N'
+  LINE_NO    : String(4);
+  SCALE_VAL  : Decimal;
+  CURRENCKEY : String(5);
+  CURRENCISO : String(3);
+  CURRENCY   : Decimal;
+  CONDCURR   : String(5);
+  CURREN_ISO : String(3);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDCNTR {
+  OPERATION  : String(3);
+  DOC_NUMBER : String(10);
+
+  @RFCAbapType: 'N'
+  ITM_NUMBER : String(6);
+
+  @RFCAbapType: 'N'
+  VAL_PER    : String(3);
+  VALPERUNIT : String(1);
+  VALPERCAT  : String(2);
+  INST_DATE  : Date;
+  ACCEPTDATE : Date;
+  CONTSTADAT : Date;
+  CONTSIGDAT : Date;
+  CANC_PROC  : String(4);
+  CONTENDACT : String(4);
+  CONTCANDAT : Date;
+  REQCANCDAT : Date;
+  CANC_PARTY : String(1);
+  CANCREASON : String(2);
+  CONTENDDAT : Date;
+  CANC_DOC   : String(20);
+  CANCDOCDAT : Date;
+  CONTSTARUL : String(2);
+
+  @RFCAbapType: 'N'
+  LEADTIMACT : String(3);
+  LEADTIMUNI : String(1);
+  DISM_DATE  : Date;
+  ACTIONDATE : Date;
+
+  @RFCAbapType: 'N'
+  WI_ID      : String(12);
+  ACTDATRULE : String(2);
+  CONTENDRUL : String(2);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPICCARDM {
+  OPERATION  : String(3);
+  SD_DOC     : String(10);
+  CC_TYPE    : String(4);
+  CC_NUMBER  : String(25);
+  CC_VALID_F : Date;
+  CC_VALID_T : Date;
+  CC_NAME    : String(40);
+  DATAORIGIN : String(1);
+  AUTHAMOUNT : Decimal;
+  CURRENCY   : String(5);
+  CURR_ISO   : String(3);
+  CC_SETTLED : String(1);
+  AUTH_CC_NO : String(10);
+  AUTH_REFNO : String(15);
+  AUTH_DATE  : Date;
+  AUTH_TIME  : Time;
+  MERCHIDCL  : String(15);
+  PNTOFRECEI : String(10);
+  TERMINAL   : String(10);
+  SETTLEMRUN : String(10);
+  CARDCATEGO : String(2);
+  AUTHORTYPE : String(1);
+  STATEXTSYS : String(1);
+  CC_REACT   : String(1);
+  AMOUNTAUTH : Decimal;
+  CURR_CRED  : String(5);
+  CURCREDISO : String(3);
+  AUTH_EXPIR : String(1);
+  AMOUNTCHAN : String(1);
+  PRE_AUTH   : String(1);
+
+  @RFCAbapType: 'N'
+  HIGHLEAUTH : String(6);
+  RADRCHECK1 : String(4);
+  RADRCHECK2 : String(4);
+  RADRCHECK3 : String(4);
+  RCARDCHECK : String(4);
+  REASONTEXT : String(40);
+  CC_LIMIT   : Decimal;
+  AUTH_USED  : String(1);
+  CC_LIMITED : String(1);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDFLOW {
+  OPERATION         : String(3);
+  SD_DOC            : String(10);
+  PRECSDDOC         : String(10);
+
+  @RFCAbapType: 'N'
+  PREDITDOC         : String(6);
+  SUBSSDDOC         : String(10);
+
+  @RFCAbapType: 'N'
+  SUBSITDOC         : String(6);
+  DOCCATEGOR        : String(1);
+  REF_QTY           : Decimal;
+  BASE_UOM          : String(3);
+  T_UNIT_ISO        : String(3);
+  REFERENVAL        : Decimal;
+  STATISCURR        : String(5);
+  CURRENCISO        : String(3);
+  DOC_CAT_SD        : String(1);
+  QTYPOSCALC        : String(1);
+  ID_MM_WM          : String(1);
+  CREAT_DATE        : Date;
+  REC_TIME          : Time;
+  MATERIAL          : String(18);
+  MOVE_TYP          : String(3);
+  REQ_TYPE          : String(2);
+  PLTYPE            : String(1);
+
+  @RFCAbapType: 'N'
+  LEVELFLOWR        : String(2);
+  WHSE_NO           : String(3);
+  CH_ON             : Date;
+  BILLINGTYP        : String(1);
+  GROSS_WT          : Decimal;
+  UNIT_OF_WT        : String(3);
+  UNITWTISO         : String(3);
+  VOLUME            : Decimal;
+  VOLUMEUNIT        : String(3);
+  VOLUNITISO        : String(3);
+  BILL_PLAN         : String(10);
+
+  @RFCAbapType: 'N'
+  BILL_PLANI        : String(6);
+  REFQTYUNIT        : Double;
+  REFQTYFLOA        : Double;
+  SALES_UNIT        : String(3);
+  ISOCODUNIT        : String(3);
+  GURANTEED         : Double;
+  SPEC_STOCK        : String(1);
+  SP_STCK_NO        : String(16);
+  INDINVMANG        : String(1);
+  NET_WEIGHT        : Decimal;
+  MATERIAL_EXTERNAL : String(40);
+  MATERIAL_GUID     : String(32);
+  MATERIAL_VERSION  : String(10);
+  MATERIAL_LONG     : String(40);
+  DOCCATEGOR_LONG   : String(4);
+  DOC_CAT_SD_LONG   : String(4);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDITBOS {
+  OPERATION           : String(3);
+  DOC_NUMBER          : String(10);
+
+  @RFCAbapType: 'N'
+  ITM_NUMBER          : String(6);
+  MATERIAL            : String(18);
+  MAT_ENTRD           : String(18);
+  PR_REF_MAT          : String(18);
+  BATCH               : String(10);
+  MATL_GROUP          : String(9);
+  SHORT_TEXT          : String(40);
+  ITEM_CATEG          : String(4);
+  ITEM_TYPE           : String(1);
+  REL_FOR_DE          : String(1);
+  REL_FOR_BI          : String(1);
+
+  @RFCAbapType: 'N'
+  HG_LV_ITEM          : String(6);
+
+  @RFCAbapType: 'N'
+  ALTERN_ITM          : String(6);
+  REA_FOR_RE          : String(2);
+  PROD_HIER           : String(18);
+  OUT_AGR_TA          : Decimal;
+  TARGET_QTY          : Decimal;
+  TARGET_QU           : String(3);
+  T_UNIT_ISO          : String(3);
+  TARG_QTY_N          : Decimal;
+  TARG_QTY_D          : Decimal;
+  BASE_UOM            : String(3);
+  T_BAS_UNIT          : String(3);
+  SCALE_QUAN          : Decimal;
+  ROUND_DLV           : Decimal;
+  RECON_DATE          : Date;
+  MAX_DEVIAT          : Decimal;
+  PO_ITM_NO           : String(6);
+  CUST_MAT22          : String(22);
+  MAX_DEV_PE          : Decimal;
+  MAX_DEV_DA          : Decimal;
+  REPAIR_PRO          : String(3);
+  DLVSCHEDUS          : String(3);
+
+  @RFCAbapType: 'N'
+  DLV_GROUP           : String(3);
+  FIXED_QUAN          : String(1);
+  DELI_UNLIM          : String(1);
+  OVER_DLV_T          : Decimal;
+  UNDER_DLV           : Decimal;
+  BILL_BLOCK          : String(2);
+  REPLACE_PT          : String(1);
+  METH_BILL           : String(1);
+  DIVISION            : String(2);
+  BUS_AREA            : String(4);
+  NET_VALUE           : Decimal;
+  CURRENCY            : String(5);
+  CURREN_ISO          : String(3);
+  MAX_PL_DLV          : Decimal;
+  PART_DLV            : String(1);
+  BTCH_SPLIT          : String(1);
+  REQ_QTY             : Decimal;
+  CUM_REQ_DE          : Decimal;
+  CUM_CF_QTY          : Decimal;
+  CUM_CON_QU          : Decimal;
+  SALES_UNIT          : String(3);
+  ISOCODUNIT          : String(3);
+  SALES_QTY1          : Decimal;
+  SALES_QTY2          : Decimal;
+  GROSS_WEIG          : Decimal;
+  NET_WEIGHT          : Decimal;
+  UNIT_OF_WT          : String(3);
+  UNIT_WTISO          : String(3);
+  VOLUME              : Decimal;
+  VOLUMEUNIT          : String(3);
+  VOLUNITISO          : String(3);
+  CAU_VBELN           : String(10);
+
+  @RFCAbapType: 'N'
+  CAU_POSNR           : String(6);
+  REF_DOC             : String(10);
+
+  @RFCAbapType: 'N'
+  POSNR_VOR           : String(6);
+  OBJ_COPY            : String(1);
+  UPDAT_FLAG          : String(1);
+  END_RULE            : String(1);
+
+  @RFCAbapType: 'N'
+  DLV_PRIO            : String(2);
+  PLANT               : String(4);
+  STGE_LOC            : String(4);
+  SHIP_POINT          : String(4);
+  ROUTE               : String(6);
+  KEY_ST              : String(1);
+  DATE_ST             : Date;
+  NBR_ST              : String(8);
+  STPOS_VBAP          : Decimal;
+
+  @RFCAbapType: 'N'
+  ORDER_PROB          : String(3);
+  CREAT_DATE          : Date;
+  CREATED_BY          : String(12);
+  REC_TIME            : Time;
+  TAX_CLASS1          : String(1);
+  TAX_CLASS2          : String(1);
+  TAX_CLASS3          : String(1);
+  TAX_CLASS4          : String(1);
+  TAX_CLASS5          : String(1);
+  TAX_CLASS6          : String(1);
+  TAX_CLASS7          : String(1);
+  TAX_CLASS8          : String(1);
+  TAX_CLASS9          : String(1);
+  FIX_SP_DAY          : Decimal;
+  VAR_SP_DAY          : Decimal;
+  PREC_DOC            : String(1);
+  NET_PRICE           : Decimal;
+  COND_P_UNT          : Decimal;
+  COND_UNIT           : String(3);
+  CONISOUNIT          : String(3);
+  RETOURE             : String(1);
+  CASH_DISC           : String(1);
+  AVAILCHECK          : String(2);
+  SUM_REQUIR          : String(1);
+  MAT_PR_GRP          : String(2);
+  ACCT_ASSGT          : String(2);
+  REBATE_GRP          : String(2);
+  COMM_GROUP          : String(2);
+  EUR_ART_NR          : String(13);
+  PRICE_OK            : String(1);
+  VAL_TYPE            : String(10);
+  SEP_VALUAT          : String(1);
+  BATCH_MGMT          : String(1);
+  IND_BTCH            : String(1);
+  MIN_DELY            : Decimal;
+  UPDATE_GRP          : String(6);
+  COST_DOC_C          : Decimal;
+  SUBTOT_PP1          : Decimal;
+  SUBTOT_PP2          : Decimal;
+  SUBTOT_PP3          : Decimal;
+  SUBTOT_PP4          : Decimal;
+  SUBTOT_PP5          : Decimal;
+  SUBTOT_PP6          : Decimal;
+  EXCH_RATE           : Decimal;
+  CH_ON               : Date;
+  EAN_UPC             : String(18);
+  FIX_DATE            : String(1);
+  PROFIT_CTR          : String(10);
+  PRC_GROUP1          : String(3);
+  PRC_GROUP2          : String(3);
+  PRC_GROUP3          : String(3);
+  PRC_GROUP4          : String(3);
+  PRC_GROUP5          : String(3);
+  COMPON_QTY          : Decimal;
+  SUBSTREASO          : String(4);
+  SPEC_STOCK          : String(1);
+  ALLOC_INDI          : String(1);
+
+  @RFCAbapType: 'N'
+  PROFIT_SEG          : String(10);
+
+  @RFCAbapType: 'N'
+  WBS_ELEM            : String(8);
+  ORDERID             : String(12);
+  PLNG_MATL           : String(18);
+  PLNG_PLANT          : String(4);
+  BASE_UNIT           : String(3);
+  ISOBASUNIT          : String(3);
+  CONV_FACT           : Double;
+  ACCTASSCAT          : String(1);
+  CONSUMPT            : String(1);
+  BOMEXPLNO           : String(8);
+  OBJ_NR_IT           : String(22);
+  RES_ANAL            : String(6);
+  REQMTSTYP           : String(4);
+  CREDPRICIT          : Decimal;
+  PARTRELID           : String(1);
+  ACTCREDID           : String(1);
+  CR_EXCHRAT          : Decimal;
+
+  @RFCAbapType: 'N'
+  CONFIG              : String(18);
+
+  @RFCAbapType: 'N'
+  CHCLASS_IN          : String(18);
+  STAT_PRICE          : String(1);
+  COND_UPDAT          : String(1);
+  SERNO_PROF          : String(4);
+  NO_OF_SERI          : Integer;
+  NOGRPOSTED          : String(1);
+  MAT_GRP_SM          : String(4);
+  MAN_PR_CH           : String(1);
+  DOC_CAT_SD          : String(1);
+  MATDETERID          : String(1);
+  ITUSAGEID           : String(1);
+
+  @RFCAbapType: 'N'
+  COSTESTNR           : String(12);
+  CSTG_VRNT           : String(4);
+  BOMITEMNR           : String(4);
+  STAT_VAL            : String(1);
+  STAT_DATE           : Date;
+  BUS_TRANST          : String(2);
+  PREF_INDIC          : String(1);
+  NRCONDREC           : String(10);
+
+  @RFCAbapType: 'N'
+  INTCLASSNR          : String(10);
+
+  @RFCAbapType: 'N'
+  BATCH_EXIT          : String(3);
+  BOM_CATEGO          : String(1);
+
+  @RFCAbapType: 'N'
+  BOM_IT_NR           : String(8);
+
+  @RFCAbapType: 'N'
+  COUNTER             : String(8);
+  INCONSCONF          : String(1);
+  OVERH_KEY           : String(6);
+  CSTG_SHEET          : String(6);
+  CSTG_VRNT1          : String(4);
+  PROD_ALLOC          : String(18);
+  PRICE_REF           : String(18);
+  MATPRICGRP          : String(2);
+  MATFRGTGRP          : String(8);
+  PLANDLVSCH          : String(4);
+  SEQUENCENO          : String(35);
+  CREDPRIC            : Double;
+  PAY_GUARAN          : String(2);
+  GURANTEED           : Double;
+  CFOP_CODE           : String(10);
+  TAXLAWICMS          : String(3);
+  TAXLAWIPI           : String(3);
+  SD_TAXCODE          : String(2);
+  VALCONTRNR          : String(10);
+
+  @RFCAbapType: 'N'
+  VALCONTRIT          : String(6);
+  ASSORT_MOD          : String(18);
+  VALSPECSTO          : String(1);
+  MATGRHIE1           : String(18);
+  MATGRHIE2           : String(18);
+  PROMOTION           : String(10);
+  SALES_DEAL          : String(10);
+  FLGLEADUNI          : String(1);
+  FREE_GOODS          : String(1);
+  VALID_OBJ           : String(12);
+  TAX_AMOUNT          : Decimal;
+  MRP_AREA            : String(10);
+  CUST_MAT35          : String(35);
+  CR_EXCHRAT_V        : Decimal;
+  EXCHRATEST_V        : Decimal;
+
+  @RFCAbapType: 'N'
+  PCKG_NO             : String(10);
+  MATERIAL_EXTERNAL   : String(40);
+  MATERIAL_GUID       : String(32);
+  MATERIAL_VERSION    : String(10);
+  MAT_ENTRD_EXTERNAL  : String(40);
+  MAT_ENTRD_GUID      : String(32);
+  MAT_ENTRD_VERSION   : String(10);
+  PLNG_MATL_EXTERNAL  : String(40);
+  PLNG_MATL_GUID      : String(32);
+  PLNG_MATL_VERSION   : String(10);
+  PRICE_REF_EXTERNAL  : String(40);
+  PRICE_REF_GUID      : String(32);
+  PRICE_REF_VERSION   : String(10);
+  PR_REF_MAT_EXTERNAL : String(40);
+  PR_REF_MAT_GUID     : String(32);
+  PR_REF_MAT_VERSION  : String(10);
+  MATERIAL_LONG       : String(40);
+  MAT_ENTRD_LONG      : String(40);
+  PR_REF_MAT_LONG     : String(40);
+  PLNG_MATL_LONG      : String(40);
+  PRICE_REF_LONG      : String(40);
+  DOC_CAT_SD_LONG     : String(4);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDPART {
+  OPERATION           : String(3);
+  SD_DOC              : String(10);
+
+  @RFCAbapType: 'N'
+  ITM_NUMBER          : String(6);
+  PARTN_ROLE          : String(2);
+  CUSTOMER            : String(10);
+  VENDOR_NO           : String(10);
+
+  @RFCAbapType: 'N'
+  PERSON_NO           : String(8);
+
+  @RFCAbapType: 'N'
+  CONTACT             : String(10);
+  ADDRESS             : String(10);
+  UNLOAD_PT           : String(25);
+  COUNTRY             : String(3);
+  COUNTRYISO          : String(2);
+  ADDRE_INDI          : String(1);
+  ACC_1_TIME          : String(1);
+  CUSTHITYP           : String(1);
+  PRIC_REL            : String(1);
+  REBATE_REL          : String(1);
+
+  @RFCAbapType: 'N'
+  LEVEL_NR            : String(2);
+  DESC_PARTN          : String(30);
+  TRANSPZONE          : String(10);
+
+  @RFCAbapType: 'N'
+  ASSIGN_HI           : String(2);
+  VAT_REG_NO          : String(20);
+  FURTHERPAR          : String(1);
+  PERS_NO             : String(10);
+  CALEND_UPD          : String(1);
+  ADDRESSGUID         : String(32);
+  BP_REF_ADDRESS_GUID : String(32);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDESLLBOS {
+  @RFCAbapType: 'N'
+  PCKG_NO      : String(10);
+
+  @RFCAbapType: 'N'
+  LINE_NO      : String(10);
+
+  @RFCAbapType: 'N'
+  EXT_LINE     : String(10);
+  OUTL_LEVEL   : Integer;
+  OUTL_NO      : String(8);
+  OUTL_IND     : String(1);
+
+  @RFCAbapType: 'N'
+  SUBPCKG_NO   : String(10);
+  DELETE_IND   : String(1);
+  SERVICE      : String(18);
+  SERV_TYPE    : String(3);
+
+  @RFCAbapType: 'N'
+  EDITION      : String(4);
+  SSC_ITEM     : String(18);
+  EXT_SERV     : String(18);
+  QUANTITY     : Decimal;
+  BASE_UOM     : String(3);
+  UOM_ISO      : String(3);
+  OVF_TOL      : Decimal;
+  OVF_UNLIM    : String(1);
+  PRICE_UNIT   : Decimal;
+  GROSS_VAL    : Decimal;
+  NET_VALUE    : Decimal;
+  FROM_LINE    : String(6);
+  TO_LINE      : String(6);
+  SHORT_TEXT   : String(40);
+  DISTRIB      : String(1);
+
+  @RFCAbapType: 'N'
+  PERS_NO      : String(8);
+  WAGETYPE     : String(4);
+
+  @RFCAbapType: 'N'
+  PLN_PCKG     : String(10);
+
+  @RFCAbapType: 'N'
+  PLN_LINE     : String(10);
+
+  @RFCAbapType: 'N'
+  CON_PCKG     : String(10);
+
+  @RFCAbapType: 'N'
+  CON_LINE     : String(10);
+
+  @RFCAbapType: 'N'
+  TMP_PCKG     : String(10);
+
+  @RFCAbapType: 'N'
+  TMP_LINE     : String(10);
+  SSC_LIM      : String(1);
+
+  @RFCAbapType: 'N'
+  LIMIT_LINE   : String(10);
+  ACTUAL_QTY   : Decimal;
+  ACTUAL_VAL   : Decimal;
+  CON_VALUE    : Decimal;
+  CON_QTY      : Decimal;
+  TARGET_VAL   : Decimal;
+  UNPL_VAL     : Decimal;
+  UNPL_QTY     : Decimal;
+
+  @RFCAbapType: 'N'
+  BASLINE_NO   : String(10);
+  BASIC_LINE   : String(1);
+  ALTERNAT     : String(1);
+  BIDDER       : String(1);
+  SUPP_LINE    : String(1);
+  OPEN_QTY     : String(1);
+  INFORM       : String(1);
+  BLANKET      : String(1);
+  EVENTUAL     : String(1);
+  TAX_CODE     : String(2);
+  TAXJURCODE   : String(15);
+  PRICE_CHG    : String(1);
+  MATL_GROUP   : String(9);
+  NOND_ITAX    : Decimal;
+  DATE         : Date;
+  BEGINTIME    : Time;
+  ENDTIME      : Time;
+  EXTPERS_NO   : String(40);
+  FORMULA      : String(10);
+  FORM_VAL1    : Decimal;
+  FORM_VAL2    : Decimal;
+  FORM_VAL3    : Decimal;
+  FORM_VAL4    : Decimal;
+  FORM_VAL5    : Decimal;
+
+  @RFCAbapType: 'N'
+  USERF1_NUM   : String(10);
+  USERF2_NUM   : Decimal;
+  USERF1_TXT   : String(40);
+  USERF2_TXT   : String(10);
+  GR_PRICE     : Decimal;
+
+  @RFCAbapType: 'N'
+  HI_LINE_NO   : String(10);
+  EXTDES       : String(10);
+  BOSGRP       : String(4);
+  BOSINTER     : String(1);
+  RISK_LINE    : String(1);
+
+  @RFCAbapType: 'N'
+  SUPPL_NO     : String(3);
+
+  @RFCAbapType: 'N'
+  SUPPL_STATUS : String(1);
+  OBJ_TYPE     : String(1);
+
+  @RFCAbapType: 'N'
+  SI_LINE      : String(4);
+
+  @RFCAbapType: 'N'
+  MI_LINE_NO   : String(10);
+  QT_REL       : String(1);
+  LOT_SIZE     : String(1);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPIBOSCD {
+  @RFCAbapType: 'N'
+  ITM_NUMBER      : String(6);
+
+  @RFCAbapType: 'N'
+  PCKG_NO         : String(10);
+
+  @RFCAbapType: 'N'
+  LINE_NO         : String(10);
+
+  @RFCAbapType: 'N'
+  COND_ST_NO      : String(3);
+
+  @RFCAbapType: 'N'
+  COND_COUNT      : String(2);
+  COND_TYPE       : String(4);
+  COND_VALUE      : Decimal;
+  CURRENCY        : String(5);
+  COND_UNIT       : String(3);
+  COND_P_UNT      : Decimal;
+  CURR_ISO        : String(3);
+  CD_UNT_ISO      : String(3);
+  REFOBJTYPE      : String(10);
+  REFOBJKEY       : String(70);
+  REFLOGSYS       : String(10);
+  APPLICATIO      : String(2);
+  CONPRICDAT      : Date;
+  CALCTYPCON      : String(1);
+  CONBASEVAL      : Decimal;
+  CONEXCHRAT      : Decimal;
+  NUMCONVERT      : Decimal;
+  DENOMINATO      : Decimal;
+  CONDTYPE        : String(1);
+  STAT_CON        : String(1);
+  SCALETYPE       : String(1);
+  ACCRUALS        : String(1);
+  CONINVOLST      : String(1);
+  CONDORIGIN      : String(1);
+  GROUPCOND       : String(1);
+  COND_UPDAT      : String(1);
+
+  @RFCAbapType: 'N'
+  ACCESS_SEQ      : String(2);
+
+  @RFCAbapType: 'N'
+  CONDCOUNT       : String(2);
+  ROUNDOFFDI      : Decimal;
+  CONDVALUE       : Decimal;
+  CURRENCY_2      : String(5);
+  CURR_ISO_2      : String(3);
+  CONDCNTRL       : String(1);
+  CONDISACTI      : String(1);
+  CONDCLASS       : String(1);
+  FACTBASVAL      : Double;
+  SCALEBASIN      : String(1);
+  SCALBASVAL      : Decimal;
+  UNITMEASUR      : String(3);
+  ISO_UNIT        : String(3);
+  CURRENCKEY      : String(5);
+  CURRENISO       : String(3);
+  CONDINCOMP      : String(1);
+  CONDCONFIG      : String(1);
+  CONDCHAMAN      : String(1);
+
+  @RFCAbapType: 'N'
+  ACCESS_SEQ_LONG : String(3);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPIBOSCOST {
+  @RFCAbapType: 'N'
+  ITM_NUMBER                  : String(6);
+
+  @RFCAbapType: 'N'
+  PCKG_NO                     : String(10);
+
+  @RFCAbapType: 'N'
+  LINE_NO                     : String(10);
+
+  @RFCAbapType: 'N'
+  ITEM_NUMBER                 : String(5);
+  FLAG_DELETE_ITEM            : String(1);
+  ITEM_CATEGORY               : String(1);
+  ORIGIN_CONTROLLING_AREA     : String(4);
+  BASE_PLANNING_OBJECT_NUMBER : String(18);
+  COSTCENTER                  : String(10);
+  ACTTYPE                     : String(6);
+  MATERIAL                    : String(18);
+  PLANT                       : String(4);
+  PSCHL                       : String(18);
+  SERVICE                     : String(18);
+  INFO_REC                    : String(10);
+  PURCH_ORG                   : String(4);
+  CO_BUSPROC                  : String(12);
+  VAL_TYPE                    : String(10);
+  VENDOR_NO                   : String(10);
+  WORK_CENTER                 : String(8);
+  WORK_CENTER_PLANT           : String(4);
+  VALUATION_DATE              : Date;
+  LATE_SCHED_FIN_DATE         : Date;
+  COST_ELEM                   : String(10);
+  ORIG_GROUP                  : String(4);
+
+  @RFCAbapType: 'N'
+  COST_COMP                   : String(3);
+  QUANTITY                    : Decimal;
+  BASE_UOM                    : String(3);
+  CURRENCY                    : String(5);
+  PRICE_TOTAL                 : Decimal;
+  PRICE_FIXED                 : Decimal;
+  PRICE_QUANTITY              : Decimal;
+  PRICE_QUANTITY_UNIT         : String(3);
+  DESCRIPT                    : String(40);
+  MATL_GROUP                  : String(9);
+  VALUE_ADD_DED_01            : Decimal;
+  VALUE_ADD_DED_02            : Decimal;
+  VALUE_ADD_DED_03            : Decimal;
+  VALUE_ADD_DED_04            : Decimal;
+  VALUE_ADD_DED_05            : Decimal;
+  PERCENT_ADD_DED_01          : Decimal;
+  PERCENT_ADD_DED_02          : Decimal;
+  PERCENT_ADD_DED_03          : Decimal;
+  PERCENT_ADD_DED_04          : Decimal;
+  PERCENT_ADD_DED_05          : Decimal;
+  MATERIAL_EXTERNAL           : String(40);
+  MATERIAL_GUID               : String(32);
+  MATERIAL_VERSION            : String(10);
+  MATERIAL_LONG               : String(40);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPIESLLTX {
+  @RFCAbapType: 'N'
+  PCKG_NO    : String(10);
+
+  @RFCAbapType: 'N'
+  LINE_NO    : String(10);
+  TEXT_ID    : String(4);
+  FORMAT_COL : String(2);
+  TEXT_LINE  : String(132);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDHDST {
+  OPERATION       : String(3);
+  SD_DOC          : String(10);
+  REFDOCHDST      : String(1);
+  TOTREFSTAT      : String(1);
+  CONFIRSTAT      : String(1);
+  DELIV_STAT      : String(1);
+  DLV_STAT_H      : String(1);
+  TOTGOODSMV      : String(1);
+  BILLSTATUS      : String(1);
+  BILLINGSTA      : String(1);
+  ACCOUNTSTA      : String(1);
+  OVERALLREJ      : String(1);
+  PRC_STAT_H      : String(1);
+  OVERALLPIC      : String(1);
+  OVERALL_WM      : String(1);
+  TOTINCOMPL      : String(1);
+  TOTINCOMIT      : String(1);
+  TOTINCOMBI      : String(1);
+  GENINCOMHD      : String(1);
+  HDIMCOMDEL      : String(1);
+  HDINCOMBIL      : String(1);
+  DOCIMCOMPR      : String(1);
+  SD_DOC_CAT      : String(1);
+  SDDOCOBJ        : String(1);
+  CH_ON           : Date;
+  BILTOTSTAT      : String(1);
+  INVOICSTAT      : String(1);
+  CUSTRESHD1      : String(1);
+  CUSTRESHD2      : String(1);
+  CUSTRESHD3      : String(1);
+  CUSTRESHD4      : String(1);
+  CUSTRESHD5      : String(1);
+  CUSTRESIT1      : String(1);
+  CUSTRESIT2      : String(1);
+  CUSTRESIT3      : String(1);
+  CUSTRESIT4      : String(1);
+  CUSTRESIT5      : String(1);
+  TOTSTATIT       : String(1);
+  STATSTACLC      : String(1);
+  STATDYNCLC      : String(1);
+  STATCREDCH      : String(1);
+  STATCRECH1      : String(1);
+  STATCRECH2      : String(1);
+  STATCRECH3      : String(1);
+  STATCRECH4      : String(1);
+  STATCRECH5      : String(1);
+  STATCRECH6      : String(1);
+  STATCRECH7      : String(1);
+  STATCRECH8      : String(1);
+  STATCRECH9      : String(1);
+  STATCRECHA      : String(1);
+  STATCRECHB      : String(1);
+  STATCRECHC      : String(1);
+  TOTSTATCCH      : String(1);
+  TRNSPLANST      : String(1);
+  QUITTSTAT       : String(1);
+  CONFIRMSTA      : String(1);
+  SAPRELEASE      : String(4);
+  TOTINCOMI       : String(1);
+  TOTINCOMI1      : String(1);
+  TOTINCOMI2      : String(1);
+  HDINCOMPL       : String(1);
+  HDINCOMPL1      : String(1);
+  HDINCOMPL2      : String(1);
+  HDINCOMPL3      : String(1);
+  CREDCHECK       : String(1);
+  DELAYSTAT       : String(1);
+  SHIPPUNIT       : String(1);
+  DISTRISTAT      : String(1);
+  REVDETSTAT      : String(1);
+  INDIDOCACH      : String(1);
+  TOBILBLOST      : String(1);
+  TODELBLOST      : String(1);
+  TOBLOCKSTA      : String(1);
+  LEBHEADSTA      : String(1);
+  FMSTATUS        : String(1);
+  SD_DOC_CAT_LONG : String(4);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDITST {
+  OPERATION  : String(3);
+  SD_DOC     : String(10);
+
+  @RFCAbapType: 'N'
+  ITM_NUMBER : String(6);
+  REFERNSTAT : String(1);
+  REFTOTSTAT : String(1);
+  CONFSTATIT : String(1);
+  DELIV_STAT : String(1);
+  DLV_STAT_I : String(1);
+  GOODSMVSTA : String(1);
+  BILLSTATHD : String(1);
+  BILLSTATIT : String(1);
+  REJSTATIT  : String(1);
+  OVRPROCSTA : String(1);
+  PICKINGSTA : String(1);
+  WHMANAGSTA : String(1);
+  GENINCOMST : String(1);
+  INCOMSTDEL : String(1);
+  INCOMSTBIL : String(1);
+  INCOMSTPRI : String(1);
+  BILLSTAINT : String(1);
+  CUSTRESIT1 : String(1);
+  CUSTRESIT2 : String(1);
+  CUSTRESIT3 : String(1);
+  CUSTRESIT4 : String(1);
+  CUSTRESIT5 : String(1);
+  PACKSTSTIT : String(1);
+  STAPICKCON : String(1);
+  CONFIRMSTA : String(1);
+  STATCRECH6 : String(1);
+  STATCRECH7 : String(1);
+  INCOMSTAIT : String(1);
+  INCOMSTAPA : String(1);
+  INCOSTAGOO : String(1);
+  DELAYSTAT  : String(1);
+  REVDETSTAT : String(1);
+  DECTWHOUSE : String(1);
+  ITBILBLOST : String(1);
+  ITDELBLOST : String(1);
+  LEBITEMSTA : String(1);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPISDTEHD {
+  OPERATION  : String(3);
+  SD_DOC     : String(10);
+
+  @RFCAbapType: 'N'
+  ITM_NUMBER : String(6);
+  APPLOBJECT : String(10);
+  TEXT_NAME  : String(70);
+  TEXT_ID    : String(4);
+  LANGU      : String(1);
+  LANGU_ISO  : String(2);
+  TITLE      : String(50);
+  FORM       : String(16);
+  STYLE      : String(8);
+
+  @RFCAbapType: 'N'
+  VERSION    : String(5);
+  CREATEUSER : String(12);
+  CREATEREL  : String(4);
+  CREATEDATE : Date;
+  CREATETIME : Time;
+  CHANGEUSER : String(12);
+  CHANGEREL  : String(4);
+  CHANGEDATE : Date;
+  CHANGETIME : Time;
+
+  @RFCAbapType: 'N'
+  LINESIZE   : String(3);
+
+  @RFCAbapType: 'N'
+  LINEAMOUNT : String(5);
+  HYPHENAT   : String(1);
+  ORGSPRAS   : String(1);
+  ORGSPRAISO : String(2);
+
+  @RFCAbapType: 'N'
+  TRANSTAT   : String(1);
+  MATCHCOD1  : String(16);
+  MATCHCOD2  : String(16);
+  REFOBJECT  : String(10);
+  REFNAME    : String(70);
+  REFID      : String(4);
+  TEXTTYPE   : String(6);
+  COMPRESSTD : String(1);
+  OBJ_CLASS  : String(4);
+};
+
+type SAP_ABAP_BACKEND_RFC.DDIC.BAPITEXTLI {
+  OPERATION  : String(3);
+  APPLOBJECT : String(10);
+  TEXT_NAME  : String(70);
+  TEXT_ID    : String(4);
+  LANGU      : String(1);
+  LANGU_ISO  : String(2);
+
+  @RFCAbapType: 'N'
+  LINE_CNT   : String(8);
+  LINE       : String(132);
+  FORMAT_COL : String(2);
 };
