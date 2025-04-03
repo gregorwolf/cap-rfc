@@ -1,5 +1,5 @@
 {
-  "name": "Terraform provider for SAP BTP - Default",
+  "name": "CAP RFC",
   "build": {
     "dockerfile": "Dockerfile"
   },
