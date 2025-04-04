@@ -1,0 +1,42 @@
+{
+  "PRHEADER": {
+    "PR_TYPE": "NB"
+  },
+  "PRHEADERX": {
+    "PR_TYPE": "X"
+  },
+  "PRITEM": [
+    {
+      "PREQ_ITEM": "00010",
+      "MATERIAL": "ZPRINTER01",
+      "PLANT": "1010",
+      "ACCTASSCAT": "U",
+      "CURRENCY": "EUR",
+      "DELIV_DATE": "20250407",
+      "MATL_GROUP": "A001",
+      "PREQ_PRICE": "100.00",
+      "QUANTITY": "1",
+      "PUR_GROUP": "001",
+      "PURCH_ORG": "1010",
+      "SHORT_TEXT": "ZPRINTER01",
+      "UNIT": "ST"
+    }
+  ],
+  "PRITEMX": [
+    {
+      "PREQ_ITEM": "00010",
+      "MATERIAL": "X",
+      "PLANT": "X",
+      "ACCTASSCAT": "X",
+      "CURRENCY": "X",
+      "DELIV_DATE": "X",
+      "MATL_GROUP": "X",
+      "PREQ_PRICE": "X",
+      "QUANTITY": "X",
+      "PUR_GROUP": "X",
+      "PURCH_ORG": "X",
+      "SHORT_TEXT": "X",
+      "UNIT": "X"
+    }
+  ]
+}
