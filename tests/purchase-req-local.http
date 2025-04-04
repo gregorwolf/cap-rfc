@@ -1,0 +1,22 @@
+###
+GET http://localhost:4004/odata/v4/purchase-req
+Authorization: Basic alice:
+###
+GET http://localhost:4004/odata/v4/purchase-req/$metadata
+Authorization: Basic alice:
+###
+POST http://localhost:4004/odata/v4/purchase-req/createPurchaseReq
+Authorization: Basic alice:
+Content-Type: application/json
+
+{
+ "PRITEM": [
+  {
+   "PREQ_ITEM": "00010",
+   "MATERIAL": "X",
+   "PLANT": "1000",
+   "QUANTITY": "10",
+   "UNIT": "PC"
+  }
+ ]
+}

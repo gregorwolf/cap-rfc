@@ -37,6 +37,15 @@
       },
       "[production]": {
         "auth": "xsuaa"
+      },
+      "S4H": {
+        "kind": "rfc",
+        "model": "srv/external/S4H",
+        "[production]": {
+          "credentials": {
+            "destination": "S4H"
+          }
+        }
       }
     }
   }
