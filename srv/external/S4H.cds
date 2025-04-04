@@ -577,7 +577,7 @@ type S4H.DDIC.BAPIMEREQITEMIMP {
   PREQ_UNIT_ISO                 : String(3);
   PREQ_DATE                     : Date;
   DEL_DATCAT_EXT                : String(1);
-  DELIV_DATE                    : Date;
+  DELIV_DATE                    : String(8);
   REL_DATE                      : Date;
   GR_PR_TIME                    : Decimal;
   PREQ_PRICE                    : Decimal;
@@ -741,7 +741,7 @@ type S4H.DDIC.BAPIMEREQITEM {
   SHORTAGE                      : Decimal;
   PREQ_DATE                     : Date;
   DEL_DATCAT_EXT                : String(1);
-  DELIV_DATE                    : Date;
+  DELIV_DATE                    : String(8);
   REL_DATE                      : Date;
   GR_PR_TIME                    : Decimal;
   PREQ_PRICE                    : Decimal;
