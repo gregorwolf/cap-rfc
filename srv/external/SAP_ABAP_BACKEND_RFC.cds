@@ -4689,10 +4689,10 @@ type SAP_ABAP_BACKEND_RFC.RSAU_API_GET_LOG_DATA.ResultType {
 };
 
 type SAP_ABAP_BACKEND_RFC.DDIC.RSAU_SEL_INTV {
-  DAT_FROM : Date;
-  DAT_TO : Date;
-  TIM_FROM : Time;
-  TIM_TO : Time;
+  DAT_FROM : String(8);
+  DAT_TO : String(8);
+  TIM_FROM : String(6);
+  TIM_TO : String(6);
 };
 
 type SAP_ABAP_BACKEND_RFC.DDIC.RSDSSELOPT_T : many {
