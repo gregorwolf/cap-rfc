@@ -1,0 +1,19 @@
+###
+GET http://localhost:4004/odata/v4/audit-log
+Authorization: Basic alice:
+###
+GET http://localhost:4004/odata/v4/audit-log/$metadata
+Authorization: Basic alice:
+###
+POST http://localhost:4004/odata/v4/audit-log/getAuditLog
+Authorization: Basic alice:
+Content-Type: application/json
+
+{
+  "IS_INTERVAL": {
+    "DAT_FROM": "20250410",
+    "DAT_TO": "20250412",
+    "TIM_FROM": "000000",
+    "TIM_TO": "235959"
+  }
+}
