@@ -7,6 +7,10 @@ Authorization: Basic alice:
 ###
 GET http://localhost:4004/odata/v4/user/getUsers()
 Authorization: Basic alice:
+# Without Accept-Language header Version 2 of the CDS RFC Connector returns:
+# "Select one of the installed languages"
+Accept-Language: en
 ###
 GET http://localhost:4004/odata/v4/user/Users
 Authorization: Basic alice:
+Accept-Language: en
