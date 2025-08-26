@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "engines": {
-    "node": "^20"
+    "node": "^22"
   },
   "dependencies": {
     "@sap-rfc/node-rfc-library": "^1.1.0",
