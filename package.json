@@ -2,7 +2,7 @@
   "name": "cap-rfc",
   "version": "1.0.0",
   "description": "A simple CAP project.",
-  "repository": "<Add your repository here>",
+  "repository": "https://github.com/gregorwolf/cap-rfc.git",
   "license": "UNLICENSED",
   "private": true,
   "engines": {
@@ -13,7 +13,7 @@
     "@sap/cds": "^9",
     "@sap/cds-rfc": "^2",
     "@sap/xssec": "^4",
-    "dotenv": "^16.5.0",
+    "dotenv": "^17.2.1",
     "express": "^4"
   },
   "devDependencies": {
