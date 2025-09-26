@@ -26,6 +26,9 @@
     "start": "cds-serve"
   },
   "cds": {
+    "log": {
+      "format": "plain"
+    },
     "requires": {
       "SAP_ABAP_BACKEND_RFC": {
         "kind": "rfc",
