@@ -21,6 +21,9 @@ grant_type=password
 GET {{$dotenv cap_backend_url}}/odata/v4/user/$metadata
 Authorization: Bearer {{user_access_token}}
 ###
+GET {{$dotenv cap_backend_url}}/odata/v4/user/getUser()
+Authorization: Bearer {{user_access_token}}
+###
 GET {{$dotenv cap_backend_url}}/odata/v4/user/getUsers()
 Authorization: Bearer {{user_access_token}}
 ###
