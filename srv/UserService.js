@@ -13,6 +13,11 @@ class UserService extends cds.ApplicationService {
       return userData.USERLIST;
     });
 
+    this.on("getUser", async (req) => {
+      const userData = await sys.USER_NAME_GET();
+      return userData;
+    });
+
     return super.init();
   }
 }

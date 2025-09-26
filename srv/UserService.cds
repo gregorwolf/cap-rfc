@@ -10,4 +10,6 @@ service UserService {
 
     function getUsers() returns array of SAP_ABAP_BACKEND_RFC.DDIC.BAPIUSNAME;
 
+    function getUser() returns SAP_ABAP_BACKEND_RFC.USER_NAME_GET.ResultType;
+
 }

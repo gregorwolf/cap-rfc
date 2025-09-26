@@ -1,0 +1,96 @@
+{
+  "rfcName": "USER_NAME_GET",
+  "import": [],
+  "export": [
+    {
+      "name": "ALIASNAME",
+      "nwrfcType": "RFCTYPE_CHAR",
+      "abapType": "c",
+      "format": "",
+      "length": 40,
+      "decimals": 0,
+      "defaultValue": "",
+      "parameterText": "Internet User Alias",
+      "optional": false
+    },
+    {
+      "name": "FULL_USER_NAME",
+      "nwrfcType": "RFCTYPE_CHAR",
+      "abapType": "c",
+      "format": "",
+      "length": 80,
+      "decimals": 0,
+      "defaultValue": "",
+      "parameterText": "Full Name of Person",
+      "optional": false
+    },
+    {
+      "name": "LANGUAGE",
+      "nwrfcType": "RFCTYPE_CHAR",
+      "abapType": "c",
+      "format": "",
+      "length": 2,
+      "decimals": 0,
+      "defaultValue": "",
+      "parameterText": "",
+      "optional": false
+    },
+    {
+      "name": "LOGSYS",
+      "nwrfcType": "RFCTYPE_CHAR",
+      "abapType": "c",
+      "format": "",
+      "length": 10,
+      "decimals": 0,
+      "defaultValue": "",
+      "parameterText": "Logical System",
+      "optional": false
+    },
+    {
+      "name": "MANDT",
+      "nwrfcType": "RFCTYPE_CHAR",
+      "abapType": "c",
+      "format": "",
+      "length": 3,
+      "decimals": 0,
+      "defaultValue": "",
+      "parameterText": "Client",
+      "optional": false
+    },
+    {
+      "name": "SYLANGU",
+      "nwrfcType": "RFCTYPE_CHAR",
+      "abapType": "c",
+      "format": "",
+      "length": 1,
+      "decimals": 0,
+      "defaultValue": "",
+      "parameterText": "",
+      "optional": false
+    },
+    {
+      "name": "SYSID",
+      "nwrfcType": "RFCTYPE_CHAR",
+      "abapType": "c",
+      "format": "",
+      "length": 8,
+      "decimals": 0,
+      "defaultValue": "",
+      "parameterText": "System",
+      "optional": false
+    },
+    {
+      "name": "USER_NAME",
+      "nwrfcType": "RFCTYPE_CHAR",
+      "abapType": "c",
+      "format": "",
+      "length": 12,
+      "decimals": 0,
+      "defaultValue": "",
+      "parameterText": "User Name",
+      "optional": false
+    }
+  ],
+  "changing": [],
+  "table": []
+}
